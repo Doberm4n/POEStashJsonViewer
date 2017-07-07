@@ -15,6 +15,7 @@ import json
 import gc
 import time
 import res.res
+import global_values
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -161,6 +162,7 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def loadConfig(self):
         #try:
             UIMainLayout.applyLayout(self)
+            self.ig = global_values.globalValues()
             guideJson = self.readJson('Configs\config.json')
             if guideJson['curGuide']:
                 #print "Yes"
@@ -249,33 +251,42 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
 
 
-
+            #add defined columns
             textLength = len(stashJson[0]['items'])
+            for columns in range (len(self.ig.columnsHeaders)):
+                self.tableWidget.insertColumn(columns)
 
-            for columns in range
+            #add rows, number equal to items count in json
+            for rows in range (textLength):
+                self.tableWidget.insertRow(rows)
 
-            self.tableWidget.setColumnCount(5)
-            self.tableWidget.setRowCount(5)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setVerticalHeaderItem(0, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setVerticalHeaderItem(1, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setVerticalHeaderItem(2, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setVerticalHeaderItem(3, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setVerticalHeaderItem(4, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setHorizontalHeaderItem(0, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setHorizontalHeaderItem(1, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setHorizontalHeaderItem(2, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setHorizontalHeaderItem(3, item)
-            item = QtGui.QTableWidgetItem()
-            self.tableWidget.setHorizontalHeaderItem(4, item)
+
+
+            #self.tableWidget.setColumnHidden()
+            #self.tableWidget.setRowHidden(1, True)
+
+            # self.tableWidget.setColumnCount(5)
+            # self.tableWidget.setRowCount(5)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setVerticalHeaderItem(0, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setVerticalHeaderItem(1, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setVerticalHeaderItem(2, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setVerticalHeaderItem(3, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setVerticalHeaderItem(4, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setHorizontalHeaderItem(0, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setHorizontalHeaderItem(1, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setHorizontalHeaderItem(2, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setHorizontalHeaderItem(3, item)
+            # item = QtGui.QTableWidgetItem()
+            # self.tableWidget.setHorizontalHeaderItem(4, item)
 
             # if (not self.firstTab) and (textLength > 0):
             #       self.tabWidget.setCurrentIndex(tabs)
