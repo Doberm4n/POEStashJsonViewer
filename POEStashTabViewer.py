@@ -249,12 +249,12 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.buttonsText = {}
             self.buttonsComplete = {}
             self.tabs = {}
-            self.verticalLayouts = {}
-            self.scrollAreas = {}
-            self.scrollAreaWidgetContents = {}
-            self.groupBoxes = {}
-            self.formLayouts = {}
-            self.gridLayouts = {}
+            self.verticalLayout = {}
+            self.scrollArea = {}
+            self.scrollAreaWidgetContent = {}
+            self.groupBox = {}
+            self.formLayout = {}
+            self.gridLayout = {}
             self.firstTab = False
             self.tabWidget.show()
             tabs_count = self.tabWidget.count()
@@ -266,39 +266,71 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #print "tabs " + str(tabs)
             self.tabs = QtGui.QWidget()
             self.tabs.setObjectName(_fromUtf8("tab"))
-            self.verticalLayouts = QtGui.QVBoxLayout(self.tabs)
-            self.verticalLayouts.setContentsMargins(-1, -1, -1, 9)
-            self.verticalLayouts.setSpacing(11)
-            self.verticalLayouts.setObjectName(_fromUtf8("verticalLayout"))
-            self.scrollAreas = QtGui.QScrollArea(self.tabs)
-            self.scrollAreas.setWidgetResizable(True)
-            self.scrollAreas.setObjectName(_fromUtf8("scrollArea"))
-            self.scrollAreaWidgetContents = QtGui.QWidget()
-            self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1048, 631))
-            self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
-            self.formLayouts = QtGui.QFormLayout(self.scrollAreaWidgetContents)
-            self.formLayouts.setFieldGrowthPolicy(QtGui.QFormLayout.AllNonFixedFieldsGrow)
-            self.formLayouts.setObjectName(_fromUtf8("formLayout"))
-            self.groupBoxes = QtGui.QGroupBox(self.scrollAreaWidgetContents)
+            self.verticalLayout = QtGui.QVBoxLayout(self.tabs)
+            self.verticalLayout.setContentsMargins(-1, -1, -1, 9)
+            self.verticalLayout.setSpacing(11)
+            self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+            self.scrollArea = QtGui.QScrollArea(self.tabs)
+            self.scrollArea.setWidgetResizable(True)
+            self.scrollArea.setObjectName(_fromUtf8("scrollArea"))
+            self.scrollAreaWidgetContent = QtGui.QWidget()
+            self.scrollAreaWidgetContent.setGeometry(QtCore.QRect(0, 0, 1048, 631))
+            self.scrollAreaWidgetContent.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
+            self.formLayout = QtGui.QFormLayout(self.scrollAreaWidgetContent)
+            self.formLayout.setFieldGrowthPolicy(QtGui.QFormLayout.AllNonFixedFieldsGrow)
+            self.formLayout.setObjectName(_fromUtf8("formLayout"))
+            self.groupBox = QtGui.QGroupBox(self.scrollAreaWidgetContent)
             sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
             sizePolicy.setHorizontalStretch(0)
             sizePolicy.setVerticalStretch(0)
-            sizePolicy.setHeightForWidth(self.groupBoxes.sizePolicy().hasHeightForWidth())
-            self.groupBoxes.setSizePolicy(sizePolicy)
-            self.groupBoxes.setObjectName(_fromUtf8("groupBox_tab"))
-            self.gridLayouts = QtGui.QGridLayout(self.groupBoxes)
-            self.gridLayouts.setVerticalSpacing(2)
-            self.gridLayouts.setObjectName(_fromUtf8("gridLayout"))
-            self.formLayouts.setWidget(0, QtGui.QFormLayout.SpanningRole, self.groupBoxes)
-            self.scrollAreas.setWidget(self.scrollAreaWidgetContents)
-            self.verticalLayouts.addWidget(self.scrollAreas)
+            sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+            self.groupBox.setSizePolicy(sizePolicy)
+            self.groupBox.setObjectName(_fromUtf8("groupBox"))
+            self.gridLayout = QtGui.QGridLayout(self.groupBox)
+            self.gridLayout.setVerticalSpacing(2)
+            self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+            self.formLayout.setWidget(0, QtGui.QFormLayout.SpanningRole, self.groupBox)
+            self.scrollArea.setWidget(self.scrollAreaWidgetContent)
+            self.verticalLayout.addWidget(self.scrollArea)
             self.tabWidget.addTab(self.tabs, _fromUtf8(""))
-            self.gridLayouts.setColumnStretch(0, 1)
-            self.gridLayouts.setVerticalSpacing(2)
+            self.gridLayout.setColumnStretch(0, 1)
+            self.gridLayout.setVerticalSpacing(2)
 
 
 
             textLength = len(stashJson[0]['items'])
+
+
+            self.tableWidget = QtGui.QTableWidget(self.groupBox)
+            self.tableWidget.setGeometry(QtCore.QRect(15, 20, 751, 511))
+            self.tableWidget.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+            self.tableWidget.setShowGrid(True)
+            self.tableWidget.setObjectName(_fromUtf8("tableWidget"))
+            self.gridLayout.addWidget(self.tableWidget, 0, 0, 1, 1)
+            self.tableWidget.setColumnCount(5)
+            self.tableWidget.setRowCount(5)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(0, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(1, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(2, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(3, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(4, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(0, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(1, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(2, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(3, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(4, item)
+            self.tableWidget.horizontalHeader().setVisible(True)
+            self.tableWidget.verticalHeader().setVisible(False)
 
             # if (not self.firstTab) and (textLength > 0):
             #       self.tabWidget.setCurrentIndex(tabs)
