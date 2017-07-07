@@ -1,3 +1,3 @@
 rmdir /Q /S build
 rmdir /Q /S dist
-pyinstaller POEWeaponDPS.py -w --version-file=version.txt
+pyinstaller POE_leveling_guide.py -w --version-file=version.txt

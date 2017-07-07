@@ -68,7 +68,7 @@
     </font>
    </property>
    <property name="text">
-    <string>weapon DPS calculator for Path of Exile</string>
+    <string>Leveling Guide for Path of Exile</string>
    </property>
   </widget>
   <widget class="QLabel" name="versionLabel">
