@@ -158,7 +158,7 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                  print "Error: " + str(e)
 
     def loadConfig(self):
-        try:
+        #try:
             guideJson = self.readJson('Configs\config.json')
             if guideJson['curGuide']:
                 #print "Yes"
@@ -171,8 +171,8 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.curDir = ""
                 self.curGuide = ""
                 #print "No"
-        except Exception, e:
-             print "Error in loading config: " + str(e)
+        #except Exception, e:
+             #print "Error in loading config: " + str(e)
 
     def browseGuide(self):
         self.curGuide = str(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.json', directory=self.curDir))
@@ -235,13 +235,15 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         return QObject.eventFilter(self, obj, event)
 
     def loadGuide(self, guide):
-        try:
-            guideJson = self.readJson(guide)
+        #try:
+            stashJson = {}
+            characterJson = {}
+            stashJson[0] = self.readJson(guide)
             text = []
             self.setWindowTitle(self.windowTitle)
-            self.clearTabs()
-            self.clearMenuActionReset()
-            self.clearMenuActionProgress()
+            ######################################################## self.clearTabs()
+            ######################################################## self.clearMenuActionReset()
+            ######################################################## self.clearMenuActionProgress()
             self.buttonsText = None
             self.buttonsComplete = None
             self.buttonsText = {}
@@ -257,100 +259,107 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.tabWidget.show()
             tabs_count = self.tabWidget.count()
             #print "tabs_count init = " + str(tabs_count)
-            tabsCount = len(guideJson['guide']['tabs'])
-            for tabs in range (tabsCount):
-                guideActKey = 'act_' + str(tabs + 1)
-                #if not guideJson['guide']['tabs'][tabs]['text']:
-                    #print "tabs " + str(tabs)
-                self.tabs[tabs] = QtGui.QWidget()
-                self.tabs[tabs].setObjectName(_fromUtf8("tab_" + str(tabs)))
-                self.verticalLayouts[tabs] = QtGui.QVBoxLayout(self.tabs[tabs])
-                self.verticalLayouts[tabs].setContentsMargins(-1, -1, -1, 9)
-                self.verticalLayouts[tabs].setSpacing(11)
-                self.verticalLayouts[tabs].setObjectName(_fromUtf8("verticalLayout_" + str(tabs)))
-                self.scrollAreas[tabs] = QtGui.QScrollArea(self.tabs[tabs])
-                self.scrollAreas[tabs].setWidgetResizable(True)
-                self.scrollAreas[tabs].setObjectName(_fromUtf8("scrollArea_" + str(tabs)))
-                self.scrollAreaWidgetContents[tabs] = QtGui.QWidget()
-                self.scrollAreaWidgetContents[tabs].setGeometry(QtCore.QRect(0, 0, 1048, 631))
-                self.scrollAreaWidgetContents[tabs].setObjectName(_fromUtf8("scrollAreaWidgetContents_" + str(tabs)))
-                self.formLayouts[tabs] = QtGui.QFormLayout(self.scrollAreaWidgetContents[tabs])
-                self.formLayouts[tabs].setFieldGrowthPolicy(QtGui.QFormLayout.AllNonFixedFieldsGrow)
-                self.formLayouts[tabs].setObjectName(_fromUtf8("formLayout" + str(tabs)))
-                self.groupBoxes[tabs] = QtGui.QGroupBox(self.scrollAreaWidgetContents[tabs])
-                sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
-                sizePolicy.setHorizontalStretch(0)
-                sizePolicy.setVerticalStretch(0)
-                sizePolicy.setHeightForWidth(self.groupBoxes[tabs].sizePolicy().hasHeightForWidth())
-                self.groupBoxes[tabs].setSizePolicy(sizePolicy)
-                self.groupBoxes[tabs].setObjectName(_fromUtf8("groupBox_" + str(tabs)))
-                self.gridLayouts[tabs] = QtGui.QGridLayout(self.groupBoxes[tabs])
-                self.gridLayouts[tabs].setVerticalSpacing(2)
-                self.gridLayouts[tabs].setObjectName(_fromUtf8("gridLayout_" + str(tabs)))
-                self.formLayouts[tabs].setWidget(0, QtGui.QFormLayout.SpanningRole, self.groupBoxes[tabs])
-                self.scrollAreas[tabs].setWidget(self.scrollAreaWidgetContents[tabs])
-                self.verticalLayouts[tabs].addWidget(self.scrollAreas[tabs])
-                self.tabWidget.addTab(self.tabs[tabs], _fromUtf8(""))
-                self.gridLayouts[tabs].setColumnStretch(0, 1)
-                self.gridLayouts[tabs].setVerticalSpacing(2)
-                textLength = len(guideJson['guide']['tabs'][tabs]['text'])
-                if (not self.firstTab) and (textLength > 0):
-                      self.tabWidget.setCurrentIndex(tabs)
-                      self.firstTab = True
-                if textLength > 0:
-                    self.menuActionResets[tabs] = QtGui.QAction(self)
-                    self.menuActionResets[tabs].setObjectName(_fromUtf8("actionReset_" + str(tabs)))
-                    self.menuReset_progress.addAction(self.menuActionResets[tabs])
-                    self.menuActionResets[tabs].setText(_translate("MainWindow", "Reset " + guideJson['guide']['tabs'][tabs]['name'], None))
-                    self.menuActionProgress[tabs] = QtGui.QAction(self)
-                    self.menuActionProgress[tabs].setObjectName(_fromUtf8("actionProgress_" + str(tabs)))
-                    self.menuComplete_progress.addAction(self.menuActionProgress[tabs])
-                    self.menuActionProgress[tabs].setText(_translate("MainWindow", "Complete " + guideJson['guide']['tabs'][tabs]['name'], None))
-                i = 0
-                if textLength == 0:
-                    #print "Length = 0"
-                    self.tabWidget.setTabEnabled(tabs, False)
-                    #self.tabWidget.widget(0).hide()
-                    #tabs_count = self.tabWidget.count()
-                    #print "tabs_count = " + str(tabs_count)
-                #print "Length " + str(tabs) + " " + str(textLength)
-                for i in range (textLength):
-                    self.buttonsText[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
-                    self.buttonsComplete[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
-                    self.buttonsText[tabs, i].setObjectName(_fromUtf8("guideStringPushButton_" + str(i)))
-                    self.buttonsComplete[tabs, i].setObjectName(_fromUtf8("resetPushButton_" + str(i)))
-                    self.buttonsText[tabs, i].setText(_translate("MainWindow", "guideStringPushButton", None))
-                    self.buttonsComplete[tabs, i].setText(_translate("MainWindow", "resetPushButton", None))
-                    self.buttonsText[tabs, i].setStyleSheet(self.completedStylesheet + self.uncompletedStylesheet)
-                    self.gridLayouts[tabs].addWidget(self.buttonsText[tabs, i], i, 0, 1, 1)
-                    self.gridLayouts[tabs].addWidget(self.buttonsComplete[tabs, i], i, 1, 1, 1)
-                    tempString = guideJson['guide']['tabs'][tabs]['text'][i]['string']
-                    if  tempString.find(u'\u25e6') >= 0:
-                        tempString = "     " + tempString
-                    self.buttonsText[tabs, i].setText(tempString)
-                    self.buttonsText[tabs, i].setEnabled(not guideJson['guide']['tabs'][tabs]['text'][i]['isCompleted'])
-                    self.buttonsText[tabs, i].installEventFilter(self)
-                    self.buttonsComplete[tabs, i].setText("Reset")
-                    self.buttonsText[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsTextClick(tabs, i))
-                    self.buttonsComplete[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsCompleteClick(tabs, i))
-                self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs[tabs]), _translate("MainWindow", guideJson['guide']['tabs'][tabs]['name'], None))
-                if textLength > 0:
-                    if self.menuActionResets[tabs].triggered:
-                        self.menuActionResets[tabs].triggered.disconnect()
-                    self.menuActionResets[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionResetClick(tabs, i))
+            #tabsCount = len(guideJson['guide']['tabs'])
+            #for tabs in range (tabsCount):
+            #guideActKey = 'act_' + str(tabs + 1)
+            #if not guideJson['guide']['tabs'][tabs]['text']:
+                #print "tabs " + str(tabs)
+            self.tabs = QtGui.QWidget()
+            self.tabs.setObjectName(_fromUtf8("tab"))
+            self.verticalLayouts = QtGui.QVBoxLayout(self.tabs)
+            self.verticalLayouts.setContentsMargins(-1, -1, -1, 9)
+            self.verticalLayouts.setSpacing(11)
+            self.verticalLayouts.setObjectName(_fromUtf8("verticalLayout"))
+            self.scrollAreas = QtGui.QScrollArea(self.tabs)
+            self.scrollAreas.setWidgetResizable(True)
+            self.scrollAreas.setObjectName(_fromUtf8("scrollArea"))
+            self.scrollAreaWidgetContents = QtGui.QWidget()
+            self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1048, 631))
+            self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
+            self.formLayouts = QtGui.QFormLayout(self.scrollAreaWidgetContents)
+            self.formLayouts.setFieldGrowthPolicy(QtGui.QFormLayout.AllNonFixedFieldsGrow)
+            self.formLayouts.setObjectName(_fromUtf8("formLayout"))
+            self.groupBoxes = QtGui.QGroupBox(self.scrollAreaWidgetContents)
+            sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+            sizePolicy.setHorizontalStretch(0)
+            sizePolicy.setVerticalStretch(0)
+            sizePolicy.setHeightForWidth(self.groupBoxes.sizePolicy().hasHeightForWidth())
+            self.groupBoxes.setSizePolicy(sizePolicy)
+            self.groupBoxes.setObjectName(_fromUtf8("groupBox_tab"))
+            self.gridLayouts = QtGui.QGridLayout(self.groupBoxes)
+            self.gridLayouts.setVerticalSpacing(2)
+            self.gridLayouts.setObjectName(_fromUtf8("gridLayout"))
+            self.formLayouts.setWidget(0, QtGui.QFormLayout.SpanningRole, self.groupBoxes)
+            self.scrollAreas.setWidget(self.scrollAreaWidgetContents)
+            self.verticalLayouts.addWidget(self.scrollAreas)
+            self.tabWidget.addTab(self.tabs, _fromUtf8(""))
+            self.gridLayouts.setColumnStretch(0, 1)
+            self.gridLayouts.setVerticalSpacing(2)
 
-                    if self.menuActionProgress[tabs].triggered:
-                        self.menuActionProgress[tabs].triggered.disconnect()
-                    self.menuActionProgress[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionCompleteClick(tabs, i))
-            if not self.firstTab:
-                self.tabWidget.hide()
-            self.setWindowTitle(self.windowTitle + " - " + os.path.basename(guide) + ' (' + os.path.dirname(guide) + ')')
-            guideInfo = guideJson['common']['info']
-            self.guideLineEdit.setText(guideInfo['name'] + "" + guideInfo['version'] + "(" + guideInfo['date'] + " " + guideInfo['time'] + ")" + guideInfo['author'] + "" + guideInfo['notes'] + "")
-            self.statusbar.clearMessage()
-        except Exception, e:
-            self.tabWidget.hide()
-            self.statusbar.showMessage("Error in loading guide: " + str(e))
+
+
+            textLength = len(stashJson[0]['items'])
+
+            # if (not self.firstTab) and (textLength > 0):
+            #       self.tabWidget.setCurrentIndex(tabs)
+            #       self.firstTab = True
+            # if textLength > 0:
+            #     self.menuActionResets[tabs] = QtGui.QAction(self)
+            #     self.menuActionResets[tabs].setObjectName(_fromUtf8("actionReset_" + str(tabs)))
+            #     self.menuReset_progress.addAction(self.menuActionResets[tabs])
+            #     self.menuActionResets[tabs].setText(_translate("MainWindow", "Reset " + guideJson['guide']['tabs'][tabs]['name'], None))
+            #     self.menuActionProgress[tabs] = QtGui.QAction(self)
+            #     self.menuActionProgress[tabs].setObjectName(_fromUtf8("actionProgress_" + str(tabs)))
+            #     self.menuComplete_progress.addAction(self.menuActionProgress[tabs])
+            #     self.menuActionProgress[tabs].setText(_translate("MainWindow", "Complete " + guideJson['guide']['tabs'][tabs]['name'], None))
+            i = 0
+            #################if textLength == 0:
+                #print "Length = 0"
+                #############################self.tabWidget.setTabEnabled(tabs, False)
+                #self.tabWidget.widget(0).hide()
+                #tabs_count = self.tabWidget.count()
+                #print "tabs_count = " + str(tabs_count)
+            #print "Length " + str(tabs) + " " + str(textLength)
+
+
+
+            # for i in range (textLength):
+            #     self.buttonsText[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
+            #     self.buttonsComplete[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
+            #     self.buttonsText[tabs, i].setObjectName(_fromUtf8("guideStringPushButton_" + str(i)))
+            #     self.buttonsComplete[tabs, i].setObjectName(_fromUtf8("resetPushButton_" + str(i)))
+            #     self.buttonsText[tabs, i].setText(_translate("MainWindow", "guideStringPushButton", None))
+            #     self.buttonsComplete[tabs, i].setText(_translate("MainWindow", "resetPushButton", None))
+            #     self.buttonsText[tabs, i].setStyleSheet(self.completedStylesheet + self.uncompletedStylesheet)
+            #     self.gridLayouts[tabs].addWidget(self.buttonsText[tabs, i], i, 0, 1, 1)
+            #     self.gridLayouts[tabs].addWidget(self.buttonsComplete[tabs, i], i, 1, 1, 1)
+            #     tempString = guideJson['guide']['tabs'][tabs]['text'][i]['string']
+            #     if  tempString.find(u'\u25e6') >= 0:
+            #         tempString = "     " + tempString
+            #     self.buttonsText[tabs, i].setText(tempString)
+            #     self.buttonsText[tabs, i].setEnabled(not guideJson['guide']['tabs'][tabs]['text'][i]['isCompleted'])
+            #     self.buttonsText[tabs, i].installEventFilter(self)
+            #     self.buttonsComplete[tabs, i].setText("Reset")
+            #     self.buttonsText[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsTextClick(tabs, i))
+            #     self.buttonsComplete[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsCompleteClick(tabs, i))
+            # self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs[tabs]), _translate("MainWindow", guideJson['guide']['tabs'][tabs]['name'], None))
+            # if textLength > 0:
+            #     if self.menuActionResets[tabs].triggered:
+            #         self.menuActionResets[tabs].triggered.disconnect()
+            #     self.menuActionResets[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionResetClick(tabs, i))
+
+            #     if self.menuActionProgress[tabs].triggered:
+            #         self.menuActionProgress[tabs].triggered.disconnect()
+            #     self.menuActionProgress[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionCompleteClick(tabs, i))
+            # if not self.firstTab:
+            #     self.tabWidget.hide()
+            # self.setWindowTitle(self.windowTitle + " - " + os.path.basename(guide) + ' (' + os.path.dirname(guide) + ')')
+            # guideInfo = guideJson['common']['info']
+            # self.guideLineEdit.setText(guideInfo['name'] + "" + guideInfo['version'] + "(" + guideInfo['date'] + " " + guideInfo['time'] + ")" + guideInfo['author'] + "" + guideInfo['notes'] + "")
+            # self.statusbar.clearMessage()
+        # except Exception, e:
+        #     self.tabWidget.hide()
+        #     self.statusbar.showMessage("Error in loading guide: " + str(e))
 
     def showAbout(self):
         global formAbout
