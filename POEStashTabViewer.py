@@ -293,6 +293,7 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.scrollArea.setWidget(self.scrollAreaWidgetContent)
             self.verticalLayout.addWidget(self.scrollArea)
             self.tabWidget.addTab(self.tabs, _fromUtf8(""))
+            self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), _translate("MainWindow", "Stash", None))
             self.gridLayout.setColumnStretch(0, 1)
             self.gridLayout.setVerticalSpacing(2)
 
@@ -374,7 +375,7 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #     self.buttonsComplete[tabs, i].setText("Reset")
             #     self.buttonsText[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsTextClick(tabs, i))
             #     self.buttonsComplete[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsCompleteClick(tabs, i))
-            # self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs[tabs]), _translate("MainWindow", guideJson['guide']['tabs'][tabs]['name'], None))
+
             # if textLength > 0:
             #     if self.menuActionResets[tabs].triggered:
             #         self.menuActionResets[tabs].triggered.disconnect()
