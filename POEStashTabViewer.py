@@ -252,6 +252,31 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
             textLength = len(stashJson[0]['items'])
 
+            for columns in range
+
+            self.tableWidget.setColumnCount(5)
+            self.tableWidget.setRowCount(5)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(0, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(1, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(2, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(3, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setVerticalHeaderItem(4, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(0, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(1, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(2, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(3, item)
+            item = QtGui.QTableWidgetItem()
+            self.tableWidget.setHorizontalHeaderItem(4, item)
+
             # if (not self.firstTab) and (textLength > 0):
             #       self.tabWidget.setCurrentIndex(tabs)
             #       self.firstTab = True
