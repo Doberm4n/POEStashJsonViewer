@@ -30,12 +30,12 @@ VSVersionInfo(
       StringTable(
         u'000004b0',
         [StringStruct(u'CompanyName', u'D0berm4n'),
-        StringStruct(u'FileDescription', u'POELevelingGuide'),
+        StringStruct(u'FileDescription', u'POEStashTabView'),
         StringStruct(u'FileVersion', u'0.9.0'),
-        StringStruct(u'InternalName', u'POELevelingGuide.exe'),
+        StringStruct(u'InternalName', u'POEStashTabView.exe'),
         StringStruct(u'LegalCopyright', u'D0berm4n'),
-        StringStruct(u'OriginalFilename', u'POELevelingGuide'),
-        StringStruct(u'ProductName', u'POELevelingGuide'),
+        StringStruct(u'OriginalFilename', u'POEStashTabView'),
+        StringStruct(u'ProductName', u'POEStashTabView'),
         StringStruct(u'ProductVersion', u'0.9.00')])
       ]),
     VarFileInfo([VarStruct(u'Translation', [0, 1200])])

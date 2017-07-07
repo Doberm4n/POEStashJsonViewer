@@ -48,7 +48,7 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
+class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -161,8 +161,10 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def loadConfig(self):
         #try:
-            UIMainLayout.applyLayout(self)
             self.ig = global_values.globalValues()
+            UIMainLayout.applyLayout(self)
+
+
             guideJson = self.readJson('Configs\config.json')
             if guideJson['curGuide']:
                 #print "Yes"
@@ -253,8 +255,8 @@ class POE_fast_leveling_guideApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
             #add defined columns
             textLength = len(stashJson[0]['items'])
-            for columns in range (len(self.ig.columnsHeaders)):
-                self.tableWidget.insertColumn(columns)
+            # for columns in range (len(self.ig.columnsHeaders)):
+            #     self.tableWidget.insertColumn(columns)
 
             #add rows, number equal to items count in json
             for rows in range (textLength):
@@ -378,7 +380,7 @@ def main():
     appIco.addFile(':todo-icon16.png', QtCore.QSize(16,16))
     appIco.addFile(':todo-icon32.png', QtCore.QSize(32,32))
     app.setWindowIcon(appIco)
-    form = POE_fast_leveling_guideApp()
+    form = POEStashTabViewerApp()
     form.show()
     app.exec_()
 

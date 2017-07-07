@@ -16,6 +16,7 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 def applyLayout(self):
+    #global ig
     self.setWindowTitle(self.windowTitle)
     self.buttonsText = None
     self.buttonsComplete = None
@@ -80,8 +81,10 @@ def applyLayout(self):
     self.gridLayout.addWidget(self.tableWidget, 0, 0, 1, 1)
     self.tableWidget.horizontalHeader().setVisible(True)
     self.tableWidget.verticalHeader().setVisible(True)
+    self.tableWidget.setSortingEnabled(True)
 
-     #add defined columns
-            textLength = len(stashJson[0]['items'])
-            for columns in range (len(self.ig.columnsHeaders)):
-                self.tableWidget.insertColumn(columns)
+
+    #add defined columns
+
+    for columns in range (len(self.ig.columnsHeaders)):
+        self.tableWidget.insertColumn(columns)
