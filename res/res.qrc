@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias='Device-blockdevice-cubes-icon16.png'>Device-blockdevice-cubes-icon16.png</file>
+    <file alias='Device-blockdevice-cubes-icon32.png'>Device-blockdevice-cubes-icon32.png</file>
+  </qresource>
+</RCC>
