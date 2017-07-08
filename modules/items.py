@@ -32,13 +32,13 @@ def setItemType(self, itemIndex):
                        print self.ig.itemTypes[i]['typeName']
                        #return
                        return self.ig.itemTypes[i]['typeName']
-                       break
+                       #break
                     if self.stashTabJson['items'][itemIndex].has_key('properties'):
                         if self.stashTabJson['items'][itemIndex]['properties'][0]['name'].lower().find(compareStr) >= 0:
                             print self.ig.itemTypes[i]['typeName']
                             #return
                             return self.ig.itemTypes[i]['typeName']
-                            break
+                            #break
         #print self.ig.itemTypes[i]['typeName']
         #return
         return itemType
