@@ -16,6 +16,7 @@ import gc
 import time
 import res.res
 import global_values
+import modules.items as items
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -244,18 +245,25 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def setItem(self, itemIndex):
         #if self.ig.columnsHeaders[columnHeader]:
             #print self.ig.columnsHeaders[columnHeader].values()[1]
-            dataName = unicode(self.stashJson[0]['items'][itemIndex]['name'])
+            #self.setNameAndTypeLine(itemIndex)
+            #print dataName[6]
             #result = self.processData()
             #data = "Tempest Stinger•fwwrweMjölner"
             #data = data.decode('utf-8')
             #data = unicode(data)
 
+            #Name ('name' + 'typeLine')
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Name'], QtGui.QTableWidgetItem(items.setItemNameAndTypeLine(self, itemIndex)))
 
-            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Name'], QtGui.QTableWidgetItem(dataName))
+            #Type
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
 
 
             #print data
             #return data
+
+
+
 
     def processData(self, data):
         print ""
@@ -264,18 +272,22 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #try:
             self.stashJson = {}
             characterJson = {}
-            self.stashJson[0] = self.readJson(guide)
-            self.stashJson[1000000000] = self.readJson(guide)
+
+            self.stashTabJson = self.readJson(guide)
+
+            #for stashTabs in range (len(self.stashTabJson)):
+
+                #self.stashJson[1000000000] = self.readJson(guide)
             text = []
 
-            ######################################################## self.clearTabs()
-            ######################################################## self.clearMenuActionReset()
-            ######################################################## self.clearMenuActionProgress()
+                ######################################################## self.clearTabs()
+                ######################################################## self.clearMenuActionReset()
+                ######################################################## self.clearMenuActionProgress()
 
 
 
-            #add defined columns
-            textLength = len(self.stashJson[0]['items'])
+                #add defined columns
+            textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
 
