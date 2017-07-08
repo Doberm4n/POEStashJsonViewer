@@ -248,7 +248,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #result = self.processData()
             #data = "Tempest Stinger•fwwrweMjölner"
             #data = data.decode('utf-8')
-            #print data
+            data = unicode(data)
+            print data
             return data
 
     def processData(self, data):
