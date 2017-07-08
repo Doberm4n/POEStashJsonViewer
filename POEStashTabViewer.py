@@ -64,7 +64,16 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionAbout.triggered.connect(self.showAbout)
         self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
 
+        self.pushButton.clicked.connect(self.tableWidgetContentsAutoSize)
+
         self.loadConfig()
+
+    def onQApplicationStarted(self):
+        self.tableWidgetContentsAutoSize()
+
+    def tableWidgetContentsAutoSize(self):
+        self.tableWidget.resizeColumnsToContents()
+        self.tableWidget.resizeRowsToContents()
 
     def buttonsTextClick(self, tab, index):
         #print str(tab) + " " + str(index)
@@ -174,6 +183,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.guideLineEdit.setText(curGuideFilename)
                 self.curDir = os.path.dirname(self.curGuide)
                 self.loadGuide(self.curGuide)
+                # self.tabWidget.update()
+                # self.tableWidget.resizeColumnsToContents()
+                # self.tableWidget.resizeRowsToContents()
+                # self.tabWidget.update()
             else:
                 self.curDir = ""
                 self.curGuide = ""
@@ -258,6 +271,20 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #Type
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
 
+            #iLvl
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QtGui.QTableWidgetItem(items.setIlvl(self, itemIndex)))
+
+            #Rarity
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Rarity'], QtGui.QTableWidgetItem(items.setItemRarity(self, itemIndex)))
+
+            #Quality
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QtGui.QTableWidgetItem(items.setItemQuality(self, itemIndex)))
+
+            #Properties
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Properties'], QtGui.QTableWidgetItem(items.setItemProperties(self, itemIndex)))
+
+            #Properties
+            #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QtGui.QTableWidgetItem(items.setItemProperties(self, itemIndex)))
 
             #print data
             #return data
@@ -284,7 +311,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 ######################################################## self.clearMenuActionReset()
                 ######################################################## self.clearMenuActionProgress()
 
-
+            #self.tableWidget.setVisible(False)
 
                 #add defined columns
             textLength = len(self.stashTabJson['items'])
@@ -297,13 +324,22 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.setItem(rows)
                 #for columns in range (len(self.ig.columnsHeaders)):
                     #fill rows with data
-
+            #time.sleep(10)
                     #print rows, columns, item
                     #self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
+            #self.tableWidget.repaint()
+            # self.tabWidget.update()
             self.tableWidget.resizeColumnsToContents()
             self.tableWidget.resizeRowsToContents()
+
+
+
+
             #self.tableWidget.setColumnHidden()
             #self.tableWidget.setRowHidden(1, True)
+            #self.tableWidgetContentsAutoSize()
+
+
 
 
 
@@ -399,6 +435,9 @@ def main():
     app.setWindowIcon(appIco)
     form = POEStashTabViewerApp()
     form.show()
+    #timer check for autosize tableWidget rows and columns to contents when form load complete
+    t = QtCore.QTimer()
+    t.singleShot(0,form.onQApplicationStarted)
     app.exec_()
 
 

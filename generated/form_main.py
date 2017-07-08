@@ -39,6 +39,9 @@ class Ui_MainWindow(object):
         self.guideLineEdit.setEnabled(False)
         self.guideLineEdit.setObjectName(_fromUtf8("guideLineEdit"))
         self.verticalLayout_2.addWidget(self.guideLineEdit)
+        self.pushButton = QtGui.QPushButton(self.centralwidget)
+        self.pushButton.setObjectName(_fromUtf8("pushButton"))
+        self.verticalLayout_2.addWidget(self.pushButton)
         self.label = QtGui.QLabel(self.centralwidget)
         self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label.setObjectName(_fromUtf8("label"))
@@ -114,6 +117,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "PoE Leveling Guide", None))
         self.openGuidePushButton.setText(_translate("MainWindow", "Open guide", None))
+        self.pushButton.setText(_translate("MainWindow", "PushButton", None))
         self.label.setText(_translate("MainWindow", "Progress:", None))
         self.menuGuide.setTitle(_translate("MainWindow", "Guide", None))
         self.menuReset_progress.setTitle(_translate("MainWindow", "Reset progress", None))
