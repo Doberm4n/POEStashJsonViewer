@@ -9,9 +9,9 @@ class globalValues():
 
 						   {'columnHeader' : 'iLvl', 'jsonName' : 'ilvl'  , 'type' : 'int', 'isCalc' : False},
 
-						   {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'str', 'isCalc' : False},
+						   {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'str', 'isCalc' : False}
 
-						   {'columnHeader' : 'Sockets', 'jsonName' : 'sockets'  , 'type' : 'str', 'isCalc' : False}
+						  # {'columnHeader' : 'Sockets', 'jsonName' : 'sockets'  , 'type' : 'str', 'isCalc' : False}
 
 
 						   ]

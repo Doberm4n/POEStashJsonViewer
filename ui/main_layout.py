@@ -59,3 +59,4 @@ def applyLayout(self):
         item = self.tableWidget.horizontalHeaderItem(columns)
     #set autoSize
     self.tableWidget.resizeColumnsToContents()
+    #self.tableWidget.resizeRowsToContents()

@@ -241,16 +241,25 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         return QObject.eventFilter(self, obj, event)
 
 
-    def getItem(self, columnHeader):
+    def getItem(self, itemIndex, columnHeader):
         if self.ig.columnsHeaders[columnHeader]:
             #print self.ig.columnsHeaders[columnHeader].values()[1]
-            return self.ig.columnsHeaders[columnHeader].values()[0]
+            data = self.stashJson[0]['items'][itemIndex][self.ig.columnsHeaders[columnHeader]['jsonName']]
+            #result = self.processData()
+            #data = "Tempest Stinger•fwwrweMjölner"
+            #data = data.decode('utf-8')
+            #print data
+            return data
+
+    def processData(self, data):
+        print ""
 
     def loadGuide(self, guide):
         #try:
-            stashJson = {}
+            self.stashJson = {}
             characterJson = {}
-            stashJson[0] = self.readJson(guide)
+            self.stashJson[0] = self.readJson(guide)
+            self.stashJson[1000000000] = self.readJson(guide)
             text = []
 
             ######################################################## self.clearTabs()
@@ -260,7 +269,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
 
             #add defined columns
-            textLength = len(stashJson[0]['items'])
+            textLength = len(self.stashJson[0]['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
 
@@ -269,11 +278,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.tableWidget.insertRow(rows)
                 for columns in range (len(self.ig.columnsHeaders)):
                     #fill rows with data
-                    item = self.getItem(columns)
+                    item = self.getItem(rows, columns)
                     #print rows, columns, item
                     self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
-
-
+            self.tableWidget.resizeColumnsToContents()
+            #self.tableWidget.resizeRowsToContents()
             #self.tableWidget.setColumnHidden()
             #self.tableWidget.setRowHidden(1, True)
 
