@@ -3,11 +3,15 @@
 
 class globalValues():
 	def __init__(self):
-		self.columnsHeaders = [{'name' : 'Name' },
-						   {'typeLine' : 'Type'},
-						   {'ilvl' : 'iLvl'},
-						   {'frameType' : 'Rarity'},
-						   {'sockets' : 'Sockets'}
+		self.columnsHeaders = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'str', 'isCalc' : False },
+
+						   {'columnHeader' : 'Type', 'jsonName' : 'typeLine'  , 'type' : 'str', 'isCalc' : False},
+
+						   {'columnHeader' : 'iLvl', 'jsonName' : 'ilvl'  , 'type' : 'int', 'isCalc' : False},
+
+						   {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'str', 'isCalc' : False},
+
+						   {'columnHeader' : 'Sockets', 'jsonName' : 'sockets'  , 'type' : 'str', 'isCalc' : False}
 
 
 						   ]

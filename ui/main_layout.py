@@ -51,6 +51,11 @@ def applyLayout(self):
     self.tableWidget.horizontalHeader().setVisible(True)
     self.tableWidget.verticalHeader().setVisible(True)
     self.tableWidget.setSortingEnabled(True)
-    #add defined columns
+    #add defined columns with headers from global_values
     for columns in range (len(self.ig.columnsHeaders)):
         self.tableWidget.insertColumn(columns)
+        item = QtGui.QTableWidgetItem(self.ig.columnsHeaders[columns]['columnHeader'])
+        self.tableWidget.setHorizontalHeaderItem(columns, item)
+        item = self.tableWidget.horizontalHeaderItem(columns)
+    #set autoSize
+    self.tableWidget.resizeColumnsToContents()

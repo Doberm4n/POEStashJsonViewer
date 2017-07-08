@@ -240,6 +240,12 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             return True
         return QObject.eventFilter(self, obj, event)
 
+
+    def getItem(self, columnHeader):
+        if self.ig.columnsHeaders[columnHeader]:
+            #print self.ig.columnsHeaders[columnHeader].values()[1]
+            return self.ig.columnsHeaders[columnHeader].values()[0]
+
     def loadGuide(self, guide):
         #try:
             stashJson = {}
@@ -261,34 +267,17 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #add rows, number equal to items count in json
             for rows in range (textLength):
                 self.tableWidget.insertRow(rows)
-
+                for columns in range (len(self.ig.columnsHeaders)):
+                    #fill rows with data
+                    item = self.getItem(columns)
+                    #print rows, columns, item
+                    self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
 
 
             #self.tableWidget.setColumnHidden()
             #self.tableWidget.setRowHidden(1, True)
 
-            # self.tableWidget.setColumnCount(5)
-            # self.tableWidget.setRowCount(5)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setVerticalHeaderItem(0, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setVerticalHeaderItem(1, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setVerticalHeaderItem(2, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setVerticalHeaderItem(3, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setVerticalHeaderItem(4, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setHorizontalHeaderItem(0, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setHorizontalHeaderItem(1, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setHorizontalHeaderItem(2, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setHorizontalHeaderItem(3, item)
-            # item = QtGui.QTableWidgetItem()
-            # self.tableWidget.setHorizontalHeaderItem(4, item)
+
 
             # if (not self.firstTab) and (textLength > 0):
             #       self.tabWidget.setCurrentIndex(tabs)
