@@ -241,16 +241,21 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         return QObject.eventFilter(self, obj, event)
 
 
-    def getItem(self, itemIndex, columnHeader):
-        if self.ig.columnsHeaders[columnHeader]:
+    def setItem(self, itemIndex):
+        #if self.ig.columnsHeaders[columnHeader]:
             #print self.ig.columnsHeaders[columnHeader].values()[1]
-            data = self.stashJson[0]['items'][itemIndex][self.ig.columnsHeaders[columnHeader]['jsonName']]
+            dataName = unicode(self.stashJson[0]['items'][itemIndex]['name'])
             #result = self.processData()
             #data = "Tempest Stinger•fwwrweMjölner"
             #data = data.decode('utf-8')
-            data = unicode(data)
-            print data
-            return data
+            #data = unicode(data)
+
+
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Name'], QtGui.QTableWidgetItem(dataName))
+
+
+            #print data
+            #return data
 
     def processData(self, data):
         print ""
@@ -277,11 +282,12 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #add rows, number equal to items count in json
             for rows in range (textLength):
                 self.tableWidget.insertRow(rows)
-                for columns in range (len(self.ig.columnsHeaders)):
+                self.setItem(rows)
+                #for columns in range (len(self.ig.columnsHeaders)):
                     #fill rows with data
-                    item = self.getItem(rows, columns)
+
                     #print rows, columns, item
-                    self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
+                    #self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
             self.tableWidget.resizeColumnsToContents()
             #self.tableWidget.resizeRowsToContents()
             #self.tableWidget.setColumnHidden()
