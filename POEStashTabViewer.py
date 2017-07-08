@@ -289,7 +289,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                     #print rows, columns, item
                     #self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
             self.tableWidget.resizeColumnsToContents()
-            #self.tableWidget.resizeRowsToContents()
+            self.tableWidget.resizeRowsToContents()
             #self.tableWidget.setColumnHidden()
             #self.tableWidget.setRowHidden(1, True)
 
