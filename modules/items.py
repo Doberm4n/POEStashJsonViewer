@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+
 def cleanString(self, data, str):
         temp = data.split(str)
         print len(temp)

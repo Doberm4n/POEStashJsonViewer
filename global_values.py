@@ -42,7 +42,8 @@ class globalValues():
 						  {'typeName' : 'Shield', 'items' : ['Shield']}, #Shields
 						  {'typeName' : 'Body Armour', 'items' : ['BodyArmour']}, #BodyArmours
 						  {'typeName' : 'Helmet', 'items' : ['Helmet']}, #Helmets
-						  {'typeName' : 'Amulet', 'items' : ['Amulet']}
+						  {'typeName' : 'Amulet', 'items' : ['Amulet']}, #Amulets
+						  {'typeName' : 'Ring', 'items' : ['Ring']} #Rings
 						 ]
 
 						# 'One Handed Mace', 'Two Handed Mace',
