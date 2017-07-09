@@ -66,7 +66,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         self.pushButton.clicked.connect(self.tableWidgetContentsAutoSize)
 
+
+
         self.loadConfig()
+
+        self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(self.tableWidgetContentsAutoSize)
 
     def onQApplicationStarted(self):
         #self.tableWidget.setVisible(False)
@@ -80,6 +84,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         # #self.tableWidget.resizeColumnsToContents();
         # self.tableWidget.resizeRowsToContents();
         # self.tableWidget.viewport().setGeometry(vporig);
+        #self.setWindowState(QtCore.Qt.WindowMaximized)
         self.tableWidgetSetResizeMode()
         print ""
         #self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.Stretch)
@@ -98,8 +103,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
         # sizePolicy.setHorizontalStretch(1000)
         # sizePolicy.setVerticalStretch(1000)
-        #sizePolicy.setHeightForWidth(False)
-        #self.tableWidget.setSizePolicy(sizePolicy)
+        #sizePolicy.setHeightForWidth(True)
+        #self.setSizePolicy(sizePolicy)
+        #self.setWindowState(QtCore.Qt.WindowMaximized)
 
     def tableWidgetSetResizeMode(self):
         for i in range (self.tableWidget.columnCount()):
@@ -372,7 +378,6 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                     self.setItem(rows)
                 #for columns in range (len(self.ig.columnsHeaders)):
                     #fill rows with data
-            #time.sleep(10)
                     #print rows, columns, item
                     #self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
             #self.tableWidget.repaint()
@@ -482,7 +487,8 @@ def main():
     appIco.addFile(':todo-icon32.png', QtCore.QSize(32,32))
     app.setWindowIcon(appIco)
     form = POEStashTabViewerApp()
-    form.show()
+    form.showMaximized()
+    #form.setWindowState(QtCore.Qt.WindowMaximized)
     #timer check for autosize tableWidget rows and columns to contents when form load complete
     t = QtCore.QTimer()
     t.singleShot(0,form.onQApplicationStarted)
