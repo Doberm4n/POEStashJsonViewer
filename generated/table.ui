@@ -70,7 +70,7 @@
               <number>100</number>
              </property>
              <property name="columnCount">
-              <number>11</number>
+              <number>12</number>
              </property>
              <row/>
              <row/>
@@ -172,6 +172,14 @@
              <row/>
              <row/>
              <row/>
+             <column>
+              <property name="text">
+               <string>Новий стовпчик</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </column>
              <column/>
              <column/>
              <column/>
@@ -183,6 +191,11 @@
              <column/>
              <column/>
              <column/>
+             <item row="0" column="0">
+              <property name="text">
+               <string>rewrwerwe</string>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>

@@ -108,13 +108,21 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #self.setWindowState(QtCore.Qt.WindowMaximized)
 
     def tableWidgetSetResizeMode(self):
+
         for i in range (self.tableWidget.columnCount()):
-        #self.tableWidget.setColumnWidth(5, 1111)
+            # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
+            # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
+            #     self.tableWidget.setColumnWidth(i, 50)
+            #     #self.tableWidget.column(i).setTextAlignment(Qt.AlignVCenter)
+            #     continue
+
 
             self.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
         for j in range (self.tableWidget.rowCount()):
         #print ""
             self.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+
+        #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
 
 
 
