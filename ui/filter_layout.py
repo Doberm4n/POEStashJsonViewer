@@ -30,8 +30,8 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
 
 
 
-        print form.tableWidget.horizontalHeaderItem(0).text()
-        print unicode(form.tableWidget.item(0, 0).text())
+        #print form.tableWidget.horizontalHeaderItem(0).text()
+        #print unicode(form.tableWidget.item(0, 0).text())
 
     def prepareGui(self, form):
         self.loadColumnsToFilterComboBox(form)

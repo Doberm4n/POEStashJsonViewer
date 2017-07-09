@@ -238,6 +238,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.ig = global_values.globalValues()
             UIMainLayout.applyLayout(self)
 
+            self.formFilter = UIFilterLayout.filterDialog(self)
 
             guideJson = self.readJson('Configs\config.json')
             if guideJson['curGuide']:
@@ -483,7 +484,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def showFilter(self):
         #global formFilter
-        self.formFilter = UIFilterLayout.filterDialog(self)
+
         self.formFilter.show()
 
 
