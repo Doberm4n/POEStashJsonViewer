@@ -25,6 +25,8 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         #print form.ig.operandsText
         self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
 
+        self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
+
         self.prepareGui(form)
 
 
@@ -55,7 +57,10 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         for i in range (len(operandsText)):
             self.operandsComboBox.addItem(operandsText[i])
 
-    def loadewqewq(self, main):
+    def addFilterLine(self, main):
+        print self.filterLinesTextEdit.toPlainText()
+        if self.filterLinesTextEdit.toPlainText() == '':
+            self.filterLinesTextEdit.setText(self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + self.valueLineEdit.text())
         print "rewrklwekrlewk;l"
 
 
