@@ -80,11 +80,12 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         # #self.tableWidget.resizeColumnsToContents();
         # self.tableWidget.resizeRowsToContents();
         # self.tableWidget.viewport().setGeometry(vporig);
-        #self.tableWidgetSetMinColumnsWidth()
-        # #print ""
+        self.tableWidgetSetResizeMode()
+        print ""
         #self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.Stretch)
-        self.tableWidgetContentsAutoSize()
+        #self.tableWidgetContentsAutoSize()
         # self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.verticalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
         # self.tableWidget.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.ResizeToContents)
         # self.tableWidget.horizontalHeader().setResizeMode(2, QtGui.QHeaderView.ResizeToContents)
         # self.tableWidget.horizontalHeader().setResizeMode(3, QtGui.QHeaderView.ResizeToContents)
@@ -94,10 +95,22 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         # self.tableWidget.horizontalHeader().setResizeMode(7, QtGui.QHeaderView.ResizeToContents)
         # self.tableWidget.horizontalHeader().setResizeMode(8, QtGui.QHeaderView.ResizeToContents)
         #self.tableWidget.setVisible(True)
+        #sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        # sizePolicy.setHorizontalStretch(1000)
+        # sizePolicy.setVerticalStretch(1000)
+        #sizePolicy.setHeightForWidth(False)
+        #self.tableWidget.setSizePolicy(sizePolicy)
 
-    def tableWidgetSetMinColumnsWidth(self):
+    def tableWidgetSetResizeMode(self):
         for i in range (self.tableWidget.columnCount()):
-            self.tableWidget.setColumnWidth(i, 11)
+        #self.tableWidget.setColumnWidth(5, 1111)
+
+            self.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
+        for j in range (self.tableWidget.rowCount()):
+        #print ""
+            self.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+
+
 
     def tableWidgetContentsAutoSize(self):
         self.tableWidget.resizeColumnsToContents()
@@ -352,11 +365,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
-
+            for i in range (11):
             #add rows, number equal to items count in json
-            for rows in range (textLength):
-                self.tableWidget.insertRow(rows)
-                self.setItem(rows)
+                for rows in range (textLength):
+                    self.tableWidget.insertRow(rows)
+                    self.setItem(rows)
                 #for columns in range (len(self.ig.columnsHeaders)):
                     #fill rows with data
             #time.sleep(10)
