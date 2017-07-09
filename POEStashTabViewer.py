@@ -158,6 +158,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.tableWidget.resizeColumnsToContents()
         self.tableWidget.resizeRowsToContents()
         #self.formFilter.applyFilter(self, ['Name [contains] test'])
+        #self.tableWidget.setColumnWidth(2, 27)
         print ""
 
     def buttonsTextClick(self, tab, index):

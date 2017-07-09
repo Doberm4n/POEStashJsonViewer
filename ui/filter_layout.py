@@ -37,7 +37,9 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         #print unicode(form.tableWidget.item(0, 0).text())
 
     def prepareGui(self, form):
+        self.valueLineEdit.setFocus()
         self.loadColumnsToFilterComboBox(form)
+
 
     def loadColumnsToFilterComboBox(self, form):
         for i in range (form.tableWidget.columnCount()):
@@ -59,6 +61,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             self.operandsComboBox.addItem(operandsText[i])
 
     def addFilterLine(self, main):
+        #check isDigit
         print self.filterLinesTextEdit.toPlainText()
         if self.filterLinesTextEdit.toPlainText() == '':
             self.filterLinesTextEdit.setText(self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + self.valueLineEdit.text())
