@@ -271,6 +271,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.windowTitle = 'PoE Leveling Guide'
         self.tabWidget.setStyleSheet(self.disabledtabsylesheet)
 
+        self.menuActionOpen.setShortcut("F3")
+
     # def clearButtons(self):
     #     for tabs in range (10):
     #             for widget in self.groupBoxes_original[tabs].children():

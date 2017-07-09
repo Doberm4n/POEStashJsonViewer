@@ -43,9 +43,6 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="filtersComboBox"/>
-    </item>
-    <item>
      <widget class="QLabel" name="label">
       <property name="text">
        <string>Progress:</string>
