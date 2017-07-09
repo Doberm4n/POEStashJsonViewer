@@ -15,10 +15,49 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.setupUi(self)
         self.setWindowFlags(QtCore.Qt.WindowTitleHint)
         self.closePushButton.clicked.connect(self.close)
-        form.tableWidget.setVisible(False)
+        #form.tableWidget.setVisible(False)
         #print form.tableWidget.columnsCount()
         #self.linkLabel.linkActivated.connect(self.openURL)
         #self.versionLabel.setText("v." + version)
         #self.linkLabel.setText(link)
         #pic = self.picLabel
         #pic.setPixmap(QtGui.QPixmap(":todo-icon32.png"))
+        #print form.ig.operandsText
+        self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
+
+        self.prepareGui(form)
+
+
+
+
+        print form.tableWidget.horizontalHeaderItem(0).text()
+        print unicode(form.tableWidget.item(0, 0).text())
+
+    def prepareGui(self, form):
+        self.loadColumnsToFilterComboBox(form)
+
+    def loadColumnsToFilterComboBox(self, form):
+        for i in range (form.tableWidget.columnCount()):
+           self.columnsHeadersComboBox.addItem(form.tableWidget.horizontalHeaderItem(i).text())
+        print ""
+
+    def loadOperandsText(self, form):
+        self.operandsComboBox.clear()
+        #print form.ig.operandsText
+        currentText = unicode(self.columnsHeadersComboBox.currentText())
+        #print currentText
+        #print form.ig.columnNameToIndex[currentText]
+
+         #['type']
+
+        #print form.ig.operandsText[form.ig.columnsHeaders[form.ig.columnNameToIndex[self.columnsHeadersComboBox.currentText()]]['type']]
+        operandsText = form.ig.operandsText[form.ig.columnsHeaders[form.ig.columnNameToIndex[currentText]]['type']]
+        for i in range (len(operandsText)):
+            self.operandsComboBox.addItem(operandsText[i])
+
+    def loadewqewq(self, main):
+        print "rewrklwekrlewk;l"
+
+
+
+

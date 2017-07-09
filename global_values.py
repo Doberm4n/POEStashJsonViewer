@@ -2,25 +2,25 @@
 
 class globalValues():
 	def __init__(self):
-		self.columnsHeaders = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'str', 'isCalc' : False},
+		self.columnsHeaders = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'String', 'isCalc' : False},
 
-							 {'columnHeader' : 'Type', 'jsonName' : 'None'  , 'type' : 'None', 'isCalc' : None},
+							 {'columnHeader' : 'Type', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : None},
 
 						   #{'columnHeader' : 'Type', 'jsonName' : 'typeLine'  , 'type' : 'str', 'isCalc' : False},
 
-						   {'columnHeader' : 'iLvl', 'jsonName' : 'ilvl'  , 'type' : 'int', 'isCalc' : False},
+						   {'columnHeader' : 'iLvl', 'jsonName' : 'ilvl'  , 'type' : 'Integer', 'isCalc' : False},
 
-						   {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'int', 'isCalc' : False},
+						   {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'Integer', 'isCalc' : False},
 
-						   {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'str', 'isCalc' : True},
+						   {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'String', 'isCalc' : True},
 
 						  # {'columnHeader' : 'Sockets', 'jsonName' : 'sockets'  , 'type' : 'str', 'isCalc' : False}
 
-							{'columnHeader' : 'Properties', 'jsonName' : ''  , 'type' : 'str', 'isCalc' : False},
+							{'columnHeader' : 'Properties', 'jsonName' : ''  , 'type' : 'String', 'isCalc' : False},
 
-						  {'columnHeader' : 'Implicit Modifiers', 'jsonName' : 'implicitMods'  , 'type' : 'str', 'isCalc' : False},
+						  {'columnHeader' : 'Implicit Modifiers', 'jsonName' : 'implicitMods'  , 'type' : 'String', 'isCalc' : False},
 
-						  {'columnHeader' : 'Explicit Modifiers', 'jsonName' : 'explicitMods'  , 'type' : 'str', 'isCalc' : False}
+						  {'columnHeader' : 'Explicit Modifiers', 'jsonName' : 'explicitMods'  , 'type' : 'String', 'isCalc' : False}
 
 
 
@@ -60,6 +60,8 @@ class globalValues():
 						# '',
 						# '',
 						# '',
+
+		self.operandsText = {'String' : ['contains'], 'Integer' : ['<', '>', '=', '<>']}
 
 
 

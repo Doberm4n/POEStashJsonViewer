@@ -76,6 +76,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         self.actionEdit_filter.triggered.connect(self.showFilter)
 
+    #close filter form when main closed
     def closeEvent(self, evnt):
         if self.formFilter:
             self.formFilter.close()
