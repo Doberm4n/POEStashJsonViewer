@@ -6,17 +6,24 @@ class globalValues():
 
 							 {'columnHeader' : 'Type', 'jsonName' : 'None'  , 'type' : 'None', 'isCalc' : None},
 
+							 {'columnHeader' : 'Properties', 'jsonName' : ''  , 'type' : 'str', 'isCalc' : False},
+
+						  {'columnHeader' : 'Implicit Modifiers', 'jsonName' : 'implicitMods'  , 'type' : 'str', 'isCalc' : False},
+
+						  {'columnHeader' : 'Explicit Modifiers', 'jsonName' : 'explicitMods'  , 'type' : 'str', 'isCalc' : False},
+
 						   #{'columnHeader' : 'Type', 'jsonName' : 'typeLine'  , 'type' : 'str', 'isCalc' : False},
 
 						   {'columnHeader' : 'iLvl', 'jsonName' : 'ilvl'  , 'type' : 'int', 'isCalc' : False},
 
 						   {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'int', 'isCalc' : False},
 
-						   {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'str', 'isCalc' : False},
+						   {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'str', 'isCalc' : True}
 
 						  # {'columnHeader' : 'Sockets', 'jsonName' : 'sockets'  , 'type' : 'str', 'isCalc' : False}
 
-						  {'columnHeader' : 'Properties', 'jsonName' : ''  , 'type' : 'str', 'isCalc' : False}
+
+
 
 
 

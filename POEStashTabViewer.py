@@ -69,7 +69,35 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.loadConfig()
 
     def onQApplicationStarted(self):
+        #self.tableWidget.setVisible(False)
+        # vporig = QtCore.QRect
+        # vporig = self.tableWidget.viewport().geometry()
+        # vpnew = QtCore.QRect
+        # vpnew = vporig
+        # #vpnew.setWidth(std::numeric_limits<int>::max());
+        # vpnew.setWidth(1);
+        # self.tableWidget.viewport().setGeometry(vpnew);
+        # #self.tableWidget.resizeColumnsToContents();
+        # self.tableWidget.resizeRowsToContents();
+        # self.tableWidget.viewport().setGeometry(vporig);
+        #self.tableWidgetSetMinColumnsWidth()
+        # #print ""
+        #self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.Stretch)
         self.tableWidgetContentsAutoSize()
+        # self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(2, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(3, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(4, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(5, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(6, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(7, QtGui.QHeaderView.ResizeToContents)
+        # self.tableWidget.horizontalHeader().setResizeMode(8, QtGui.QHeaderView.ResizeToContents)
+        #self.tableWidget.setVisible(True)
+
+    def tableWidgetSetMinColumnsWidth(self):
+        for i in range (self.tableWidget.columnCount()):
+            self.tableWidget.setColumnWidth(i, 11)
 
     def tableWidgetContentsAutoSize(self):
         self.tableWidget.resizeColumnsToContents()
@@ -283,8 +311,15 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #Properties
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Properties'], QtGui.QTableWidgetItem(items.setItemProperties(self, itemIndex)))
 
+            #Implicit modifiers
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Implicit Modifiers'], QtGui.QTableWidgetItem(items.setItemImplicitModifiers(self, itemIndex)))
+
+            #Type
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Explicit Modifiers'], QtGui.QTableWidgetItem(items.setItemExplicitModifiers(self, itemIndex)))
+
             #Properties
             #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QtGui.QTableWidgetItem(items.setItemProperties(self, itemIndex)))
+
 
             #print data
             #return data
@@ -329,8 +364,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                     #self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
             #self.tableWidget.repaint()
             # self.tabWidget.update()
-            self.tableWidget.resizeColumnsToContents()
-            self.tableWidget.resizeRowsToContents()
+            # self.tableWidget.resizeColumnsToContents()
+            # self.tableWidget.resizeRowsToContents()
 
 
 

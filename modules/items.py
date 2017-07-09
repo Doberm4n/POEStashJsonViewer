@@ -112,12 +112,62 @@ def setItemProperties(self, itemIndex):
     return propertiesLines
     #print ""
 
-def setImplicitModifiers(self, itemIndex):
-    return self.stashTabJson['items'][itemIndex]['frameType']
+def setItemImplicitModifiers(self, itemIndex):
+    dataImplicitModifiers = []
+    #dataProperties.update({'propertiesLines' : []})
+    implicitModifiersLines = ''
+    #dataProperties['propertiesLines'].append({'key': '', 'keyNext': ''})
+    #dataProperties['fdsfds'] = 'frdsfs'
+    #print dataProperties
+    #dataProperties.append([])
+    if self.stashTabJson['items'][itemIndex].has_key('implicitMods'):
+        for i in range (len(self.stashTabJson['items'][itemIndex]['implicitMods'])):
+            #for j in range (len(self.stashTabJson['items'][itemIndex]['properties'][i]['values'])):
+
+                dataImplicitModifiers.append(unicode(self.stashTabJson['items'][itemIndex]['implicitMods'][i]))
+
+
+                if i < (len(self.stashTabJson['items'][itemIndex]['implicitMods']) - 1):
+                    implicitModifiersLines = implicitModifiersLines + dataImplicitModifiers[i] + '\n'
+                else:
+                    implicitModifiersLines = implicitModifiersLines + dataImplicitModifiers[i]
+    #print dataProperties['propertiesLines']
+    #             if self.stashTabJson['items'][itemIndex]['properties'][i]['name'] == 'Quality':
+    #                 dataQuality = self.stashTabJson['items'][itemIndex]['properties'][i]['values'][0][0]
+    #                 dataQuality = dataQuality.replace('%', '')
+    #                 dataQuality = dataQuality.replace('+', '')
+    #return propertiesLines
+    return implicitModifiersLines
     print ""
 
-def setExplicitModifiers(self, itemIndex):
-    return self.stashTabJson['items'][itemIndex]['frameType']
+def setItemExplicitModifiers(self, itemIndex):
+    dataExplicitModifiers = []
+    #dataProperties.update({'propertiesLines' : []})
+    explicitModifiersLines = ''
+    #dataProperties['propertiesLines'].append({'key': '', 'keyNext': ''})
+    #dataProperties['fdsfds'] = 'frdsfs'
+    #print dataProperties
+    #dataProperties.append([])
+    if self.stashTabJson['items'][itemIndex].has_key('explicitMods'):
+        for i in range (len(self.stashTabJson['items'][itemIndex]['explicitMods'])):
+            #for j in range (len(self.stashTabJson['items'][itemIndex]['properties'][i]['values'])):
+
+                dataExplicitModifiers.append(unicode(self.stashTabJson['items'][itemIndex]['explicitMods'][i]))
+
+
+                if i < (len(self.stashTabJson['items'][itemIndex]['explicitMods']) - 1):
+                    explicitModifiersLines = explicitModifiersLines + dataExplicitModifiers[i] + '\n'
+                else:
+                    explicitModifiersLines = explicitModifiersLines + dataExplicitModifiers[i]
+    #print dataProperties['propertiesLines']
+    #             if self.stashTabJson['items'][itemIndex]['properties'][i]['name'] == 'Quality':
+    #                 dataQuality = self.stashTabJson['items'][itemIndex]['properties'][i]['values'][0][0]
+    #                 dataQuality = dataQuality.replace('%', '')
+    #                 dataQuality = dataQuality.replace('+', '')
+    #return propertiesLines
+    #return implicitModifiersLines
+    #print ""
+    return explicitModifiersLines
     print ""
 
 
