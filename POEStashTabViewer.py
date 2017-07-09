@@ -94,7 +94,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         # self.tableWidget.resizeRowsToContents();
         # self.tableWidget.viewport().setGeometry(vporig);
         #self.setWindowState(QtCore.Qt.WindowMaximized)
+
         self.tableWidgetSetResizeMode()
+        #self.setFixedColumnsWidth()
+
         print ""
         #self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.Stretch)
         #self.tableWidgetContentsAutoSize()
@@ -116,15 +119,31 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #self.setSizePolicy(sizePolicy)
         #self.setWindowState(QtCore.Qt.WindowMaximized)
 
+
+    def setFixedColumnsWidth(self):
+        for i in range (self.tableWidget.columnCount()):
+            # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
+            # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
+            self.tableWidget.setColumnWidth(i, 125)
+            #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
+            #      continue
+
+
+        #     self.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
+        # for j in range (self.tableWidget.rowCount()):
+        # #print ""
+        #     self.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+        # print ""
+
     def tableWidgetSetResizeMode(self):
 
         for i in range (self.tableWidget.columnCount()):
             # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
             # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
-            #     self.tableWidget.setColumnWidth(i, 50)
-            #     #self.tableWidget.column(i).setTextAlignment(Qt.AlignVCenter)
-            #     continue
-
+            #      self.tableWidget.setColumnWidth(i, 27)
+            #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
+            #      continue
+            print ""
 
             self.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
         for j in range (self.tableWidget.rowCount()):
@@ -138,6 +157,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def tableWidgetContentsAutoSize(self):
         self.tableWidget.resizeColumnsToContents()
         self.tableWidget.resizeRowsToContents()
+        print ""
 
     def buttonsTextClick(self, tab, index):
         #print str(tab) + " " + str(index)

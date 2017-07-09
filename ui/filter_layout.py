@@ -26,6 +26,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
 
         self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
+        self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines()))
 
         self.prepareGui(form)
 
@@ -61,7 +62,38 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         print self.filterLinesTextEdit.toPlainText()
         if self.filterLinesTextEdit.toPlainText() == '':
             self.filterLinesTextEdit.setText(self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + self.valueLineEdit.text())
+        else:
+            self.filterLinesTextEdit.setText(self.filterLinesTextEdit.toPlainText() + '\n' + self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + self.valueLineEdit.text())
         print "rewrklwekrlewk;l"
+
+    def applyFilter(self, form, filterLines):
+        print filterLines
+        if filterLines != '':
+            self.filters = {}
+            self.filters.update({'filters' : []})
+
+            #self.filterLines = filterLines
+            print 'Length: ' + str(len(filterLines))
+            for i in range (len(filterLines)):
+                self.filters['filters'].append({'columnHeader' : None, 'operand' : None, 'filterValue' : None, 'filterType' : None})
+
+                temp = filterLines[i].split(' [')
+                self.filters['filters'][i]['columnHeader'] = temp[0]
+                self.filters['filters'][i]['operand'] = temp[1].split('] ')[0]
+
+                if (self.filters['filters'][i]['operand'].find('contains') >= 0) or (self.filters['filters'][i]['operand'].find('match') >=0):
+                    filterLines[i] =filterLines[i].replace('[match]', '[=]')
+                    self.filters['filters'][i]['filterType'] = 'String'
+                else:
+                    self.filters['filters'][i]['filterType'] = 'Integer'
+
+                self.filters['filters'][i]['filterValue'] = temp[1].split('] ')[1]
+
+            print self.filters['filters']
+
+
+
+
 
 
 

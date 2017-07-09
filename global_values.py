@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import operator
 
 class globalValues():
 	def __init__(self):
@@ -61,7 +62,9 @@ class globalValues():
 						# '',
 						# '',
 
-		self.operandsText = {'String' : ['contains'], 'Integer' : ['<', '>', '=', '<>']}
+		self.operandsText = {'String' : ['contains', 'match'], 'Integer' : ['<', '>', '=', '<>']}
+
+		self.operandsChars = {'<' : operator.lt, '>' : operator.gt, '=' : operator.eq, '<>' : operator.ne, 'contains' : operator.contains}
 
 
 
