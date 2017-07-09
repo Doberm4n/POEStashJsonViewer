@@ -21,6 +21,7 @@ import modules.items as items
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
 import ui.main_layout as UIMainLayout
+import ui.filter_layout as UIFilterLayout
 #import generated.about as GUIAbout
 from Tkinter import Tk
 import ctypes
@@ -32,6 +33,7 @@ ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 form = None
 formAbout = None
+formFilter = None
 version = '0.9.0'
 link = '<a href="https://github.com/Doberm4n/PoEStashTabViewer">GitHub</a>'
 
@@ -71,6 +73,12 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.loadConfig()
 
         self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(self.tableWidgetContentsAutoSize)
+
+        self.actionEdit_filter.triggered.connect(self.showFilter)
+
+    def closeEvent(self, evnt):
+        if self.formFilter:
+            self.formFilter.close()
 
     def onQApplicationStarted(self):
         #self.tableWidget.setVisible(False)
@@ -271,7 +279,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.windowTitle = 'PoE Leveling Guide'
         self.tabWidget.setStyleSheet(self.disabledtabsylesheet)
 
-        self.menuActionOpen.setShortcut("F3")
+        self.actionEdit_filter.setShortcut("F3")
 
     # def clearButtons(self):
     #     for tabs in range (10):
@@ -468,9 +476,14 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #     self.statusbar.showMessage("Error in loading guide: " + str(e))
 
     def showAbout(self):
-        global formAbout
-        formAbout = aboutDialog()
-        formAbout.show()
+        #global formAbout
+        self.formAbout = aboutDialog()
+        self.formAbout.show()
+
+    def showFilter(self):
+        #global formFilter
+        self.formFilter = UIFilterLayout.filterDialog(self)
+        self.formFilter.show()
 
 
 class aboutDialog(QtGui.QDialog, GUIAbout.Ui_Dialog):

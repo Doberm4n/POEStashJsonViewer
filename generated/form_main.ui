@@ -105,8 +105,15 @@
     </property>
     <addaction name="actionCreate_empty_guide_file"/>
    </widget>
+   <widget class="QMenu" name="menuFilter">
+    <property name="title">
+     <string>Filter</string>
+    </property>
+    <addaction name="actionEdit_filter"/>
+   </widget>
    <addaction name="menuGuide"/>
    <addaction name="menuTools"/>
+   <addaction name="menuFilter"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -188,6 +195,11 @@
   <action name="actionComplete_All">
    <property name="text">
     <string>Complete all</string>
+   </property>
+  </action>
+  <action name="actionEdit_filter">
+   <property name="text">
+    <string>Edit filter</string>
    </property>
   </action>
  </widget>
