@@ -143,7 +143,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #      self.tableWidget.setColumnWidth(i, 27)
             #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
             #      continue
-            print ""
+            print unicode(self.tableWidget.item(0,0).text())
 
             self.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
         for j in range (self.tableWidget.rowCount()):
@@ -157,6 +157,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def tableWidgetContentsAutoSize(self):
         self.tableWidget.resizeColumnsToContents()
         self.tableWidget.resizeRowsToContents()
+        #self.formFilter.applyFilter(self, ['Name [contains] test'])
         print ""
 
     def buttonsTextClick(self, tab, index):

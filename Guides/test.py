@@ -24,11 +24,15 @@ a = "i %s am a %s" % (sub1, sub2)
 #a = "i %s am a %s" % (*sub)
 tu = ['15', '12']
 a = "{0} retretre".format(*tu)
+b = 'Thousand Ribbons Tempest Stinger•fwwrweMjölner\n \
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe'
 print a
 
 test = sub1.split()[0]
-if sub1 > sub2:
+if operator.contains(b, '•'):
 	print "Yes"
+
+print b
 
 print test
 print sub1

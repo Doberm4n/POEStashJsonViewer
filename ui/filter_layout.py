@@ -82,14 +82,39 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
                 self.filters['filters'][i]['operand'] = temp[1].split('] ')[0]
 
                 if (self.filters['filters'][i]['operand'].find('contains') >= 0) or (self.filters['filters'][i]['operand'].find('match') >=0):
-                    filterLines[i] =filterLines[i].replace('[match]', '[=]')
+                    self.filters['filters'][i]['operand'] = self.filters['filters'][i]['operand'].replace('match', '=')
                     self.filters['filters'][i]['filterType'] = 'String'
                 else:
                     self.filters['filters'][i]['filterType'] = 'Integer'
 
                 self.filters['filters'][i]['filterValue'] = temp[1].split('] ')[1]
 
+                self.filters['filters'][i]['operand'] = form.ig.operandsChars[self.filters['filters'][i]['operand']]
+
             print self.filters['filters']
+            self.filterTable(form, self.filters)
+
+    def filterTable(self, form, filters):
+        for i in range (len(filters['filters'])):
+            columnHeader = filters['filters'][i]['columnHeader']
+            filterType = filters['filters'][i]['filterType']
+            filterValue = filters['filters'][i]['filterValue']
+
+            operand = filters['filters'][i]['operand']
+            print unicode(form.tableWidget.item(0, form.ig.columnNameToIndex[columnHeader]).text())
+            print columnHeader
+            print filterType
+            print filterValue
+            print operand
+            for j in range (form.tableWidget.rowCount()):
+                if filterType == 'String':
+                    if not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()).lower(), filterValue.lower()):
+                        form.tableWidget.hideRow(j)
+                else:
+                    filterValue = int(filterValue)
+                    if not operand(int(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue):
+                        form.tableWidget.hideRow(j)
+        print ""
 
 
 
