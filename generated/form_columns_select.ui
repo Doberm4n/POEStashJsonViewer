@@ -34,7 +34,7 @@
   <property name="windowTitle">
    <string>About</string>
   </property>
-  <widget class="QListWidget" name="columnsListWidget">
+  <widget class="QListWidget" name="columnsSelectListWidget">
    <property name="geometry">
     <rect>
      <x>10</x>

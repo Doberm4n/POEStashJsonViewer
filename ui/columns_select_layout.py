@@ -5,7 +5,9 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
 from PyQt4 import QtGui
 from PyQt4 import QtCore
+from PyQt4.QtCore import *
 import generated.form_columns_select as GUIColumnsSelect
+import modules.tools as tools
 
 class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
     def __init__(self, form):
@@ -40,14 +42,23 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
 
     def prepareGui(self, form):
         # self.valueLineEdit.setFocus()
-        # self.loadColumnsToFilterComboBox(form)
+        jsonConfig = tools.readJson('Configs\config.json')
+        self.configView = jsonConfig['view']['columns']
+
+
+        for i in range (len(self.configView)):
+            item = QtGui.QListWidgetItem()
+            item.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
+            item.setText(self.configView[i]['columnHeader'])
+            self.columnsSelectListWidget.addItem(item)
+        #self.loadColumnsToColumnsListWidget(form)
         print "test ewqewqewqewqeqw"
 
 
-    # def loadColumnsToFilterComboBox(self, form):
-    #     for i in range (form.tableWidget.columnCount()):
-    #        self.columnsHeadersComboBox.addItem(form.tableWidget.horizontalHeaderItem(i).text())
-    #     print ""
+    def loadColumnsToColumnsListWidget(self, form):
+        for i in range (form.tableWidget.columnCount()):
+           self.columnsHeadersComboBox.addItem(form.tableWidget.horizontalHeaderItem(i).text())
+        print ""
 
     # def loadOperandsText(self, form):
     #     self.operandsComboBox.clear()
