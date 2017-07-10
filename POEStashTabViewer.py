@@ -22,6 +22,7 @@ import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
 import ui.main_layout as UIMainLayout
 import ui.filter_layout as UIFilterLayout
+import ui.columns_select_layout as UIColumnsSelectLayout
 #import generated.about as GUIAbout
 from Tkinter import Tk
 import ctypes
@@ -75,6 +76,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(self.tableWidgetContentsAutoSize)
 
         self.actionEdit_filter.triggered.connect(self.showFilter)
+        self.actionSelect_columns.triggered.connect(self.showColumnsSelect)
 
     #close filter form when main closed
     def closeEvent(self, evnt):
@@ -260,7 +262,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.ig = global_values.globalValues()
             UIMainLayout.applyLayout(self)
 
-            self.formFilter = UIFilterLayout.filterDialog(self)
+            # self.formFilter = UIFilterLayout.filterDialog(self)
+            # self.formColumnsSelect = UIColumnsSelectLayout.columnsSelectDialog(self)
+            self.formFilter = None
+            self.formColumnsSelect = None
 
             guideJson = self.readJson('Configs\config.json')
             if guideJson['curGuide']:
@@ -304,6 +309,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.tabWidget.setStyleSheet(self.disabledtabsylesheet)
 
         self.actionEdit_filter.setShortcut("F3")
+        self.actionSelect_columns.setShortcut("F2")
 
     # def clearButtons(self):
     #     for tabs in range (10):
@@ -506,8 +512,22 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def showFilter(self):
         #global formFilter
+        if not self.formFilter:
+            self.formFilter = UIFilterLayout.filterDialog(self)
+            self.formFilter.show()
+        else:
+            self.formFilter.show()
+            self.formFilter.activateWindow()
 
-        self.formFilter.show()
+    def showColumnsSelect(self):
+        #global formFilter
+        if not self.formColumnsSelect:
+            self.formColumnsSelect = UIColumnsSelectLayout.columnsSelectDialog(self)
+            self.formColumnsSelect.show()
+        else:
+            self.formColumnsSelect.show()
+            self.formColumnsSelect.activateWindow()
+        #self.formFilter.activateWindow()
 
 
 class aboutDialog(QtGui.QDialog, GUIAbout.Ui_Dialog):
