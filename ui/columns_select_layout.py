@@ -19,7 +19,7 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
         #self.closePushButton.clicked.connect(self.close)
         self.columnsSelectListWidget.clicked.connect(self.setCheckBox)
 
-        self.savePushButton.clicked.connect(self.saveColumnsSelection)
+        self.savePushButton.clicked.connect(lambda: self.saveColumnsSelection(form))
         # #form.tableWidget.setVisible(False)
         # #print form.tableWidget.columnsCount()
         # #self.linkLabel.linkActivated.connect(self.openURL)
@@ -49,10 +49,16 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
 
     def prepareGui(self, form):
         # self.valueLineEdit.setFocus()
-        jsonConfig = tools.readJson('Configs\config.json')
-        self.configView = jsonConfig['view']['columns']
+        self.jsonConfig = tools.readJson('Configs\config.json')
+        self.configView = self.jsonConfig['view']['columns']
+
+        self.loadColumnsToColumnsListWidget(form)
+
+        #self.loadColumnsToColumnsListWidget(form)
+        print "test ewqewqewqewqeqw"
 
 
+    def loadColumnsToColumnsListWidget(self, form):
         for i in range (len(self.configView)):
             item = QtGui.QListWidgetItem()
             item.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
@@ -62,20 +68,24 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
             else:
                 item.setCheckState(0)
             self.columnsSelectListWidget.addItem(item)
-        #self.loadColumnsToColumnsListWidget(form)
-        print "test ewqewqewqewqeqw"
 
-
-    def loadColumnsToColumnsListWidget(self, form):
-        for i in range (form.tableWidget.columnCount()):
-           self.columnsHeadersComboBox.addItem(form.tableWidget.horizontalHeaderItem(i).text())
+        # for i in range (form.tableWidget.columnCount()):
+        #    self.columnsHeadersComboBox.addItem(form.tableWidget.horizontalHeaderItem(i).text())
         print ""
 
     def saveColumnsSelection(self, form):
         for i in range (self.columnsSelectListWidget.count()):
             if self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
+                form.tableWidget.showColumn(i)
+                self.jsonConfig['view']['columns'][i]['isHidden'] = False
+            else:
+                form.tableWidget.hideColumn(i)
+                self.jsonConfig['view']['columns'][i]['isHidden'] = True
                 print "Checked " + self.columnsSelectListWidget.item(i).text()
         print ""
+        tools.writeJson(self.jsonConfig, 'Configs\config.json')
+        tools.tableWidgetSetResizeMode(form)
+        self.close()
 
     # def loadOperandsText(self, form):
     #     self.operandsComboBox.clear()

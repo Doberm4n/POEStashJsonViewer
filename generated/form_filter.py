@@ -70,6 +70,9 @@ class Ui_Dialog(object):
         self.saveFilterPushButton = QtGui.QPushButton(Dialog)
         self.saveFilterPushButton.setGeometry(QtCore.QRect(330, 375, 75, 23))
         self.saveFilterPushButton.setObjectName(_fromUtf8("saveFilterPushButton"))
+        self.resetFilterPushButton = QtGui.QPushButton(Dialog)
+        self.resetFilterPushButton.setGeometry(QtCore.QRect(10, 375, 75, 23))
+        self.resetFilterPushButton.setObjectName(_fromUtf8("resetFilterPushButton"))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -83,4 +86,5 @@ class Ui_Dialog(object):
         self.savedFiltersGroupBox.setTitle(_translate("Dialog", "Filters", None))
         self.loadFilterPushButton.setText(_translate("Dialog", "Load filter", None))
         self.saveFilterPushButton.setText(_translate("Dialog", "Save", None))
+        self.resetFilterPushButton.setText(_translate("Dialog", "Reset filters", None))
 

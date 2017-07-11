@@ -17,6 +17,7 @@ import time
 import res.res
 import global_values
 import modules.items as items
+import modules.tools as tools
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -97,7 +98,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         # self.tableWidget.viewport().setGeometry(vporig);
         #self.setWindowState(QtCore.Qt.WindowMaximized)
 
-        self.tableWidgetSetResizeMode()
+        tools.tableWidgetSetResizeMode(self)
         #self.setFixedColumnsWidth()
 
         print ""
@@ -274,6 +275,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 curGuideFilename = os.path.basename(self.curGuide)
                 self.guideLineEdit.setText(curGuideFilename)
                 self.curDir = os.path.dirname(self.curGuide)
+
+                self.setColumnsSelected(guideJson)
+
                 self.loadGuide(self.curGuide)
                 # self.tabWidget.update()
                 # self.tableWidget.resizeColumnsToContents()
@@ -285,6 +289,18 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #print "No"
         #except Exception, e:
              #print "Error in loading config: " + str(e)
+
+    def setColumnsSelected(self, jsonConfig):
+        for i in range (self.tableWidget.columnCount()):
+            if jsonConfig['view']['columns'][i]['isHidden']:
+            #self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
+                self.tableWidget.hideColumn(i)
+
+            # else:
+            #     form.tableWidget.hideColumn(i)
+            #     self.jsonConfig['view']['columns'][i]['isHidden'] = True
+            #     print "Checked " + self.columnsSelectListWidget.item(i).text()
+
 
     def browseGuide(self):
         self.curGuide = str(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.json', directory=self.curDir))

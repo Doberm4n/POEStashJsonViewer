@@ -111,11 +111,11 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             print operand
             for j in range (form.tableWidget.rowCount()):
                 if filterType == 'String':
-                    if not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()).lower(), filterValue.lower()):
+                    if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()).lower(), filterValue.lower())) and (form.tableWidget.isRowHidden(j) == False):
                         form.tableWidget.hideRow(j)
                 else:
                     filterValue = int(filterValue)
-                    if not operand(int(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue):
+                    if (not operand(int(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)) and (form.tableWidget.isRowHidden(j) == False):
                         form.tableWidget.hideRow(j)
         print ""
 

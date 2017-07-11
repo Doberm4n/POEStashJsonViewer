@@ -175,6 +175,19 @@
     <string>Save</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="resetFilterPushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>375</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reset filters</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
