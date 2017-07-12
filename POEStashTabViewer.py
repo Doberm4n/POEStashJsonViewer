@@ -16,8 +16,9 @@ import gc
 import time
 import res.res
 import global_values
-import modules.items as items
+import modules.items.items as items
 import modules.tools as tools
+from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitExplicit
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -268,15 +269,15 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.formFilter = None
             self.formColumnsSelect = None
 
-            guideJson = self.readJson('Configs\config.json')
-            if guideJson['curGuide']:
+            self.jsonConfig = self.readJson('Configs\config.json')
+            if self.jsonConfig['curGuide']:
                 #print "Yes"
-                self.curGuide = guideJson["curGuide"]
+                self.curGuide = self.jsonConfig["curGuide"]
                 curGuideFilename = os.path.basename(self.curGuide)
                 self.guideLineEdit.setText(curGuideFilename)
                 self.curDir = os.path.dirname(self.curGuide)
 
-                self.setColumnsSelected(guideJson)
+                self.setColumnsSelected(self.jsonConfig)
 
                 self.loadGuide(self.curGuide)
                 # self.tabWidget.update()
@@ -400,9 +401,17 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #Type
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Explicit Modifiers'], QtGui.QTableWidgetItem(items.setItemExplicitModifiers(self, itemIndex)))
 
+            #Type
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['PropertiesImplicitExplicit'], QtGui.QTableWidgetItem(setItemPropertiesImplicitExplicit(self, itemIndex)))
+
             #Properties
             #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QtGui.QTableWidgetItem(items.setItemProperties(self, itemIndex)))
 
+            ###############################################################
+            # Calculated columns
+            ###############################################################
+            if self.jsonConfig['common']['calculateSpecifiedColumns']:
+                print ""
 
             #print data
             #return data

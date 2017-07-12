@@ -21,7 +21,9 @@ class globalValues():
 
 						  {'columnHeader' : 'Implicit Modifiers', 'jsonName' : 'implicitMods'  , 'type' : 'String', 'isCalc' : False},
 
-						  {'columnHeader' : 'Explicit Modifiers', 'jsonName' : 'explicitMods'  , 'type' : 'String', 'isCalc' : False}
+						  {'columnHeader' : 'Explicit Modifiers', 'jsonName' : 'explicitMods'  , 'type' : 'String', 'isCalc' : False},
+
+						  {'columnHeader' : 'PropertiesImplicitExplicit', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : None}
 
 
 
@@ -32,7 +34,7 @@ class globalValues():
 		for i in range (len(self.columnsHeaders)):
 			self.columnNameToIndex[self.columnsHeaders[i]['columnHeader']] = i
 
-		self.rarity = ['unknown', 'unknown', 'unknown', 'unknown', 'Uniquie']
+		self.rarity = ['Normal', 'Magic', 'Rare', 'Uniquie']
 
 		self.itemTypes = [
 						'Flask', #Flasks
@@ -45,8 +47,8 @@ class globalValues():
 
 
 		self.itemTypes = [{'typeName' : 'Flask', 'items' : ['Flask']}, #Flasks
-						  {'typeName' : 'One Handed Mace', 'items' : ['One Handed Mace']}, #Maces
-						  {'typeName' : 'Two Handed Mace', 'items' : ['Two Handed Mace']},
+						  {'typeName' : 'One Handed Mace\n(1H Weapon)', 'items' : ['One Handed Mace']}, #Maces
+						  {'typeName' : 'Two Handed Mace\n(2H Weapon)', 'items' : ['Two Handed Mace']},
 						  {'typeName' : 'Map', 'items' : ['Map']},	#Maps
 						  {'typeName' : 'Boots', 'items' : ['Boots']}, #Boots
 						  {'typeName' : 'Gloves', 'items' : ['Gloves']}, #Gloves

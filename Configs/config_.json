@@ -1,8 +1,8 @@
 {
   "common": {
-    "configVersion": "10",
-    "currentGuide": "",
-    "calculateSpecifiedColumns": true
+    "calculateSpecifiedColumns": true,
+    "configVersion": "9",
+    "currentGuide": ""
   },
   "curGuide": "D:/Github_repositories/POEStashTabViewer/Guides/stash_tab.json",
   "view": {
@@ -40,7 +40,7 @@
         "columnHeader": "Explicit Modifiers"
       },
       {
-        "isHidden": true,
+        "isHidden": false,
         "columnHeader": "PropertiesImplicitExplicit"
       }
     ]
