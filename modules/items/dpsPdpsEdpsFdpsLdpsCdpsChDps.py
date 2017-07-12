@@ -21,7 +21,7 @@ def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitE
  #            self.resetData()
     if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
         _dpsCalc = dpsCalc.dpsCalc()
-        if _dpsCalc.Calc(data):
+        if _dpsCalc.Calc(unicode(data)):
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valuePhysical)))
         # self.eDPSLabel.setText("eDPS: " + str(self.POEDPSCalc.valueElemental))
         # self.cDPSLabel.setText("cDPS: " + str(self.POEDPSCalc.valueChaos))

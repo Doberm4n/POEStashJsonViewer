@@ -20,7 +20,7 @@ class dpsCalc():
 
     def searchPattern(self, pattern, data):
         pattern = re.compile(pattern)
-        self.modifier = filter(pattern.search, unicode(data).splitlines())
+        self.modifier = filter(pattern.search, data.splitlines())
 
 
     def Split(self, isAugmented):
@@ -62,7 +62,6 @@ class dpsCalc():
                     self.valuePhysical = round(temp * (1+1/100*(self.valueIncreasedPhysicalDamage+20)) * self.valueAttacksPerSecond, 1)
                 else:
                     self.valuePhysical = round((int(filter(str.isdigit, str(self.values[0]))) + int(filter(str.isdigit, str(self.values[1])))) / 2, 1)
-
             else:
                 self.valuePhysical = 0
             self.searchPattern(self.patternStringChaos, data)
@@ -94,13 +93,6 @@ class dpsCalc():
             if self.totalDPS > 0:
                 return True
             else:
-                # self.totalDPS =
-                # self.valuePhysical = 'Wrong data'
-                # self.valueElemental = 'Wrong data'
-                # self.valueFire = 'Wrong data'
-                # self.valueLightning = 'Wrong data'
-                # self.valueCold = 'Wrong data'
-                # self.valueChaos = 'Wrong data'
                 return False
         except:
             return False
