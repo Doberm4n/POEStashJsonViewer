@@ -116,18 +116,20 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             print filterValue
             print operand
             for j in range (form.tableWidget.rowCount()):
+                if form.tableWidget.isRowHidden(j) == True:
+                    continue
                 if (filterType == 'String') and (filters['filters'][i]['operand'] == operator.contains):
-                    if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()).lower(), filterValue.lower())) and (form.tableWidget.isRowHidden(j) == False):
+                    if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()).lower(), filterValue.lower())):
                         form.tableWidget.hideRow(j)
                 elif (filterType == 'String'):
-                        if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)) and (form.tableWidget.isRowHidden(j) == False):
+                        if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)):
                             form.tableWidget.hideRow(j)
                 else:
                     if not form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text():
                         form.tableWidget.hideRow(j)
                     else:
                         filterValue = float(filterValue)
-                        if (not operand(float(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)) and (form.tableWidget.isRowHidden(j) == False):
+                        if (not operand(float(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)):
                             form.tableWidget.hideRow(j)
         print ""
 
