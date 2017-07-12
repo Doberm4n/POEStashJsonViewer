@@ -1,8 +1,8 @@
 {
   "common": {
-    "calculateSpecifiedColumns": true,
-    "configVersion": "9",
-    "currentGuide": ""
+    "configVersion": "11",
+    "currentGuide": "",
+    "calculateSpecifiedColumns": true
   },
   "curGuide": "D:/Github_repositories/POEStashTabViewer/Guides/stash_tab.json",
   "view": {
@@ -40,8 +40,12 @@
         "columnHeader": "Explicit Modifiers"
       },
       {
-        "isHidden": false,
+        "isHidden": true,
         "columnHeader": "PropertiesImplicitExplicit"
+      },
+      {
+        "isHidden": false,
+        "columnHeader": "pDPS"
       }
     ]
   }

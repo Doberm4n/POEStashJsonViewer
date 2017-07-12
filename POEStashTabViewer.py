@@ -19,6 +19,7 @@ import global_values
 import modules.items.items as items
 import modules.tools as tools
 from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitExplicit
+from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -262,22 +263,25 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def loadConfig(self):
         #try:
             self.ig = global_values.globalValues()
-            UIMainLayout.applyLayout(self)
+
 
             # self.formFilter = UIFilterLayout.filterDialog(self)
             # self.formColumnsSelect = UIColumnsSelectLayout.columnsSelectDialog(self)
             self.formFilter = None
             self.formColumnsSelect = None
 
-            self.jsonConfig = self.readJson('Configs\config.json')
-            if self.jsonConfig['curGuide']:
+
+
+            UIMainLayout.applyLayout(self)
+
+            if self.ig.jsonConfig['curGuide']:
                 #print "Yes"
-                self.curGuide = self.jsonConfig["curGuide"]
+                self.curGuide = self.ig.jsonConfig["curGuide"]
                 curGuideFilename = os.path.basename(self.curGuide)
                 self.guideLineEdit.setText(curGuideFilename)
                 self.curDir = os.path.dirname(self.curGuide)
 
-                self.setColumnsSelected(self.jsonConfig)
+                self.setColumnsSelected(self.ig.jsonConfig)
 
                 self.loadGuide(self.curGuide)
                 # self.tabWidget.update()
@@ -410,7 +414,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             ###############################################################
             # Calculated columns
             ###############################################################
-            if self.jsonConfig['common']['calculateSpecifiedColumns']:
+            if self.ig.jsonConfig['common']['calculateSpecifiedColumns']:
+                propertiesImplicitExplicitLines = unicode(self.tableWidget.item(itemIndex,self.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
+                #dpsPdpsEdpsFdpsLdpsCdpsChDps
+                setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(self, itemIndex, propertiesImplicitExplicitLines)
+                #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
                 print ""
 
             #print data

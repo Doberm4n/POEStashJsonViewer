@@ -5,6 +5,7 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
 from PyQt4 import QtGui
 from PyQt4 import QtCore
+import operator
 import generated.form_filter as GUIFilter
 
 class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
@@ -84,11 +85,16 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
                 self.filters['filters'][i]['columnHeader'] = temp[0]
                 self.filters['filters'][i]['operand'] = temp[1].split('] ')[0]
 
-                if (self.filters['filters'][i]['operand'].find('contains') >= 0) or (self.filters['filters'][i]['operand'].find('match') >=0):
+                self.filters['filters'][i]['filterType'] = form.ig.columnsHeaders[form.ig.columnNameToIndex[temp[0]]]['type']
+
+                # if (self.filters['filters'][i]['operand'].find('contains') >= 0) or (self.filters['filters'][i]['operand'].find('match') >=0):
+                #     self.filters['filters'][i]['operand'] = self.filters['filters'][i]['operand'].replace('match', '=')
+                #     self.filters['filters'][i]['filterType'] = 'String'
+                # else:
+                #     self.filters['filters'][i]['filterType'] = 'Integer'
+
+                if self.filters['filters'][i]['filterType'] == 'String':
                     self.filters['filters'][i]['operand'] = self.filters['filters'][i]['operand'].replace('match', '=')
-                    self.filters['filters'][i]['filterType'] = 'String'
-                else:
-                    self.filters['filters'][i]['filterType'] = 'Integer'
 
                 self.filters['filters'][i]['filterValue'] = temp[1].split('] ')[1]
 
@@ -110,13 +116,19 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             print filterValue
             print operand
             for j in range (form.tableWidget.rowCount()):
-                if filterType == 'String':
+                if (filterType == 'String') and (filters['filters'][i]['operand'] == operator.contains):
                     if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()).lower(), filterValue.lower())) and (form.tableWidget.isRowHidden(j) == False):
                         form.tableWidget.hideRow(j)
+                elif (filterType == 'String'):
+                        if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)) and (form.tableWidget.isRowHidden(j) == False):
+                            form.tableWidget.hideRow(j)
                 else:
-                    filterValue = int(filterValue)
-                    if (not operand(int(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)) and (form.tableWidget.isRowHidden(j) == False):
+                    if not form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text():
                         form.tableWidget.hideRow(j)
+                    else:
+                        filterValue = float(filterValue)
+                        if (not operand(float(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)) and (form.tableWidget.isRowHidden(j) == False):
+                            form.tableWidget.hideRow(j)
         print ""
 
 

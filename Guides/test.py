@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import operator
+#from future import division
 # from PyQt4 import QtGui
 # from PyQt4 import QtCore
 # from PyQt4.QtGui import QDesktopServices
@@ -37,6 +38,16 @@ print b
 print test
 print sub1
 print
+
+a = float('1')
+#print round(a, 1)
+print a
+aa = 1
+b = int(a)
+if a>aa:
+	print "ewqewq + \n\n\n\n\n"
+#c = int(b)
+print b
 
 #a = "i am a " % (sub1, sub2)
 
