@@ -53,8 +53,8 @@ def applyLayout(self):
     self.tableWidget.setSortingEnabled(True)
     #add defined columns with headers from global_values
     for columns in range (len(self.ig.columnsHeaders)):
-        if (not self.ig.jsonConfig['common']['calculateSpecifiedColumns']) and (self.ig.columnsHeaders[columns]['isCalc']):
-            continue
+        # if (not self.ig.jsonConfig['common']['calculateSpecifiedColumns']) and (self.ig.columnsHeaders[columns]['isCalc']):
+        #     continue
         self.tableWidget.insertColumn(columns)
         item = QtGui.QTableWidgetItem(self.ig.columnsHeaders[columns]['columnHeader'])
         self.tableWidget.setHorizontalHeaderItem(columns, item)

@@ -415,7 +415,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             # Calculated columns
             ###############################################################
             if self.ig.jsonConfig['common']['calculateSpecifiedColumns']:
-                propertiesImplicitExplicitLines = unicode(self.tableWidget.item(itemIndex,self.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
+                propertiesImplicitExplicitLines = unicode(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
                 #dpsPdpsEdpsFdpsLdpsCdpsChDps
                 setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(self, itemIndex, propertiesImplicitExplicitLines)
                 #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))

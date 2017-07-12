@@ -22,7 +22,13 @@ def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitE
     if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
         _dpsCalc = dpsCalc.dpsCalc()
         if _dpsCalc.Calc(unicode(data)):
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem(str(_dpsCalc.totalDPS)))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueElemental)))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valuePhysical)))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueFire)))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueLightning)))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueCold)))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueChaos)))
         # self.eDPSLabel.setText("eDPS: " + str(self.POEDPSCalc.valueElemental))
         # self.cDPSLabel.setText("cDPS: " + str(self.POEDPSCalc.valueChaos))
         # self.fireDPSLabel.setText(str(self.POEDPSCalc.valueFire))
@@ -31,9 +37,22 @@ def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitE
         # self.totalDPSLabel.setText(str(self.POEDPSCalc.totalDPS))
         else:
 
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem('Wrong data'))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QtGui.QTableWidgetItem('Wrong data'))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem('Wrong data'))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QtGui.QTableWidgetItem('Wrong data'))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem('Wrong data'))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem('Wrong data'))
+            # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem('Wrong data'))
         #set for not None value
-    else: form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem(''))
+    else:
+        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem(''))
+        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QtGui.QTableWidgetItem(''))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem(''))
+        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QtGui.QTableWidgetItem(''))
+        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem(''))
+        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem(''))
+        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem(''))
 
 
 

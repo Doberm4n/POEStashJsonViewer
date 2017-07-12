@@ -23,13 +23,16 @@ class globalValues():
 
                             {'columnHeader' : 'Properties', 'jsonName' : ''  , 'type' : 'String', 'isCalc' : False},
 
+
+
+
                           {'columnHeader' : 'Implicit Modifiers', 'jsonName' : 'implicitMods'  , 'type' : 'String', 'isCalc' : False},
 
                           {'columnHeader' : 'Explicit Modifiers', 'jsonName' : 'explicitMods'  , 'type' : 'String', 'isCalc' : False},
 
                           {'columnHeader' : 'PropertiesImplicitExplicit', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
 
-                          {'columnHeader' : 'pDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True}
+{'columnHeader' : 'pDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True}
 
 
 
@@ -38,9 +41,10 @@ class globalValues():
         #assign columns headers to columns indices
         self.columnNameToIndex = {}
         for i in range (len(self.columnsHeaders)):
-            if (not self.jsonConfig['common']['calculateSpecifiedColumns']) and (self.columnsHeaders[i]['isCalc']):
-                continue
+            # if (not self.jsonConfig['common']['calculateSpecifiedColumns']) and (self.columnsHeaders[i]['isCalc']):
+            #     continue
             self.columnNameToIndex[self.columnsHeaders[i]['columnHeader']] = i
+        print self.columnNameToIndex
 
         self.rarity = ['Normal', 'Magic', 'Rare', 'Unique']
 
