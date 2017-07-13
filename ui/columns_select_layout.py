@@ -60,6 +60,7 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
 
 
     def loadColumnsToColumnsListWidget(self, form):
+        self.columnsSelectListWidget.clear()
         for i in range (len(self.configView)):
             # if not form.ig.jsonConfig['common']['calculateSpecifiedColumns'] and form.ig.columnsHeaders[i]['isCalc']:
             #     continue

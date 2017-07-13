@@ -76,7 +76,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         self.loadConfig()
 
-        self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(UIMainLayout.tableWidgetContentsAutoSize)
+        self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
 
         self.actionEdit_filter.triggered.connect(self.showFilter)
         self.actionSelect_columns.triggered.connect(self.showColumnsSelect)
@@ -586,6 +586,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         else:
             self.formColumnsSelect.show()
             self.formColumnsSelect.activateWindow()
+            self.formColumnsSelect.prepareGui(self)
         #self.formFilter.activateWindow()
 
 
