@@ -577,6 +577,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         else:
             self.formFilter.show()
             self.formFilter.activateWindow()
+            self.formFilter.prepareGui(self)
 
     def showColumnsSelect(self):
         #global formFilter
