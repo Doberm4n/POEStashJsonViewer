@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 import operator
-import ui.main_layout as UIMainLayout
+#import ui.main_layout as UIMainLayout
 
 def applyFilter(form, filterLines):
         print filterLines
@@ -69,6 +73,6 @@ def filterTable(form, filters):
                     filterValue = float(filterValue)
                     if (not operand(float(itemValue), filterValue)):
                         form.tableWidget.hideRow(j)
-    UIMainLayout.tableWidgetContentsAutoSize(form)
+    #UIMainLayout.tableWidgetContentsAutoSize(form)
     print ""
 

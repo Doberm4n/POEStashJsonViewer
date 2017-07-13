@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 from PyQt4 import QtGui
 from PyQt4 import QtCore
+import os
+import modules.filter as tableWidgetFilters
+import modules.tools as tools
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -60,6 +67,20 @@ def applyLayout(self):
         item = QtGui.QTableWidgetItem(self.ig.columnsHeaders[columns]['columnHeader'])
         self.tableWidget.setHorizontalHeaderItem(columns, item)
         item = self.tableWidget.horizontalHeaderItem(columns)
+
+    self.savedFiltersComboBox.currentIndexChanged.connect(lambda: loadAndApplyFilter(self))
+    #self.savedFiltersComboBox.setMinimumWidth(700)
+    # self.openGuidePushButton.setMaximumHeight(20)
+    # self.savedFiltersComboBox.setMaximumHeight(18)
+
+    #self.toolBar.addWidget(self.openGuidePushButton)
+    #self.toolBar.addSeparator()
+    #self.toolBar.addWidget(self.savedFiltersComboBox)
+    #self.toolBar.setMinimumHeight(25)
+    #self.toolBar.setStyleSheet('QToolBar{spacing:5px;}')
+    # self.openGuidePushButton.setGeometry(5, 5, 20, 20)
+    # self.savedFiltersComboBox.setGeometry(5,20, 20, 20)
+
     # self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
     # self.tableWidget.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.ResizeToContents)
     # self.tableWidget.horizontalHeader().setResizeMode(2, QtGui.QHeaderView.ResizeToContents)
@@ -105,3 +126,21 @@ def tableWidgetSetColumnsSelected(form):
             #     self.jsonConfig['view']['columns'][i]['isHidden'] = True
             #     print "Checked " + self.columnsSelectListWidget.item(i).text()
 
+def loadFiltersToSavedFiltersComboBox(form):
+        form.savedFiltersComboBox.clear()
+        form.savedFiltersComboBox.addItem('No filters')
+        for file in os.listdir(form.ig.filtersDir):
+            if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
+                print os.path.splitext(file)[0]
+                form.savedFiltersComboBox.addItem(os.path.splitext(file)[0])
+        if not form.savedFiltersComboBox.currentText():
+
+            print ""
+
+def loadAndApplyFilter(form):
+    if (form.savedFiltersComboBox.currentText()) and (form.savedFiltersComboBox.currentText() != 'No saved filters'):
+        filterJsonFileName = os.path.join(form.ig.filtersDir, unicode(form.savedFiltersComboBox.currentText()) + '.filter')
+        if os.path.isfile(filterJsonFileName):
+            print "Current text"
+            filterJsonData = tools.readJson(filterJsonFileName)
+            tableWidgetFilters.applyFilter(form, filterJsonData['filter']['filterLines'])

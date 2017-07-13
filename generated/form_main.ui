@@ -43,7 +43,14 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="filtersComboBox"/>
+     <widget class="QComboBox" name="savedFiltersComboBox">
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="label">

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import operator
 import modules.tools as tools
+import os
 
 class globalValues():
     def __init__(self):
@@ -91,6 +92,8 @@ class globalValues():
         self.operandsText = {'String' : ['contains', 'match'], 'Integer' : ['<', '>', '=', '<>'], 'Float' : ['<', '>', '=', '<>']}
 
         self.operandsChars = {'<' : operator.lt, '>' : operator.gt, '=' : operator.eq, '<>' : operator.ne, 'contains' : operator.contains}
+
+        self.filtersDir = os.getcwd() + '\\Filters'
 
 
 

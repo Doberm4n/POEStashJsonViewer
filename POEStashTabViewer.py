@@ -106,6 +106,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         UIMainLayout.tableWidgetSetResizeMode(self)
         UIMainLayout.tableWidgetSetColumnsSelected(self)
 
+        UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
+
         # tools.tableWidgetSetResizeMode(self)
 
         # self.setColumnsSelected(self.ig.jsonConfig)

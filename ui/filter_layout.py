@@ -33,10 +33,10 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
         self.applyFilterPushButton.clicked.connect(lambda: tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines()))
 
-        self.saveFilterPushButton.clicked.connect(self.saveFilter)
-        self.loadFilterPushButton.clicked.connect(self.loadFilter)
+        self.saveFilterPushButton.clicked.connect(lambda: self.saveFilter(form))
+        self.loadFilterPushButton.clicked.connect(lambda: self.loadFilter(form))
 
-        self.filtersDir = parentdir + '\\Filters'
+        #self.filtersDir = parentdir + '\\Filters'
 
         self.prepareGui(form)
 
@@ -50,7 +50,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.filterLinesTextEdit.setEnabled(False)
         self.valueLineEdit.setFocus()
         self.loadColumnsToFilterComboBox(form)
-        self.loadFiltersToSavedFiltersComboBox()
+        self.loadFiltersToSavedFiltersComboBox(form)
 
 
     def loadColumnsToFilterComboBox(self, form):
@@ -87,7 +87,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         newName = QtGui.QFileDialog.getSaveFileName(None, 'Save filter', directory=os.getcwd() + '\\Filters', filter='*.filter')
         return newName
 
-    def saveFilter(self):
+    def saveFilter(self, form):
         print currentdir
         print parentdir
         print os.getcwd()
@@ -104,12 +104,12 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             filterFileName = self.getFilterFileName()
             if filterFileName:
                 tools.writeJson(jsonData, filterFileName)
-                self.loadFiltersToSavedFiltersComboBox()
+                self.loadFiltersToSavedFiltersComboBox(form)
                 #writeConfigAndLoadGuide(self, filterFileName)
 
-    def loadFilter(self):
+    def loadFilter(self, form):
         if self.savedFiltersComboBox.currentText():
-            filterJsonFileName = os.path.join(self.filtersDir, unicode(self.savedFiltersComboBox.currentText()) + '.filter')
+            filterJsonFileName = os.path.join(form.ig.filtersDir, unicode(self.savedFiltersComboBox.currentText()) + '.filter')
             if os.path.isfile(filterJsonFileName):
                 print "Current text"
                 filterJsonData = tools.readJson(filterJsonFileName)
@@ -124,10 +124,10 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
 
         #
 
-    def loadFiltersToSavedFiltersComboBox(self):
+    def loadFiltersToSavedFiltersComboBox(self, form):
         self.savedFiltersComboBox.clear()
-        for file in os.listdir(self.filtersDir):
-            if os.path.isfile(os.path.join(self.filtersDir, file)) and (file.endswith('.filter')):
+        for file in os.listdir(form.ig.filtersDir):
+            if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
                 print os.path.splitext(file)[0]
                 self.savedFiltersComboBox.addItem(os.path.splitext(file)[0])
         print ""
