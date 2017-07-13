@@ -6,8 +6,11 @@ sys.path.insert(0,parentdir)
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 import operator
+import json
+from json import loads
 import generated.form_filter as GUIFilter
 import ui.main_layout as UIMainLayout
+import modules.tools as tools
 
 class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
     def __init__(self, form):
@@ -29,6 +32,8 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
 
         self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
         self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines()))
+
+        self.saveFilterPushButton.clicked.connect(self.saveFilter)
 
         self.prepareGui(form)
 
@@ -140,6 +145,43 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
                             form.tableWidget.hideRow(j)
         UIMainLayout.tableWidgetContentsAutoSize(form)
         print ""
+
+    def getFilterFileName(self):
+        newName = QtGui.QFileDialog.getSaveFileName(None, 'Save filter', directory=os.getcwd() + '\\Filters', filter='*.json')
+        return newName
+
+    def saveFilter(self):
+        filterLines = self.filterLinesTextEdit.toPlainText()
+        if filterLines:
+            data = {"filter":{"filterLines":[]}}
+            temp = json.dumps(data)
+            jsonData = loads(temp)
+            filterLines = unicode(filterLines).splitlines()
+            for i in range (len(filterLines)):
+                jsonData['filter']['filterLines'].append(filterLines[i])
+
+
+
+
+
+            print filterLines
+            filterFileName = self.getFilterFileName()
+            if filterFileName:
+                tools.writeJson(jsonData, filterFileName)
+            #writeConfigAndLoadGuide(self, filterFileName)
+
+    def loadFilter(self):
+        #print ""
+        currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+        #filterFileName = str(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.json', directory=self.curDir))
+        # for file in os.listdir(self.curDir):
+        #     if os.path.isfile(os.path.join(self.curDir, file)) and (file.endswith('.json')):
+
+        #filterJson = tools.readJson()
+
+
+
+
 
 
 
