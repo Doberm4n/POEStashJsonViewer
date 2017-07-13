@@ -115,6 +115,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
 
+        self.tableWidget.setEnabled(True)
+
         # tools.tableWidgetSetResizeMode(self)
 
         # self.setColumnsSelected(self.ig.jsonConfig)
@@ -506,7 +508,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
             #self.tableWidgetSetResizeMode()
             self.tableWidget.setVisible(True)
-            self.tableWidget.setEnabled(True)
+            #self.tableWidget.setEnabled(True)
 
             #self.tableWidget.setColumnHidden()
             #self.tableWidget.setRowHidden(1, True)

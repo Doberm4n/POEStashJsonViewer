@@ -168,6 +168,7 @@ def loadAndApplyFilter(form):
 
 
 def applyFilter(form, filterJsonData):
+    tableWidgetDisableResizeToContents(form)
     tableWidgetFilters.resetFilter(form)
     tableWidgetFilters.applyFilter(form, filterJsonData['filter']['filterLines'])
     tableWidgetContentsAutoSize(form)
