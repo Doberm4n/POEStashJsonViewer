@@ -77,8 +77,9 @@ def filterTable(form, filters):
                         form.tableWidget.hideRow(j)
     print "Applied"
 
-    def resetFilter(form):
-        for i in range (len(form.tableWidget.rowCount())):
-            if form.tableWidget.row(i).isRowHidden():
-                form.tableWidget.showRow(i)
+def resetFilter(form):
+    for i in range (form.tableWidget.rowCount()):
+        if form.tableWidget.isRowHidden(i):
+            form.tableWidget.showRow(i)
+
 

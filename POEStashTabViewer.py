@@ -115,6 +115,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #self.tableWidget.setVisible(True)
         #self.setFixedColumnsWidth()
 
+        #UIMainLayout.tableWidgetDisableResizeToContents(self)
+
         print ""
         #self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.Stretch)
         #self.tableWidgetContentsAutoSize()

@@ -116,6 +116,21 @@ def tableWidgetSetResizeMode(form):
         form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
         #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
 
+def tableWidgetDisableResizeToContents(form):
+    for i in range (form.tableWidget.columnCount()):
+        # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
+        # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
+        #      self.tableWidget.setColumnWidth(i, 27)
+        #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
+        #      continue
+        #print unicode(self.tableWidget.item(0,0).text())
+
+        form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.Fixed)
+    for j in range (form.tableWidget.rowCount()):
+    #print ""
+        form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.Fixed)
+        #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
+
 def tableWidgetSetColumnsSelected(form):
      for i in range (form.tableWidget.columnCount()):
             if form.ig.jsonConfig['view']['columns'][i]['isHidden']:
@@ -129,7 +144,7 @@ def tableWidgetSetColumnsSelected(form):
 
 def loadFiltersToSavedFiltersComboBox(form):
         form.savedFiltersComboBox.clear()
-        form.savedFiltersComboBox.addItem('No filters')
+        form.savedFiltersComboBox.addItem('No filters selected ')
         for file in os.listdir(form.ig.filtersDir):
             if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
                 print os.path.splitext(file)[0]
@@ -148,5 +163,6 @@ def loadAndApplyFilter(form):
 
 
 def applyFilter(form, filterJsonData):
+    tableWidgetFilters.resetFilter(form)
     tableWidgetFilters.applyFilter(form, filterJsonData['filter']['filterLines'])
     tableWidgetContentsAutoSize(form)
