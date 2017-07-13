@@ -101,6 +101,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #self.setWindowState(QtCore.Qt.WindowMaximized)
 
         tools.tableWidgetSetResizeMode(self)
+
+        self.setColumnsSelected(self.ig.jsonConfig)
+
+        #self.tableWidget.setVisible(True)
         #self.setFixedColumnsWidth()
 
         print ""
@@ -281,7 +285,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.guideLineEdit.setText(curGuideFilename)
                 self.curDir = os.path.dirname(self.curGuide)
 
-                self.setColumnsSelected(self.ig.jsonConfig)
+                #self.setColumnsSelected(self.ig.jsonConfig)
 
                 self.loadGuide(self.curGuide)
                 # self.tabWidget.update()
@@ -308,14 +312,18 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
 
     def browseGuide(self):
+        print "browse"
         self.curGuide = str(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.json', directory=self.curDir))
         if self.curGuide:
-            guideJson = self.readJson('Configs\config.json')
-            guideJson['curGuide'] = self.curGuide
-            self.writeJson(guideJson, 'Configs\config.json')
+            #guideJson = self.readJson('Configs\config.json')
+            self.ig.jsonConfig['curGuide'] = self.curGuide
+            self.writeJson(self.ig.jsonConfig, 'Configs\config.json')
             self.guideLineEdit.setText(os.path.basename(self.curGuide))
             #self.clearGuide()
             self.loadGuide(self.curGuide)
+            #self.tableWidget.setVisible(False)
+            self.tableWidgetSetResizeMode()
+
 
     def prepareGui(self):
 
@@ -466,8 +474,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             # self.tableWidget.resizeColumnsToContents()
             # self.tableWidget.resizeRowsToContents()
 
-            self.tableWidgetSetResizeMode()
-
+            #self.tableWidgetSetResizeMode()
+            self.tableWidget.setVisible(True)
 
             #self.tableWidget.setColumnHidden()
             #self.tableWidget.setRowHidden(1, True)

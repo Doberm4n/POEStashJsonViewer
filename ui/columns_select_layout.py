@@ -49,8 +49,8 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
 
     def prepareGui(self, form):
         # self.valueLineEdit.setFocus()
-        self.jsonConfig = tools.readJson('Configs\config.json')
-        self.configView = self.jsonConfig['view']['columns']
+        #self.jsonConfig = tools.readJson('Configs\config.json')
+        self.configView = form.ig.jsonConfig['view']['columns']
 
         self.loadColumnsToColumnsListWidget(form)
 
@@ -64,7 +64,7 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
             #     continue
             item = QtGui.QListWidgetItem()
             item.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
-            item.setText(self.configView[i]['columnHeader'])
+            item.setText(form.ig.columnsHeaders[i]['columnHeader'])
             if self.configView[i]['isHidden'] == False:
                 item.setCheckState(2)
             else:
@@ -79,14 +79,15 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
         for i in range (self.columnsSelectListWidget.count()):
             if self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
                 form.tableWidget.showColumn(i)
-                self.jsonConfig['view']['columns'][i]['isHidden'] = False
+                form.ig.jsonConfig['view']['columns'][i]['isHidden'] = False
             else:
                 form.tableWidget.hideColumn(i)
-                self.jsonConfig['view']['columns'][i]['isHidden'] = True
+                form.ig.jsonConfig['view']['columns'][i]['isHidden'] = True
                 print "Checked " + self.columnsSelectListWidget.item(i).text()
         print ""
-        tools.writeJson(self.jsonConfig, 'Configs\config.json')
+        tools.writeJson(form.ig.jsonConfig, 'Configs\config.json')
         tools.tableWidgetSetResizeMode(form)
+
         self.close()
 
     # def loadOperandsText(self, form):

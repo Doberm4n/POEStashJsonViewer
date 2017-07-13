@@ -51,6 +51,7 @@ def applyLayout(self):
     self.tableWidget.horizontalHeader().setVisible(True)
     self.tableWidget.verticalHeader().setVisible(True)
     self.tableWidget.setSortingEnabled(True)
+    self.tableWidget.setVisible(False)
     #add defined columns with headers from global_values
     for columns in range (len(self.ig.columnsHeaders)):
         # if (not self.ig.jsonConfig['common']['calculateSpecifiedColumns']) and (self.ig.columnsHeaders[columns]['isCalc']):
