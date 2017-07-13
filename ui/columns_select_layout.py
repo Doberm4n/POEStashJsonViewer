@@ -8,6 +8,7 @@ from PyQt4 import QtCore
 from PyQt4.QtCore import *
 import generated.form_columns_select as GUIColumnsSelect
 import modules.tools as tools
+import ui.main_layout as UIMainLayout
 
 class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
     def __init__(self, form):
@@ -86,9 +87,14 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
                 print "Checked " + self.columnsSelectListWidget.item(i).text()
         print ""
         tools.writeJson(form.ig.jsonConfig, 'Configs\config.json')
+        #auto size content
 
-        tools.tableWidgetSetResizeMode(form)
+        #form.tableWidgetContentsAutoSize()
+        # tools.tableWidgetSetResizeMode(form)
+
         #form.tableWidget.updateGeometries()
+        UIMainLayout.tableWidgetContentsAutoSize(form)
+        UIMainLayout.tableWidgetSetResizeMode(form)
 
         self.close()
 

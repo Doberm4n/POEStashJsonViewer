@@ -72,3 +72,36 @@ def applyLayout(self):
     #set autoSize
     #self.tableWidget.resizeColumnsToContents()
     #self.tableWidget.resizeRowsToContents()
+
+def tableWidgetContentsAutoSize(form):
+    form.tableWidget.resizeColumnsToContents()
+    form.tableWidget.resizeRowsToContents()
+
+
+def tableWidgetSetResizeMode(form):
+
+    for i in range (form.tableWidget.columnCount()):
+        # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
+        # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
+        #      self.tableWidget.setColumnWidth(i, 27)
+        #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
+        #      continue
+        #print unicode(self.tableWidget.item(0,0).text())
+
+        form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
+    for j in range (form.tableWidget.rowCount()):
+    #print ""
+        form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+        #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
+
+def tableWidgetSetColumnsSelected(form):
+     for i in range (form.tableWidget.columnCount()):
+            if form.ig.jsonConfig['view']['columns'][i]['isHidden']:
+            #self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
+                form.tableWidget.hideColumn(i)
+
+            # else:
+            #     form.tableWidget.hideColumn(i)
+            #     self.jsonConfig['view']['columns'][i]['isHidden'] = True
+            #     print "Checked " + self.columnsSelectListWidget.item(i).text()
+

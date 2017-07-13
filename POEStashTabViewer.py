@@ -70,13 +70,13 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionAbout.triggered.connect(self.showAbout)
         self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
 
-        self.pushButton.clicked.connect(self.tableWidgetContentsAutoSize)
+        self.pushButton.clicked.connect(UIMainLayout.tableWidgetContentsAutoSize)
 
 
 
         self.loadConfig()
 
-        self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(self.tableWidgetContentsAutoSize)
+        self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(UIMainLayout.tableWidgetContentsAutoSize)
 
         self.actionEdit_filter.triggered.connect(self.showFilter)
         self.actionSelect_columns.triggered.connect(self.showColumnsSelect)
@@ -102,9 +102,13 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         #
 
-        tools.tableWidgetSetResizeMode(self)
+        #UIMainLayout.tableViewAutoSizeContents(self)
+        UIMainLayout.tableWidgetSetResizeMode(self)
+        UIMainLayout.tableWidgetSetColumnsSelected(self)
 
-        self.setColumnsSelected(self.ig.jsonConfig)
+        # tools.tableWidgetSetResizeMode(self)
+
+        # self.setColumnsSelected(self.ig.jsonConfig)
 
         #self.tableWidget.setVisible(True)
         #self.setFixedColumnsWidth()
@@ -146,31 +150,31 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #     self.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
         # print ""
 
-    def tableWidgetSetResizeMode(self):
+    # def tableWidgetSetResizeMode(self):
 
-        for i in range (self.tableWidget.columnCount()):
-            # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
-            # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
-            #      self.tableWidget.setColumnWidth(i, 27)
-            #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
-            #      continue
-            #print unicode(self.tableWidget.item(0,0).text())
+    #     for i in range (self.tableWidget.columnCount()):
+    #         # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
+    #         # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
+    #         #      self.tableWidget.setColumnWidth(i, 27)
+    #         #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
+    #         #      continue
+    #         #print unicode(self.tableWidget.item(0,0).text())
 
-            self.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
-        for j in range (self.tableWidget.rowCount()):
-        #print ""
-            self.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+    #         self.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
+    #     for j in range (self.tableWidget.rowCount()):
+    #     #print ""
+    #         self.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
 
-        #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
+    #     #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
 
 
 
-    def tableWidgetContentsAutoSize(self):
-        self.tableWidget.resizeColumnsToContents()
-        self.tableWidget.resizeRowsToContents()
-        #self.formFilter.applyFilter(self, ['Name [contains] test'])
-        #self.tableWidget.setColumnWidth(2, 27)
-        print ""
+    # def tableWidgetContentsAutoSize(self):
+    #     self.tableWidget.resizeColumnsToContents()
+    #     self.tableWidget.resizeRowsToContents()
+    #     #self.formFilter.applyFilter(self, ['Name [contains] test'])
+    #     #self.tableWidget.setColumnWidth(2, 27)
+    #     print ""
 
     def buttonsTextClick(self, tab, index):
         #print str(tab) + " " + str(index)
@@ -301,16 +305,16 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #except Exception, e:
              #print "Error in loading config: " + str(e)
 
-    def setColumnsSelected(self, jsonConfig):
-        for i in range (self.tableWidget.columnCount()):
-            if jsonConfig['view']['columns'][i]['isHidden']:
-            #self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
-                self.tableWidget.hideColumn(i)
+    # def setColumnsSelected(self, jsonConfig):
+    #     for i in range (self.tableWidget.columnCount()):
+    #         if jsonConfig['view']['columns'][i]['isHidden']:
+    #         #self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
+    #             self.tableWidget.hideColumn(i)
 
-            # else:
-            #     form.tableWidget.hideColumn(i)
-            #     self.jsonConfig['view']['columns'][i]['isHidden'] = True
-            #     print "Checked " + self.columnsSelectListWidget.item(i).text()
+    #         # else:
+    #         #     form.tableWidget.hideColumn(i)
+    #         #     self.jsonConfig['view']['columns'][i]['isHidden'] = True
+    #         #     print "Checked " + self.columnsSelectListWidget.item(i).text()
 
     def showAllColumns(self):
         for i in range (self.tableWidget.columnCount()):
@@ -328,11 +332,13 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #clear rows
             self.tableWidget.setVisible(False)
             self.tableWidget.setRowCount(0)
-            self.showAllColumns()
+            #self.showAllColumns()
             self.loadGuide(self.curGuide)
-            self.tableWidgetSetResizeMode()
-            self.setColumnsSelected(self.ig.jsonConfig)
 
+            # self.tableWidgetSetResizeMode()
+            # self.setColumnsSelected(self.ig.jsonConfig)
+            UIMainLayout.tableWidgetSetResizeMode(self)
+            UIMainLayout.tableWidgetSetColumnsSelected(self)
 
 
 
