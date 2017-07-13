@@ -320,6 +320,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.writeJson(self.ig.jsonConfig, 'Configs\config.json')
             self.guideLineEdit.setText(os.path.basename(self.curGuide))
             #self.clearGuide()
+            #clear rows
+            self.tableWidget.setRowCount(0)
             self.loadGuide(self.curGuide)
             #self.tableWidget.setVisible(False)
             self.tableWidgetSetResizeMode()
