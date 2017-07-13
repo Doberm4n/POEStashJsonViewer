@@ -12,6 +12,8 @@ import generated.form_filter as GUIFilter
 import modules.tools as tools
 import modules.filter as tableWidgetFilters
 
+#import ui.main_layout as UIMainLayout
+
 class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
     def __init__(self, form):
         #global version
@@ -31,7 +33,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
 
         self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
-        self.applyFilterPushButton.clicked.connect(lambda: tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines()))
+        self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form))
 
         self.saveFilterPushButton.clicked.connect(lambda: self.saveFilter(form))
         self.loadFilterPushButton.clicked.connect(lambda: self.loadFilter(form))
@@ -135,6 +137,9 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
     def clearFilterLinesTextEdit(self):
         self.filterLinesTextEdit.clear()
         print ""
+
+    def applyFilter(self, form):
+        tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines())
 
 
 

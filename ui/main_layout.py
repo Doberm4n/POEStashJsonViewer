@@ -97,6 +97,7 @@ def applyLayout(self):
 def tableWidgetContentsAutoSize(form):
     form.tableWidget.resizeColumnsToContents()
     form.tableWidget.resizeRowsToContents()
+    print "Auto sized"
 
 
 def tableWidgetSetResizeMode(form):
@@ -143,4 +144,9 @@ def loadAndApplyFilter(form):
         if os.path.isfile(filterJsonFileName):
             print "Current text"
             filterJsonData = tools.readJson(filterJsonFileName)
-            tableWidgetFilters.applyFilter(form, filterJsonData['filter']['filterLines'])
+            applyFilter(form, filterJsonData)
+
+
+def applyFilter(form, filterJsonData):
+    tableWidgetFilters.applyFilter(form, filterJsonData['filter']['filterLines'])
+    #tableWidgetFilters.applyFilter(form, )

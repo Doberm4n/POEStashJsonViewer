@@ -4,7 +4,9 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
 import operator
-#import ui.main_layout as UIMainLayout
+import ui.main_layout
+
+#import modules.tools as tools
 
 def applyFilter(form, filterLines):
         print filterLines
@@ -73,6 +75,11 @@ def filterTable(form, filters):
                     filterValue = float(filterValue)
                     if (not operand(float(itemValue), filterValue)):
                         form.tableWidget.hideRow(j)
-    #UIMainLayout.tableWidgetContentsAutoSize(form)
-    print ""
+    ui.main_layout.tableWidgetContentsAutoSize(form)
+    print "Applied"
+
+    def resetFilter(form):
+        for i in range (len(form.tableWidget.rowCount())):
+            if form.tableWidget.row(i).isRowHidden():
+                form.tableWidget.showRow(i)
 
