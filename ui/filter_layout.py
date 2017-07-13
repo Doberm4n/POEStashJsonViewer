@@ -12,6 +12,8 @@ import generated.form_filter as GUIFilter
 import modules.tools as tools
 import modules.filter as tableWidgetFilters
 
+import ui.main_layout as UIMainLayout
+
 #import ui.main_layout as UIMainLayout
 
 class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
@@ -140,7 +142,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
 
     def applyFilter(self, form):
         tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines())
-
+        UIMainLayout.tableWidgetContentsAutoSize(form)
 
 
 
