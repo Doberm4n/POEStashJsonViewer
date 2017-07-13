@@ -7,6 +7,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 import operator
 import generated.form_filter as GUIFilter
+import ui.main_layout as UIMainLayout
 
 class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
     def __init__(self, form):
@@ -137,6 +138,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
                         filterValue = float(filterValue)
                         if (not operand(float(itemValue), filterValue)):
                             form.tableWidget.hideRow(j)
+        UIMainLayout.tableWidgetContentsAutoSize(form)
         print ""
 
 
