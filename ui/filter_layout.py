@@ -110,7 +110,8 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             filterValue = filters['filters'][i]['filterValue']
 
             operand = filters['filters'][i]['operand']
-            print unicode(form.tableWidget.item(0, form.ig.columnNameToIndex[columnHeader]).text())
+
+            #print unicode(form.tableWidget.item(0, form.ig.columnNameToIndex[columnHeader]).text())
             print columnHeader
             print filterType
             print filterValue
@@ -118,18 +119,23 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             for j in range (form.tableWidget.rowCount()):
                 if form.tableWidget.isRowHidden(j) == True:
                     continue
+                if form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]):
+                    itemValue = form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()
+                else:
+                    itemValue = ''
+                #if not itemValue:
                 if (filterType == 'String') and (filters['filters'][i]['operand'] == operator.contains):
-                    if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()).lower(), filterValue.lower())):
+                    if (not operand(unicode(itemValue).lower(), filterValue.lower())):
                         form.tableWidget.hideRow(j)
                 elif (filterType == 'String'):
-                        if (not operand(unicode(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)):
+                        if (not operand(unicode(itemValue), filterValue)):
                             form.tableWidget.hideRow(j)
                 else:
-                    if not form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text():
+                    if not itemValue:
                         form.tableWidget.hideRow(j)
                     else:
                         filterValue = float(filterValue)
-                        if (not operand(float(form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()), filterValue)):
+                        if (not operand(float(itemValue), filterValue)):
                             form.tableWidget.hideRow(j)
         print ""
 
