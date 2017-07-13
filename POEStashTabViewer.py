@@ -100,6 +100,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         # self.tableWidget.viewport().setGeometry(vporig);
         #self.setWindowState(QtCore.Qt.WindowMaximized)
 
+        #
+
         tools.tableWidgetSetResizeMode(self)
 
         self.setColumnsSelected(self.ig.jsonConfig)
@@ -310,6 +312,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #     self.jsonConfig['view']['columns'][i]['isHidden'] = True
             #     print "Checked " + self.columnsSelectListWidget.item(i).text()
 
+    def showAllColumns(self):
+        for i in range (self.tableWidget.columnCount()):
+            self.tableWidget.showColumn(i)
 
     def browseGuide(self):
         print "browse"
@@ -321,10 +326,14 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.guideLineEdit.setText(os.path.basename(self.curGuide))
             #self.clearGuide()
             #clear rows
+            self.tableWidget.setVisible(False)
             self.tableWidget.setRowCount(0)
+            self.showAllColumns()
             self.loadGuide(self.curGuide)
-            #self.tableWidget.setVisible(False)
             self.tableWidgetSetResizeMode()
+            self.setColumnsSelected(self.ig.jsonConfig)
+
+
 
 
     def prepareGui(self):

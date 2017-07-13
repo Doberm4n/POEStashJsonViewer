@@ -77,16 +77,18 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
 
     def saveColumnsSelection(self, form):
         for i in range (self.columnsSelectListWidget.count()):
-            if self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
+            if self.columnsSelectListWidget.item(i).checkState() == Qt.Checked and form.tableWidget.isColumnHidden(i):
                 form.tableWidget.showColumn(i)
                 form.ig.jsonConfig['view']['columns'][i]['isHidden'] = False
-            else:
+            elif self.columnsSelectListWidget.item(i).checkState() == Qt.Unchecked and not form.tableWidget.isColumnHidden(i):
                 form.tableWidget.hideColumn(i)
                 form.ig.jsonConfig['view']['columns'][i]['isHidden'] = True
                 print "Checked " + self.columnsSelectListWidget.item(i).text()
         print ""
         tools.writeJson(form.ig.jsonConfig, 'Configs\config.json')
+
         tools.tableWidgetSetResizeMode(form)
+        #form.tableWidget.updateGeometries()
 
         self.close()
 
