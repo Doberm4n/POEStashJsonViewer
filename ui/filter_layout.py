@@ -5,12 +5,12 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
 from PyQt4 import QtGui
 from PyQt4 import QtCore
-import operator
 import json
 from json import loads
 import generated.form_filter as GUIFilter
-import ui.main_layout as UIMainLayout
+
 import modules.tools as tools
+import modules.filter as tableWidgetFilters
 
 class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
     def __init__(self, form):
@@ -31,7 +31,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
 
         self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
-        self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines()))
+        self.applyFilterPushButton.clicked.connect(lambda: tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines()))
 
         self.saveFilterPushButton.clicked.connect(self.saveFilter)
         self.loadFilterPushButton.clicked.connect(self.loadFilter)
@@ -81,75 +81,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             self.filterLinesTextEdit.setText(self.filterLinesTextEdit.toPlainText() + '\n' + self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + self.valueLineEdit.text())
         print "rewrklwekrlewk;l"
 
-    def applyFilter(self, form, filterLines):
-        print filterLines
-        if filterLines != '':
-            self.filters = {}
-            self.filters.update({'filters' : []})
 
-            #self.filterLines = filterLines
-            print 'Length: ' + str(len(filterLines))
-            for i in range (len(filterLines)):
-                self.filters['filters'].append({'columnHeader' : None, 'operand' : None, 'filterValue' : None, 'filterType' : None})
-
-                temp = filterLines[i].split(' [')
-                self.filters['filters'][i]['columnHeader'] = temp[0]
-                self.filters['filters'][i]['operand'] = temp[1].split('] ')[0]
-
-                self.filters['filters'][i]['filterType'] = form.ig.columnsHeaders[form.ig.columnNameToIndex[temp[0]]]['type']
-
-                # if (self.filters['filters'][i]['operand'].find('contains') >= 0) or (self.filters['filters'][i]['operand'].find('match') >=0):
-                #     self.filters['filters'][i]['operand'] = self.filters['filters'][i]['operand'].replace('match', '=')
-                #     self.filters['filters'][i]['filterType'] = 'String'
-                # else:
-                #     self.filters['filters'][i]['filterType'] = 'Integer'
-
-                if self.filters['filters'][i]['filterType'] == 'String':
-                    self.filters['filters'][i]['operand'] = self.filters['filters'][i]['operand'].replace('match', '=')
-
-                self.filters['filters'][i]['filterValue'] = temp[1].split('] ')[1]
-
-                self.filters['filters'][i]['operand'] = form.ig.operandsChars[self.filters['filters'][i]['operand']]
-
-            print self.filters['filters']
-            self.filterTable(form, self.filters)
-
-    def filterTable(self, form, filters):
-        for i in range (len(filters['filters'])):
-            columnHeader = filters['filters'][i]['columnHeader']
-            filterType = filters['filters'][i]['filterType']
-            filterValue = filters['filters'][i]['filterValue']
-
-            operand = filters['filters'][i]['operand']
-
-            #print unicode(form.tableWidget.item(0, form.ig.columnNameToIndex[columnHeader]).text())
-            print columnHeader
-            print filterType
-            print filterValue
-            print operand
-            for j in range (form.tableWidget.rowCount()):
-                if form.tableWidget.isRowHidden(j) == True:
-                    continue
-                if form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]):
-                    itemValue = form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()
-                else:
-                    itemValue = ''
-                #if not itemValue:
-                if (filterType == 'String') and (filters['filters'][i]['operand'] == operator.contains):
-                    if (not operand(unicode(itemValue).lower(), filterValue.lower())):
-                        form.tableWidget.hideRow(j)
-                elif (filterType == 'String'):
-                        if (not operand(unicode(itemValue), filterValue)):
-                            form.tableWidget.hideRow(j)
-                else:
-                    if not itemValue:
-                        form.tableWidget.hideRow(j)
-                    else:
-                        filterValue = float(filterValue)
-                        if (not operand(float(itemValue), filterValue)):
-                            form.tableWidget.hideRow(j)
-        UIMainLayout.tableWidgetContentsAutoSize(form)
-        print ""
 
     def getFilterFileName(self):
         newName = QtGui.QFileDialog.getSaveFileName(None, 'Save filter', directory=os.getcwd() + '\\Filters', filter='*.filter')
