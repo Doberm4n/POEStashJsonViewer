@@ -70,7 +70,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionAbout.triggered.connect(self.showAbout)
         self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
 
-        self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
+        self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetSetResizeMode(self))
 
 
 
