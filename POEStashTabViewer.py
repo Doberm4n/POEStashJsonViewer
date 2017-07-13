@@ -491,7 +491,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
-            for i in range (1000):
+            for i in range (11):
                 print "=======================================Stash " + str(i) + " ======================================="
             #add rows, number equal to items count in json
                 for rows in range (textLength):

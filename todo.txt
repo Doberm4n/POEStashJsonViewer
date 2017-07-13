@@ -1,2 +1,10 @@
-filter optimize
 reset filter
+
+UIMainLayout.tableWidgetDisableResizeToContents(form)
+tableWidgetFilters.resetFilter(form)
+
+UIMainLayout.tableWidgetContentsAutoSize(form)
+
+from filter_layout, main_layout to filter
+
+filter to thread
