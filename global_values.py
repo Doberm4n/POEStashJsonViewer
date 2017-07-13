@@ -32,7 +32,19 @@ class globalValues():
 
                           {'columnHeader' : 'PropertiesImplicitExplicit', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
 
-{'columnHeader' : 'pDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True}
+                          {'columnHeader' : 'DPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                           {'columnHeader' : 'eDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                           {'columnHeader' : 'pDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                            {'columnHeader' : 'fDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                             {'columnHeader' : 'lDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                             {'columnHeader' : 'cDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                              {'columnHeader' : 'ChDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True}
 
 
 
