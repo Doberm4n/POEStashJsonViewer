@@ -4,7 +4,7 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
 import operator
-#import ui.main_layout
+import ui.main_layout
 
 #import modules.tools as tools
 
@@ -55,6 +55,7 @@ def filterTable(form, filters):
         print filterValue
         print operand
         for j in range (form.tableWidget.rowCount()):
+            print "=======================================Row " + " ======================================="
             if form.tableWidget.isRowHidden(j) == True:
                 continue
             if form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]):
@@ -78,8 +79,10 @@ def filterTable(form, filters):
     print "Applied"
 
 def resetFilter(form):
+    ui.main_layout.tableWidgetDisableResizeToContents(form)
     for i in range (form.tableWidget.rowCount()):
-        if form.tableWidget.isRowHidden(i):
-            form.tableWidget.showRow(i)
+        print "=======================================Reset " + str(i) + " ======================================="
+        #if form.tableWidget.isRowHidden(i):
+        form.tableWidget.showRow(i)
 
 

@@ -59,6 +59,7 @@ def applyLayout(self):
     self.tableWidget.verticalHeader().setVisible(True)
     self.tableWidget.setSortingEnabled(True)
     self.tableWidget.setVisible(False)
+    self.tableWidget.setEnabled(False)
     #add defined columns with headers from global_values
     for columns in range (len(self.ig.columnsHeaders)):
         # if (not self.ig.jsonConfig['common']['calculateSpecifiedColumns']) and (self.ig.columnsHeaders[columns]['isCalc']):
@@ -69,6 +70,8 @@ def applyLayout(self):
         item = self.tableWidget.horizontalHeaderItem(columns)
 
     self.savedFiltersComboBox.currentIndexChanged.connect(lambda: loadAndApplyFilter(self))
+
+
     #self.savedFiltersComboBox.setMinimumWidth(700)
     # self.openGuidePushButton.setMaximumHeight(20)
     # self.savedFiltersComboBox.setMaximumHeight(18)
@@ -144,7 +147,7 @@ def tableWidgetSetColumnsSelected(form):
 
 def loadFiltersToSavedFiltersComboBox(form):
         form.savedFiltersComboBox.clear()
-        form.savedFiltersComboBox.addItem('No filters selected ')
+        form.savedFiltersComboBox.addItem('No filters selected')
         for file in os.listdir(form.ig.filtersDir):
             if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
                 print os.path.splitext(file)[0]
@@ -153,8 +156,10 @@ def loadFiltersToSavedFiltersComboBox(form):
 
             print ""
 
+
 def loadAndApplyFilter(form):
-    if (form.savedFiltersComboBox.currentText()) and (form.savedFiltersComboBox.currentText() != 'No saved filters'):
+    print "Checking currentIndex"
+    if (form.savedFiltersComboBox.currentText()) and (form.savedFiltersComboBox.currentText() != 'No filters selected'):
         filterJsonFileName = os.path.join(form.ig.filtersDir, unicode(form.savedFiltersComboBox.currentText()) + '.filter')
         if os.path.isfile(filterJsonFileName):
             print "Current text"

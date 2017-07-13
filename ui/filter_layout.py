@@ -143,7 +143,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
     def applyFilter(self, form):
         tableWidgetFilters.resetFilter(form)
         tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines())
-        #UIMainLayout.tableWidgetContentsAutoSize(form)
+        UIMainLayout.tableWidgetContentsAutoSize(form)
 
 
 

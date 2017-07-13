@@ -70,7 +70,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionAbout.triggered.connect(self.showAbout)
         self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
 
-        self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetSetResizeMode(self))
+        #self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetSetResizeMode(self))
+        self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
 
 
 
@@ -103,8 +104,14 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #
 
         #UIMainLayout.tableViewAutoSizeContents(self)
+
+
+
         UIMainLayout.tableWidgetSetResizeMode(self)
         UIMainLayout.tableWidgetSetColumnsSelected(self)
+
+
+
 
         UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
 
@@ -482,7 +489,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
-            for i in range (11):
+            for i in range (1000):
+                print "=======================================Stash " + str(i) + " ======================================="
             #add rows, number equal to items count in json
                 for rows in range (textLength):
                     self.tableWidget.insertRow(rows)
@@ -498,6 +506,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
             #self.tableWidgetSetResizeMode()
             self.tableWidget.setVisible(True)
+            self.tableWidget.setEnabled(True)
 
             #self.tableWidget.setColumnHidden()
             #self.tableWidget.setRowHidden(1, True)
