@@ -3,6 +3,9 @@ import operator
 import modules.tools as tools
 import os
 
+#form = None
+#t = None
+
 class globalValues():
     def __init__(self):
         #load config
