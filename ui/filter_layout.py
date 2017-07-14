@@ -13,7 +13,6 @@ import modules.tools as tools
 import modules.filter as tableWidgetFilters
 
 import ui.main_layout as UIMainLayout
-import modules.filter_thread as filterThread
 
 #import ui.main_layout as UIMainLayout
 
@@ -36,12 +35,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
 
         self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
-
-        #non threaded
-        #self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form))
-
-        #threaded
-        self.applyFilterPushButton.clicked.connect(lambda: self.applyFilterThreaded(form))
+        self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form))
 
         self.saveFilterPushButton.clicked.connect(lambda: self.saveFilter(form))
         self.loadFilterPushButton.clicked.connect(lambda: self.loadFilter(form))
@@ -147,30 +141,10 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         print ""
 
     def applyFilter(self, form):
-        filterLines = unicode(self.filterLinesTextEdit.toPlainText()).splitlines()
         UIMainLayout.tableWidgetDisableResizeToContents(form)
         tableWidgetFilters.resetFilter(form)
-        tableWidgetFilters.applyFilter(form, filterLines)
+        tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines())
         UIMainLayout.tableWidgetContentsAutoSize(form)
-
-    def applyFilterThreaded(self, form):
-        filterLines = unicode(self.filterLinesTextEdit.toPlainText()).splitlines()
-        print "filterLines: " + str(filterLines)
-        #form.filter_threadA = QtCore.QThread()
-
-
-        form.filter_threadA = filterThread.filterThread(form, filterLines, 0, 0 )
-        #print form.filter_threadA.resizeSignal.connect
-        # if form.filter_threadA.resizeSignal.connect:
-        # form.filter_threadA.resizeSignal.connect(UIMainLayout.tableWidgetContentsAutoSizeThreaded)
-        # form.filter_threadA.resizeSignal.disconnect()
-        form.filter_threadA.resizeSignal.connect(lambda: UIMainLayout.tableWidgetContentsAutoSizeThreaded(form))
-
-        form.filter_threadA.start()
-        # form.filter_threadB = filterThread.filterThread(form, filterLines, 0, 0 )
-        # form.filter_threadB.start()
-
-
 
 
 

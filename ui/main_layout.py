@@ -8,7 +8,6 @@ from PyQt4 import QtCore
 import os
 import modules.filter as tableWidgetFilters
 import modules.tools as tools
-import global_values
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -103,11 +102,6 @@ def tableWidgetContentsAutoSize(form):
     form.tableWidget.resizeRowsToContents()
     print "Auto sized"
 
-def tableWidgetContentsAutoSizeThreaded(form):
-    form.tableWidget.resizeColumnsToContents()
-    form.tableWidget.resizeRowsToContents()
-    print "Auto sized"
-
 
 def tableWidgetSetResizeMode(form):
 
@@ -126,21 +120,6 @@ def tableWidgetSetResizeMode(form):
         #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
 
 def tableWidgetDisableResizeToContents(form):
-    for i in range (form.tableWidget.columnCount()):
-        # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
-        # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
-        #      self.tableWidget.setColumnWidth(i, 27)
-        #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
-        #      continue
-        #print unicode(self.tableWidget.item(0,0).text())
-
-        form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.Fixed)
-    for j in range (form.tableWidget.rowCount()):
-    #print ""
-        form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.Fixed)
-        #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
-
-def tableWidgetDisableResizeToContentsThreaded(form, minValue, maxValue):
     for i in range (form.tableWidget.columnCount()):
         # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
         # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':

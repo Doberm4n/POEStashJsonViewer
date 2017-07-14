@@ -61,8 +61,6 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)
 
-        #self.isResizeEvent = False
-
         self.prepareGui()
 
         self.openGuidePushButton.clicked.connect(self.browseGuide)
@@ -119,10 +117,6 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         self.tableWidget.setEnabled(True)
 
-        #self.isResizeEvent = True
-
-        #global_values.t = None
-
         # tools.tableWidgetSetResizeMode(self)
 
         # self.setColumnsSelected(self.ig.jsonConfig)
@@ -153,10 +147,6 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #self.setSizePolicy(sizePolicy)
         #self.setWindowState(QtCore.Qt.WindowMaximized)
 
-    # def resizeEvent(self,event):
-    #     if not self.isResizeEvent:
-    #         print "resize event"
-    #         self.onQApplicationStarted()
 
     def setFixedColumnsWidth(self):
         for i in range (self.tableWidget.columnCount()):
@@ -634,22 +624,17 @@ class aboutDialog(QtGui.QDialog, GUIAbout.Ui_Dialog):
 
 
 def main():
-    #global form
     app = QtGui.QApplication(sys.argv)
     appIco = QtGui.QIcon()
     appIco.addFile(':todo-icon16.png', QtCore.QSize(16,16))
     appIco.addFile(':todo-icon32.png', QtCore.QSize(32,32))
     app.setWindowIcon(appIco)
     form = POEStashTabViewerApp()
-    #global_values.form = form
     form.showMaximized()
-    form.onQApplicationStarted()
     #form.setWindowState(QtCore.Qt.WindowMaximized)
-
     #timer check for autosize tableWidget rows and columns to contents when form load complete
-    #t = QtCore.QTimer()
-    #global_values.t.singleShot(0,form.onQApplicationStarted)
-
+    t = QtCore.QTimer()
+    t.singleShot(0,form.onQApplicationStarted)
     app.exec_()
 
 
