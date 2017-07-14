@@ -8,3 +8,17 @@ UIMainLayout.tableWidgetContentsAutoSize(form)
 from filter_layout, main_layout to filter
 
 filter to thread
+
+set fixed width for columns
+
+remove columns auto size
+
+reload filters comboBox in main when new filter saved
+
+add reset filter to menu and add hotkey
+
+form disable on filter
+
+add filter applying progress in status bar
+
+form enable after filter
