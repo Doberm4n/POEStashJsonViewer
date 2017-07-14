@@ -95,7 +95,7 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
 
         #form.tableWidget.updateGeometries()
         UIMainLayout.tableWidgetContentsAutoSize(form)
-        UIMainLayout.tableWidgetSetResizeMode(form)
+        #UIMainLayout.tableWidgetSetResizeMode(form)
 
         self.close()
 
