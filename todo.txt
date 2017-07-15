@@ -12,3 +12,45 @@ remove columns auto size
 form disable on filter
 
 form enable after filter
+
+Columns:
+
+Requirements:
+	Level,
+	Strength,
+	Dexterity,
+	Intelligence
+
+Calculated columns:
+
+Armour (not weapons)
+Evasion (not weapons)
+Shield (not weapons)
+Block
+
+Critical Strike Chance:  (weapons)
+
+# to Strength
+# to Dexterity
+# to Intelligence
+
+#% to all Elemental Resistances
+#% to Fire Resistance
+#% to Lightning Resistance
+#% to Cold Resistance
+#% to Chaos Resistance
+
+#% increased Global Critical Strike Chance
+#% to Global Critical Strike Multiplier
+#% increased Critical Strike Chance for Spells
+
+#% increased Cast Speed
+#% increased Spell Damage
+Adds # to # #### Damage to Spells
+
+# to maximum Life
+# to maximum Mana
+
+
+
+
