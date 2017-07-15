@@ -20,13 +20,16 @@ sub2 = "an arg"
 a = "i %s am a %s" % (sub1, sub2)
 
 a = '    2 '
-a = [1.1]
+a = [1]
 b = [2.1, 5.1]
 #print float(a)
 #print int(float(a))
-a = sub1.split(' ')
-a = a[0].split('!')
-print a
+#a = sub1.split(' ')
+#a = a[0].split('!')
+#a = 2
+#b = 7
+if a:
+	print sum(a)
 print sub1
 #print sum(a)
 print sum(b)

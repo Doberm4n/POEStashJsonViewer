@@ -49,7 +49,19 @@ class globalValues():
 
                                {'columnHeader' : 'APS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
 
-                               {'columnHeader' : 'csCh', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True}
+                               {'columnHeader' : 'csCh', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                               {'columnHeader' : 'resTotal', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'resAll', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'resF', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'resL', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'resC', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'resCh', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
 
 
 

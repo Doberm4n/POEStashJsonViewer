@@ -32,17 +32,17 @@ Evasion: (not weapons)
 Energy Shield: (not weapons)
 Chance to Block:
 
-Critical Strike Chance:  (weapons)
+// Critical Strike Chance:  (weapons)
 
 # to Strength
 # to Dexterity
 # to Intelligence
 
-#% to all Elemental Resistances
-#% to Fire Resistance
-#% to Lightning Resistance
-#% to Cold Resistance
-#% to Chaos Resistance
+// #% to all Elemental Resistances
+// #% to Fire Resistance
+// #% to Lightning Resistance
+// #% to Cold Resistance
+// #% to Chaos Resistance
 
 #% increased Global Critical Strike Chance
 #% to Global Critical Strike Multiplier
