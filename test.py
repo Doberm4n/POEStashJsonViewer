@@ -24,8 +24,11 @@ a = [1.1]
 b = [2.1, 5.1]
 #print float(a)
 #print int(float(a))
-
-print sum(a)
+a = sub1.split(' ')
+a = a[0].split('!')
+print a
+print sub1
+#print sum(a)
 print sum(b)
 
 #print a    # "i am a python string!"

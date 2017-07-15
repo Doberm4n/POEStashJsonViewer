@@ -20,7 +20,7 @@ import modules.items.items as items
 import modules.tools as tools
 from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitExplicit
 from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
-from modules.items.apS import setItemApS
+from modules.items.apScsCh import setItemApScsCh
 from modules.filter import resetFilter
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
@@ -477,8 +477,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(self, itemIndex, propertiesImplicitExplicitLines)
                 #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
 
-                #APS
-                setItemApS(self, itemIndex, propertiesImplicitExplicitLinesList)
+                #APS, Critical Strike Chance
+                setItemApScsCh(self, itemIndex, propertiesImplicitExplicitLinesList)
 
                 print ""
 

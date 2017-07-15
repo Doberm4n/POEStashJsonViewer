@@ -15,6 +15,8 @@ form enable after filter
 
 set fixed width for columns / add option to enable disable columns and row autosize
 
+check entered values types in filter_layout
+
 Columns:
 
 Requirements:
