@@ -45,7 +45,9 @@ class globalValues():
 
                              {'columnHeader' : 'cDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
 
-                              {'columnHeader' : 'ChDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True}
+                              {'columnHeader' : 'ChDPS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                               {'columnHeader' : 'APS', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True}
 
 
 

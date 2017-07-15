@@ -1,5 +1,3 @@
-reset filter
-
 UIMainLayout.tableWidgetDisableResizeToContents(form)
 tableWidgetFilters.resetFilter(form)
 

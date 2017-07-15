@@ -20,6 +20,7 @@ import modules.items.items as items
 import modules.tools as tools
 from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitExplicit
 from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
+from modules.items.apS import setItemApS
 from modules.filter import resetFilter
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
@@ -84,6 +85,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionSelect_columns.triggered.connect(self.showColumnsSelect)
 
         self.actionReset_filter.triggered.connect(self.resetFilter)
+
+
 
     def resetFilter(self):
         resetFilter(self)
@@ -468,9 +471,15 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             ###############################################################
             if self.ig.jsonConfig['common']['calculateSpecifiedColumns']:
                 propertiesImplicitExplicitLines = unicode(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
+                propertiesImplicitExplicitLinesList = propertiesImplicitExplicitLines.splitlines()
+
                 #dpsPdpsEdpsFdpsLdpsCdpsChDps
                 setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(self, itemIndex, propertiesImplicitExplicitLines)
                 #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
+
+                #APS
+                setItemApS(self, itemIndex, propertiesImplicitExplicitLinesList)
+
                 print ""
 
 
@@ -505,7 +514,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
-            for i in range (700):
+            for i in range (11):
                 print "=======================================Stash " + str(i) + " ======================================="
             #add rows, number equal to items count in json
                 for rows in range (textLength):

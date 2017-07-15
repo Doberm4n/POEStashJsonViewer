@@ -40,6 +40,8 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.saveFilterPushButton.clicked.connect(lambda: self.saveFilter(form))
         self.loadFilterPushButton.clicked.connect(lambda: self.loadFilter(form))
 
+        self.clearFilterPushButton.clicked.connect(self.clearFilterLinesTextEdit)
+
         #self.filtersDir = parentdir + '\\Filters'
 
         self.prepareGui(form)
