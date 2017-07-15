@@ -25,10 +25,10 @@ Requirements:
 
 Calculated columns:
 
-Armour (not weapons)
-Evasion (not weapons)
-Shield (not weapons)
-Block
+Armour: (not weapons)
+Evasion: (not weapons)
+Energy Shield: (not weapons)
+Chance to Block:
 
 Critical Strike Chance:  (weapons)
 
