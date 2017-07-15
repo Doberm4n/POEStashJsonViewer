@@ -51,6 +51,8 @@ Adds # to # #### Damage to Spells
 # to maximum Life
 # to maximum Mana
 
+Sockets groups
+
 
 
 
