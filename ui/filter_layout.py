@@ -109,6 +109,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             if filterFileName:
                 tools.writeJson(jsonData, filterFileName)
                 self.loadFiltersToSavedFiltersComboBox(form)
+                UIMainLayout.loadFiltersToSavedFiltersComboBox(form)
                 #writeConfigAndLoadGuide(self, filterFileName)
 
     def loadFilter(self, form):
@@ -141,10 +142,13 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         print ""
 
     def applyFilter(self, form):
+        form.statusbar.showMessage('Applying filter...')
         UIMainLayout.tableWidgetDisableResizeToContents(form)
         tableWidgetFilters.resetFilter(form)
         tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines())
         UIMainLayout.tableWidgetContentsAutoSize(form)
+        form.statusbar.showMessage('Filter applied')
+
 
 
 

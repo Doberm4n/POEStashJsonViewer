@@ -147,7 +147,7 @@ def tableWidgetSetColumnsSelected(form):
 
 def loadFiltersToSavedFiltersComboBox(form):
         form.savedFiltersComboBox.clear()
-        form.savedFiltersComboBox.addItem('No filters selected')
+        form.savedFiltersComboBox.addItem('Saved filter selection')
         for file in os.listdir(form.ig.filtersDir):
             if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
                 print os.path.splitext(file)[0]
@@ -159,7 +159,7 @@ def loadFiltersToSavedFiltersComboBox(form):
 
 def loadAndApplyFilter(form):
     print "Checking currentIndex"
-    if (form.savedFiltersComboBox.currentText()) and (form.savedFiltersComboBox.currentText() != 'No filters selected'):
+    if (form.savedFiltersComboBox.currentText()) and (form.savedFiltersComboBox.currentText() != 'Saved filter selection'):
         filterJsonFileName = os.path.join(form.ig.filtersDir, unicode(form.savedFiltersComboBox.currentText()) + '.filter')
         if os.path.isfile(filterJsonFileName):
             print "Current text"
@@ -168,7 +168,9 @@ def loadAndApplyFilter(form):
 
 
 def applyFilter(form, filterJsonData):
+    form.statusbar.showMessage('Applying filter...')
     tableWidgetDisableResizeToContents(form)
     tableWidgetFilters.resetFilter(form)
     tableWidgetFilters.applyFilter(form, filterJsonData['filter']['filterLines'])
     tableWidgetContentsAutoSize(form)
+    form.statusbar.showMessage('Filter applied')

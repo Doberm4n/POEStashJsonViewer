@@ -20,6 +20,7 @@ import modules.items.items as items
 import modules.tools as tools
 from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitExplicit
 from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
+from modules.filter import resetFilter
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -82,6 +83,13 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionEdit_filter.triggered.connect(self.showFilter)
         self.actionSelect_columns.triggered.connect(self.showColumnsSelect)
 
+        self.actionReset_filter.triggered.connect(self.resetFilter)
+
+    def resetFilter(self):
+        resetFilter(self)
+        self.savedFiltersComboBox.setCurrentIndex(0)
+        UIMainLayout.tableWidgetContentsAutoSize(self)
+
     #close filter form when main closed
     def closeEvent(self, evnt):
         if self.formFilter:
@@ -106,9 +114,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #UIMainLayout.tableViewAutoSizeContents(self)
 
 
-
+        self.statusbar.showMessage('Please wait...')
         UIMainLayout.tableWidgetSetResizeMode(self)
         UIMainLayout.tableWidgetSetColumnsSelected(self)
+
 
 
 
@@ -116,6 +125,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
 
         self.tableWidget.setEnabled(True)
+
+        self.statusbar.showMessage('Loaded')
+        print "Started"
 
         # tools.tableWidgetSetResizeMode(self)
 
@@ -370,6 +382,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionEdit_filter.setShortcut("F3")
         self.actionSelect_columns.setShortcut("F2")
 
+        self.actionReset_filter.setShortcut("F7")
+
     # def clearButtons(self):
     #     for tabs in range (10):
     #             for widget in self.groupBoxes_original[tabs].children():
@@ -491,7 +505,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
-            for i in range (11):
+            for i in range (700):
                 print "=======================================Stash " + str(i) + " ======================================="
             #add rows, number equal to items count in json
                 for rows in range (textLength):

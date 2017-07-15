@@ -114,6 +114,8 @@ class Ui_MainWindow(object):
         self.actionEdit_filter.setObjectName(_fromUtf8("actionEdit_filter"))
         self.actionSelect_columns = QtGui.QAction(MainWindow)
         self.actionSelect_columns.setObjectName(_fromUtf8("actionSelect_columns"))
+        self.actionReset_filter = QtGui.QAction(MainWindow)
+        self.actionReset_filter.setObjectName(_fromUtf8("actionReset_filter"))
         self.menuReset_progress.addAction(self.actionReset_All)
         self.menuComplete_progress.addAction(self.actionComplete_All)
         self.menuGuide.addAction(self.menuActionOpen)
@@ -122,6 +124,7 @@ class Ui_MainWindow(object):
         self.menuHelp.addAction(self.actionAbout)
         self.menuTools.addAction(self.actionCreate_empty_guide_file)
         self.menuFilter.addAction(self.actionEdit_filter)
+        self.menuFilter.addAction(self.actionReset_filter)
         self.menuView.addAction(self.actionSelect_columns)
         self.menubar.addAction(self.menuGuide.menuAction())
         self.menubar.addAction(self.menuView.menuAction())
@@ -163,4 +166,5 @@ class Ui_MainWindow(object):
         self.actionComplete_All.setText(_translate("MainWindow", "Complete all", None))
         self.actionEdit_filter.setText(_translate("MainWindow", "Edit filter", None))
         self.actionSelect_columns.setText(_translate("MainWindow", "Select columns", None))
+        self.actionReset_filter.setText(_translate("MainWindow", "Reset filter", None))
 

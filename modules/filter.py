@@ -79,9 +79,11 @@ def filterTable(form, filters):
     print "Applied"
 
 def resetFilter(form):
+    form.statusbar.showMessage('Reset filter...')
     for i in range (form.tableWidget.rowCount()):
         print "=======================================Reset " + str(i) + " ======================================="
         #if form.tableWidget.isRowHidden(i):
         form.tableWidget.showRow(i)
+    form.statusbar.showMessage('Filter reset complete')
 
 

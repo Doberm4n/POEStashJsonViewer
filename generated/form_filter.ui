@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>497</width>
-    <height>409</height>
+    <height>404</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -104,7 +104,7 @@
    <property name="geometry">
     <rect>
      <x>245</x>
-     <y>375</y>
+     <y>370</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -117,7 +117,7 @@
    <property name="geometry">
     <rect>
      <x>415</x>
-     <y>375</y>
+     <y>370</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -143,7 +143,7 @@
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>376</width>
+      <width>381</width>
       <height>22</height>
      </rect>
     </property>
@@ -166,7 +166,7 @@
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>375</y>
+     <y>370</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -175,17 +175,17 @@
     <string>Save</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="resetFilterPushButton">
+  <widget class="QPushButton" name="clearFilterPushButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>375</y>
+     <x>5</x>
+     <y>370</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Reset filters</string>
+    <string>Clear</string>
    </property>
   </widget>
  </widget>

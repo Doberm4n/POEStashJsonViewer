@@ -117,6 +117,7 @@
      <string>Filter</string>
     </property>
     <addaction name="actionEdit_filter"/>
+    <addaction name="actionReset_filter"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -219,6 +220,11 @@
   <action name="actionSelect_columns">
    <property name="text">
     <string>Select columns</string>
+   </property>
+  </action>
+  <action name="actionReset_filter">
+   <property name="text">
+    <string>Reset filter</string>
    </property>
   </action>
  </widget>
