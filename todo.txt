@@ -5,13 +5,15 @@ UIMainLayout.tableWidgetContentsAutoSize(form)
 
 from filter_layout, main_layout to filter
 
-set fixed width for columns
+
 
 remove columns auto size
 
 form disable on filter
 
 form enable after filter
+
+set fixed width for columns / add option to enable disable columns and row autosize
 
 Columns:
 
