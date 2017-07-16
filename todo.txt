@@ -29,10 +29,10 @@ Requirements:
 
 Calculated columns:
 
-Armour: (not weapons)
-Evasion: (not weapons)
-Energy Shield: (not weapons)
-Chance to Block:
+// Armour: (not weapons)
+// Evasion: (not weapons)
+// Energy Shield: (not weapons)
+// Chance to Block:
 
 // Critical Strike Chance:  (weapons)
 
@@ -56,10 +56,20 @@ Chance to Block:
 #% increased Spell Damage
 Adds # to # #### Damage to Spells
 
-# to maximum Life
-# to maximum Mana
+// # to maximum Life
+// # to maximum Mana
 
-Sockets groups
+Location (character / Stash Tab) (non calculated)
+
+Stack Quantity (non calculated)
+
+Sockets groups (non calculated)
+
+Load multiple json
+
+Export to single json (arrayRow[arrayColumns[], ...]) for faster load
+
+Load single json
 
 Adds
 
