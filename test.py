@@ -13,6 +13,7 @@ import os
 from json import load
 from json import loads
 import json
+import operator
 
 sub1 = "python string!"
 sub2 = "an arg"
@@ -36,6 +37,15 @@ print sum(b)
 
 if ('p' in sub1) and not('z' in sub1) and ('t' in sub1):
     print 'find'
+
+a = '1'
+b = a
+if a:
+    print a
+print a.find('')
+if not a:
+    print "find"
+
 
 # patternStringFire = 'Adds\s\d+\s+to\s\d+\s+Fire Damage'
 # pattern = re.compile(pattern)

@@ -46,8 +46,10 @@ def filterTable(form, filters):
         columnHeader = filters['filters'][i]['columnHeader']
         filterType = filters['filters'][i]['filterType']
         filterValue = filters['filters'][i]['filterValue']
-
         operand = filters['filters'][i]['operand']
+
+        if not filterValue:
+            continue
 
         #print unicode(form.tableWidget.item(0, form.ig.columnNameToIndex[columnHeader]).text())
         print columnHeader
@@ -62,17 +64,21 @@ def filterTable(form, filters):
                 itemValue = form.tableWidget.item(j, form.ig.columnNameToIndex[columnHeader]).text()
             else:
                 itemValue = ''
-            #if not itemValue:
-            if (filterType == 'String') and (filters['filters'][i]['operand'] == operator.contains):
+
+            if not itemValue:
+                form.tableWidget.hideRow(j)
+                continue
+
+            if (filterType == 'String') and (operand == operator.contains):
                 if (not operand(unicode(itemValue).lower(), filterValue.lower())):
                     form.tableWidget.hideRow(j)
             elif (filterType == 'String'):
                     if (not operand(unicode(itemValue), filterValue)):
                         form.tableWidget.hideRow(j)
             else:
-                if not itemValue:
-                    form.tableWidget.hideRow(j)
-                else:
+                # if not itemValue:
+                #     form.tableWidget.hideRow(j)
+                # else:
                     filterValue = float(filterValue)
                     if (not operand(float(itemValue), filterValue)):
                         form.tableWidget.hideRow(j)
