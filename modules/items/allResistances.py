@@ -6,8 +6,8 @@ def setItemResistances(form, itemIndex, dataPropertiesImplicitExplicitLines, dat
         #if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
         if dataPropertiesImplicitExplicitLines.find('Resistance') >= 0:
             temp = dataPropertiesImplicitExplicitLinesList
-            data = []
-            dataTotal = ''
+            #data = []
+            #dataTotal = ''
             dataAll = []
             dataF = []
             dataL = []
@@ -21,19 +21,19 @@ def setItemResistances(form, itemIndex, dataPropertiesImplicitExplicitLines, dat
             valueCh = 0
 
             for i in range (len(temp)):
-                if (temp[i].find('Fire') >= 0) and (temp[i].find('Resistance') >= 0):
+                if ('% to' in temp[i]) and ('Fire' in temp[i]) and ('Resistance' in temp[i]):
                     dataF.append(int(temp[i].split('%')[0]))
 
-                if (temp[i].find('Lightning') >= 0) and (temp[i].find('Resistance') >= 0):
+                if ('% to' in temp[i]) and ('Lightning' in temp[i]) and ('Resistance' in temp[i]):
                     dataL.append(int(temp[i].split('%')[0]))
 
-                if (temp[i].find('Cold') >= 0) and (temp[i].find('Resistance') >= 0):
+                if ('% to' in temp[i]) and ('Cold' in temp[i]) and ('Resistance' in temp[i]):
                     dataC.append(int(temp[i].split('%')[0]))
 
-                if (temp[i].find('Chaos') >= 0) and (temp[i].find('Resistance') >= 0):
+                if ('% to' in temp[i]) and ('Chaos' in temp[i]) and ('Resistance' in temp[i]):
                     dataCh.append(int(temp[i].split('%')[0]))
 
-                elif temp[i].find('% to all Elemental Resistances') >= 0:
+                elif ('% to all Elemental Resistances' in temp[i]):
                     dataAll.append(int(temp[i].split('%')[0]))
 
 

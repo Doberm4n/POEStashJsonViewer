@@ -38,6 +38,7 @@ Chance to Block:
 # to Dexterity
 # to Intelligence
 
+
 // #% to all Elemental Resistances
 // #% to Fire Resistance
 // #% to Lightning Resistance

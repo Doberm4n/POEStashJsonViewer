@@ -29,9 +29,15 @@ b = [2.1, 5.1]
 #a = 2
 #b = 7
 if a:
-	print sum(a)
+    print sum(a)
 print sub1
 #print sum(a)
 print sum(b)
+
+if ('p' in sub1) and ('z' in sub1) and ('t' in sub1):
+    print 'find'
+
+# patternStringFire = 'Adds\s\d+\s+to\s\d+\s+Fire Damage'
+# pattern = re.compile(pattern)
 
 #print a    # "i am a python string!"

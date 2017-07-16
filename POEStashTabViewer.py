@@ -481,7 +481,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #APS, Critical Strike Chance
                 setItemApScsCh(self, itemIndex, propertiesImplicitExplicitLinesList)
 
-                #all resistances, values for Fire, Lightning, Cold resistances includes value from '% to all elemental resistances' modifier
+                #all resistances (resTotal, resAll, resF, resL, resC, resCh), values for Fire, Lightning, Cold resistances includes value from '% to all elemental resistances' modifier
                 setItemResistances(self, itemIndex, propertiesImplicitExplicitLines, propertiesImplicitExplicitLinesList)
                 print ""
 

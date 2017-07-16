@@ -1836,14 +1836,14 @@
         }
       ],
       "implicitMods": [
-        "+88% to Fire and Lightning Resistances"
+        "+1 to Strength and Dexterity"
       ],
       "explicitMods": [
-        "Socketed Gems have Elemental Equilibrium",
-        "Socketed Gems have 25% reduced Elemental Equilibrium effect",
-        "+20% to all Elemental Resistances",
+        "+5 to all Attributes",
+        "+1 to Dexterity",
+        "+100 to Level of Socketed Strength Gems",
         "+88% to Fire Resistance when Socketed with a Red Gem",
-        "+80% to Cold Resistance when Socketed with a Green Gem",
+        "Damage Penetrates 80% Cold Resistance",
         "+95% to Lightning Resistance when Socketed with a Blue Gem",
         "All Sockets are White"
       ],
