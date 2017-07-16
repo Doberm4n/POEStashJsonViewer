@@ -93,7 +93,7 @@ class globalValues():
             self.columnNameToIndex[self.columnsHeaders[i]['columnHeader']] = i
         print self.columnNameToIndex
 
-        self.rarity = ['Normal', 'Magic', 'Rare', 'Unique']
+        self.rarity = ['Normal', 'Magic', 'Rare', 'Unique', 'Gem', 'Currency']
 
         self.itemTypes = [
                         'Flask', #Flasks
@@ -115,7 +115,10 @@ class globalValues():
                           {'typeName' : 'Body Armour', 'items' : ['BodyArmour']}, #BodyArmours
                           {'typeName' : 'Helmet', 'items' : ['Helmet']}, #Helmets
                           {'typeName' : 'Amulet', 'items' : ['Amulet']}, #Amulets
-                          {'typeName' : 'Ring', 'items' : ['Ring']} #Rings
+                          {'typeName' : 'Ring', 'items' : ['Ring']}, #Rings
+                          {'typeName' : 'Gem', 'items' : ['Gems']}, #Gems
+                          {'typeName' : 'Currency', 'items' : ['Currency']}, #Currency
+                          {'typeName' : 'Jewel', 'items' : ['Jewels']} #Jewels
                          ]
 
                         # 'One Handed Mace', 'Two Handed Mace',
