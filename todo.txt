@@ -69,6 +69,8 @@ Load multiple json
 
 Export to single json (arrayRow[arrayColumns[], ...]) for faster load
 
+// Export to csv
+
 Load single json
 
 Select all / Unselect all in columns select
