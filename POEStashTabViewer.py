@@ -333,7 +333,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
                 #self.setColumnsSelected(self.ig.jsonConfig)
 
-                self.loadGuide(self.curGuide)
+                #self.loadGuide(self.curGuide)
                 # self.tabWidget.update()
                 # self.tableWidget.resizeColumnsToContents()
                 # self.tableWidget.resizeRowsToContents()
@@ -372,12 +372,14 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #clear rows
             self.tableWidget.setVisible(False)
             self.tableWidget.setRowCount(0)
+            UIMainLayout.tableWidgetDisableResizeToContents(self)
             #self.showAllColumns()
             self.loadGuide(self.curGuide)
 
             # self.tableWidgetSetResizeMode()
             # self.setColumnsSelected(self.ig.jsonConfig)
-            UIMainLayout.tableWidgetSetResizeMode(self)
+            #UIMainLayout.tableWidgetSetResizeMode(self)
+            UIMainLayout.tableWidgetContentsAutoSize(self)
             UIMainLayout.tableWidgetSetColumnsSelected(self)
 
 
@@ -542,6 +544,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #self.tableWidget.setVisible(False)
 
                 #add defined columns
+            if not self.stashTabJson.has_key('items'):
+                self.statusbar.showMessage('Wrong json file')
+                return
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)

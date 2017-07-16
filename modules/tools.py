@@ -15,18 +15,18 @@ def readJson(json_file):
 
 def writeJson(dump, json_file):
     if json_file:
-        try:
+        #try:
             #print ""
             with open(json_file, 'w') as outfile:
                     json.dump(dump, outfile)
-        except Exception, e:
-             print "Error: " + str(e)
+        #except Exception, e:
+             #print "Error: " + str(e)
 
 def getJsonFileName():
     return QtGui.QFileDialog.getSaveFileName(None, 'Save to .json', directory=os.getcwd(), filter='*.json')
 
-def openJsonFileName():
-    return QtGui.QFileDialog.getOpenFileName(None, "Select json", directory=os.getcwd(), filter='*.json')
+def openJsonFileName(directoryName):
+    return unicode(QtGui.QFileDialog.getOpenFileName(None, "Select json", directory=directoryName, filter='*.json'))
 
 
 # def tableWidgetSetResizeMode(form):

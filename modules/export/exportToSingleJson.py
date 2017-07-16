@@ -28,4 +28,4 @@ def exportToSingleJson(form):
                         jsonData['rows'][i].append(unicode(itemValue.text()))
                     else:
                         jsonData['rows'][i].append('')
-                tools.writeJson(jsonData, fileName)
+        tools.writeJson(jsonData, fileName)
