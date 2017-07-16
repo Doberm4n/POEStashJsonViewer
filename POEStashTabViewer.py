@@ -22,6 +22,7 @@ from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitEx
 from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
 from modules.items.apScsCh import setItemApScsCh
 from modules.items.allResistances import setItemResistances
+from modules.items.allAttributes import setItemAttributes
 from modules.filter import resetFilter
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
@@ -481,8 +482,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #APS, Critical Strike Chance
                 setItemApScsCh(self, itemIndex, propertiesImplicitExplicitLinesList)
 
-                #all resistances (resTotal, resAll, resF, resL, resC, resCh), values for Fire, Lightning, Cold resistances includes value from '% to all elemental resistances' modifier
+                #all Resistances (resTotal, resAll, resF, resL, resC, resCh), values for Fire, Lightning, Cold resistances includes value from '% to all elemental resistances' modifier
                 setItemResistances(self, itemIndex, propertiesImplicitExplicitLines, propertiesImplicitExplicitLinesList)
+
+                #all Attributes (toAttrTotal, toStr, toDex, toInt), values for Str, Dex, Int attributes includes value from 'to all Attributes' modifier
+                setItemAttributes(self, itemIndex, propertiesImplicitExplicitLinesList)
                 print ""
 
 

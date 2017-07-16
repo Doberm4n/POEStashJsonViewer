@@ -61,9 +61,15 @@ class globalValues():
 
                                {'columnHeader' : 'resC', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
 
-                               {'columnHeader' : 'resCh', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
+                               {'columnHeader' : 'resCh', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
 
+                               {'columnHeader' : 'toAttrTotal', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
 
+                               {'columnHeader' : 'toStr', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'toDex', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'toInt', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
 
 
                           ]

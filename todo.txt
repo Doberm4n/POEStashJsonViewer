@@ -17,6 +17,8 @@ set fixed width for columns / add option to enable disable columns and row autos
 
 check entered values types in filter_layout
 
+change first digit operand for > instead of <
+
 Columns:
 
 Requirements:
@@ -34,9 +36,10 @@ Chance to Block:
 
 // Critical Strike Chance:  (weapons)
 
-# to Strength
-# to Dexterity
-# to Intelligence
+// # to all Attributes
+// # to Strength
+// # to Dexterity
+// # to Intelligence
 
 
 // #% to all Elemental Resistances
