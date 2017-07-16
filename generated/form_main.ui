@@ -97,6 +97,7 @@
      <addaction name="actionComplete_All"/>
     </widget>
     <addaction name="menuActionOpen"/>
+    <addaction name="actionOpen_single_json"/>
     <addaction name="menuReset_progress"/>
     <addaction name="menuComplete_progress"/>
    </widget>
@@ -115,6 +116,7 @@
       <string>Export to</string>
      </property>
      <addaction name="actionCsv"/>
+     <addaction name="actionSingle_json"/>
     </widget>
     <addaction name="actionCreate_empty_guide_file"/>
     <addaction name="menuExport_to"/>
@@ -237,6 +239,16 @@
   <action name="actionCsv">
    <property name="text">
     <string>csv</string>
+   </property>
+  </action>
+  <action name="actionSingle_json">
+   <property name="text">
+    <string>single json</string>
+   </property>
+  </action>
+  <action name="actionOpen_single_json">
+   <property name="text">
+    <string>Open single json</string>
    </property>
   </action>
  </widget>

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 from PyQt4 import QtGui
 from json import load
 from json import loads
@@ -21,17 +22,25 @@ def writeJson(dump, json_file):
         except Exception, e:
              print "Error: " + str(e)
 
-def tableWidgetSetResizeMode(form):
+def getJsonFileName():
+    return QtGui.QFileDialog.getSaveFileName(None, 'Save to .json', directory=os.getcwd(), filter='*.json')
 
-        for i in range (form.tableWidget.columnCount()):
-            # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
-            # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
-            #      self.tableWidget.setColumnWidth(i, 27)
-            #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
-            #      continue
-            #print unicode(self.tableWidget.item(0,0).text())
+def openJsonFileName():
+    return QtGui.QFileDialog.getOpenFileName(None, "Select json", directory=os.getcwd(), filter='*.json')
 
-            form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
-        for j in range (form.tableWidget.rowCount()):
-        #print ""
-            form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+
+# def tableWidgetSetResizeMode(form):
+
+#         for i in range (form.tableWidget.columnCount()):
+#             # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
+#             # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
+#             #      self.tableWidget.setColumnWidth(i, 27)
+#             #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
+#             #      continue
+#             #print unicode(self.tableWidget.item(0,0).text())
+
+#             form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
+#         for j in range (form.tableWidget.rowCount()):
+#         #print ""
+#             form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+

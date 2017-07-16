@@ -26,6 +26,8 @@ from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
 from modules.items.armEvEsChtb import setItemArmEvEsChtb
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
+import modules.export.exportToSingleJson as exportToSingleJson
+import modules.openSingleJson as openSingleJson
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -91,6 +93,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionReset_filter.triggered.connect(self.resetFilter)
 
         self.actionCsv.triggered.connect(lambda: exportToCsv.exportToCsv(self))
+
+        self.actionSingle_json.triggered.connect(lambda: exportToSingleJson.exportToSingleJson(self))
+
+        self.actionOpen_single_json.triggered.connect(lambda: openSingleJson.openSingleJson(self))
 
 
 
