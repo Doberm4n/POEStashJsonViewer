@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#from __future__ import division
+from __future__ import division
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 from PyQt4.QtGui import QDesktopServices
@@ -38,13 +38,15 @@ print sum(b)
 if ('p' in sub1) and not('z' in sub1) and ('t' in sub1):
     print 'find'
 
-a = '1'
-b = a
+a = 1
+b = a / 2
 if a:
     print a
-print a.find('')
+#print a.find('')
 if not a:
     print "find"
+b = 'find'
+print b.split('f')[1].split('d')[0]
 
 
 # patternStringFire = 'Adds\s\d+\s+to\s\d+\s+Fire Damage'

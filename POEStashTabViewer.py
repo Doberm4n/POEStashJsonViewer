@@ -22,7 +22,8 @@ from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitEx
 from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
 from modules.items.apScsCh import setItemApScsCh
 from modules.items.allResistances import setItemResistances
-from modules.items.allAttributes import setItemAttributes
+from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
+from modules.items.armEvEsChtb import setItemArmEvEsChtb
 from modules.filter import resetFilter
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
@@ -472,8 +473,20 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             # Calculated columns
             ###############################################################
             if self.ig.jsonConfig['common']['calculateSpecifiedColumns']:
+
+                #get required values
                 propertiesImplicitExplicitLines = unicode(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
                 propertiesImplicitExplicitLinesList = propertiesImplicitExplicitLines.splitlines()
+
+                # if self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['toStr']):
+                #     strengthValue = int(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['toStr']).text())
+                # if self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['toDex']):
+                #     strengthValue = int(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['toDex']).text())
+
+            #     if not strengthValue:
+            #     strengthValue = 0
+            # if not intelligenceValue:
+            #     intelligenceValue = 0
 
                 #dpsPdpsEdpsFdpsLdpsCdpsChDps
                 setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(self, itemIndex, propertiesImplicitExplicitLines)
@@ -486,7 +499,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 setItemResistances(self, itemIndex, propertiesImplicitExplicitLines, propertiesImplicitExplicitLinesList)
 
                 #all Attributes (toAttrTotal, toStr, toDex, toInt), values for Str, Dex, Int attributes includes value from 'to all Attributes' modifier
-                setItemAttributes(self, itemIndex, propertiesImplicitExplicitLinesList)
+                setItemAttributesLifeMana(self, itemIndex, propertiesImplicitExplicitLinesList)
+
+                setItemArmEvEsChtb(self, itemIndex, propertiesImplicitExplicitLinesList)
                 print ""
 
 

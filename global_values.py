@@ -69,7 +69,19 @@ class globalValues():
 
                                {'columnHeader' : 'toDex', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
 
-                               {'columnHeader' : 'toInt', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
+                               {'columnHeader' : 'toInt', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'toMaxLife', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                               {'columnHeader' : 'toMaxMana', 'jsonName' : 'None'  , 'type' : 'Float', 'isCalc' : True},
+
+                               {'columnHeader' : 'Arm', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'Ev', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'ES', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                               {'columnHeader' : 'ChtB', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
 
 
                           ]
