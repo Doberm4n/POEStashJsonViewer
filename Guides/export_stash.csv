@@ -1,0 +1,1794 @@
+Name,Type,iLvl,Rarity,Quality,Properties,Implicit Modifiers,Explicit Modifiers,PropertiesImplicitExplicit,DPS,eDPS,pDPS,fDPS,lDPS,cDPS,ChDPS,APS,csCh,resTotal,resAll,resF,resL,resC,resCh,toAttrTotal,toStr,toDex,toInt,toMaxLife,toMaxMana,Arm,Ev,ES,ChtB
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,"Evasion Rating: 17
+Energy Shield: 30",,"Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,
+Crystal Ore Map,Map,63,Normal,,Map Tier: 1,,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+Rock Breaker,"One Handed Mace
+(1H Weapon)",57,Normal,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+Physical Damage: 37-69
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.15
+Weapon Range: 9
+
+15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,13% increased Rarity of Items found,"Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating","13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,
+"Sundance
+Clasped Boots",Boots,57,Unique,,"Evasion Rating: 79
+Energy Shield: 13",,"10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed","Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,
+Superior Ambush Mitts,Gloves,61,Normal,5,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54",,"+1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block","Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges",,"25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect","Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,Has 1 Socket,"+20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White","Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,+1 to Strength and Dexterity,"+5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11","+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,

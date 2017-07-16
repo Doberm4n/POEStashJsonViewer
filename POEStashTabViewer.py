@@ -25,6 +25,7 @@ from modules.items.allResistances import setItemResistances
 from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
 from modules.items.armEvEsChtb import setItemArmEvEsChtb
 from modules.filter import resetFilter
+import modules.export.exportToCsv as exportToCsv
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -88,6 +89,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionSelect_columns.triggered.connect(self.showColumnsSelect)
 
         self.actionReset_filter.triggered.connect(self.resetFilter)
+
+        self.actionCsv.triggered.connect(lambda: exportToCsv.exportToCsv(self))
 
 
 

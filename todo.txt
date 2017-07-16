@@ -71,6 +71,8 @@ Export to single json (arrayRow[arrayColumns[], ...]) for faster load
 
 Load single json
 
+Select all / Unselect all in columns select
+
 Adds
 
 and other

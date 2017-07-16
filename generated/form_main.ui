@@ -110,7 +110,14 @@
     <property name="title">
      <string>Tools</string>
     </property>
+    <widget class="QMenu" name="menuExport_to">
+     <property name="title">
+      <string>Export to</string>
+     </property>
+     <addaction name="actionCsv"/>
+    </widget>
     <addaction name="actionCreate_empty_guide_file"/>
+    <addaction name="menuExport_to"/>
    </widget>
    <widget class="QMenu" name="menuFilter">
     <property name="title">
@@ -225,6 +232,11 @@
   <action name="actionReset_filter">
    <property name="text">
     <string>Reset filter</string>
+   </property>
+  </action>
+  <action name="actionCsv">
+   <property name="text">
+    <string>csv</string>
    </property>
   </action>
  </widget>
