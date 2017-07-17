@@ -10,7 +10,7 @@ class globalValues():
 
         self.columnsHeaders = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'String', 'isCalc' : False},
 
-                             {'columnHeader' : 'Type', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : None},
+                             {'columnHeader' : 'Type', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
 
                            #{'columnHeader' : 'Type', 'jsonName' : 'typeLine'  , 'type' : 'str', 'isCalc' : False},
 
@@ -19,6 +19,14 @@ class globalValues():
                            {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'String', 'isCalc' : False},
 
                            {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'Integer', 'isCalc' : False},
+
+                            {'columnHeader' : 'rLvl', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                             {'columnHeader' : 'rStr', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                              {'columnHeader' : 'rDex', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                               {'columnHeader' : 'rInt', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
 
                           # {'columnHeader' : 'Sockets', 'jsonName' : 'sockets'  , 'type' : 'str', 'isCalc' : False}
 

@@ -24,6 +24,7 @@ from modules.items.apScsCh import setItemApScsCh
 from modules.items.allResistances import setItemResistances
 from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
 from modules.items.armEvEsChtbGcscGcsmCscfsCspSpd import setItemArmEvEsChtbGcscGcsmCscfsCspSpd
+from modules.items.allRequirements import setItemRequirements
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
@@ -469,6 +470,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #Quality
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QtGui.QTableWidgetItem(items.setItemQuality(self, itemIndex)))
 
+            #Requirements
+            setItemRequirements(self, itemIndex)
+
             #Properties
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Properties'], QtGui.QTableWidgetItem(items.setItemProperties(self, itemIndex)))
 
@@ -516,6 +520,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #all Attributes (toAttrTotal, toStr, toDex, toInt), values for Str, Dex, Int attributes includes value from 'to all Attributes' modifier
                 setItemAttributesLifeMana(self, itemIndex, propertiesImplicitExplicitLinesList)
 
+                #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
                 setItemArmEvEsChtbGcscGcsmCscfsCspSpd(self, itemIndex, propertiesImplicitExplicitLinesList)
                 print ""
 

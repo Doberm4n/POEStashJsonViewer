@@ -173,6 +173,9 @@ def setItemExplicitModifiers(self, itemIndex):
 
 
 
+
+
+
         # dataName = unicode(self.stashJson[0]['items'][itemIndex]['name'])
         # dataName = self.cleanString(dataName, '>')
         # typeLine = unicode(self.stashJson[0]['items'][itemIndex]['typeLine'])
