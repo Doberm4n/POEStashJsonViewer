@@ -20,6 +20,8 @@ class globalValues():
 
                            {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'Integer', 'isCalc' : False},
 
+                           {'columnHeader' : 'Qty', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
                            {'columnHeader' : 'Sockets', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
 
                            {'columnHeader' : 'Linked', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},

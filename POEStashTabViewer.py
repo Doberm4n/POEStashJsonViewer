@@ -23,7 +23,7 @@ from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdp
 from modules.items.apScsCh import setItemApScsCh
 from modules.items.allResistances import setItemResistances
 from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
-from modules.items.armEvEsChtbGcscGcsmCscfsCspSpd import setItemArmEvEsChtbGcscGcsmCscfsCspSpd
+from modules.items.armEvEsChtbGcscGcsmCscfsCspSpdQty import setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty
 from modules.items.allRequirements import setItemRequirements
 from modules.items.allSockets import setItemSockets
 from modules.filter import resetFilter
@@ -522,7 +522,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 setItemAttributesLifeMana(self, itemIndex, propertiesImplicitExplicitLinesList)
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
-                setItemArmEvEsChtbGcscGcsmCscfsCspSpd(self, itemIndex, propertiesImplicitExplicitLinesList)
+                setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(self, itemIndex, propertiesImplicitExplicitLinesList)
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
                 setItemSockets(self, itemIndex)
@@ -563,7 +563,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
-            for i in range (11):
+            for i in range (700):
                 print "=======================================Stash " + str(i) + " ======================================="
             #add rows, number equal to items count in json
                 for rows in range (textLength):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
 
-def setItemArmEvEsChtbGcscGcsmCscfsCspSpd(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
+def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
     if dataPropertiesImplicitExplicitLinesList:
         #if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
         #if dataPropertiesImplicitExplicitLines.find('Resistance') >= 0:
@@ -31,6 +31,8 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpd(form, itemIndex, dataPropertiesImplici
         valueCscfs = 0
         valueCsp = 0
         valueSpd = 0
+
+        valueStackQuantity = ''
 
 
         for i in range (len(temp)):
@@ -71,6 +73,10 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpd(form, itemIndex, dataPropertiesImplici
                     dataSpd.append(int(temp[i].split('%')[0]))
                     continue
 
+            if 'Stack Size' in temp[i]:
+                valueStackQuantity = temp[i].split(':')[1].split('/')[0]
+
+
 
 
 
@@ -104,6 +110,8 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpd(form, itemIndex, dataPropertiesImplici
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['CscfS'], QtGui.QTableWidgetItem(str(valueCscfs)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Csp'], QtGui.QTableWidgetItem(str(valueCsp)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['SpD'], QtGui.QTableWidgetItem(str(valueSpd)))
+
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Qty'], QtGui.QTableWidgetItem(str(valueStackQuantity)))
         # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resC'], QtGui.QTableWidgetItem(str(valueC)))
         # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resCh'], QtGui.QTableWidgetItem(str(valueCh)))
         #form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['csCh'], QtGui.QTableWidgetItem(str(dataCsCh[0])))

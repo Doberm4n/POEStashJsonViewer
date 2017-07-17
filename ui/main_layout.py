@@ -98,10 +98,39 @@ def applyLayout(self):
     #self.tableWidget.resizeRowsToContents()
 
 def tableWidgetContentsAutoSize(form):
+    #print form.tableWidget.itemAt(1, 1)
+    #print form.tableWidget.columnAt(0)
+    #print form.tableWidget.visualColumn(0)#.text()
+    #print form.tableWidget.rowAt(0)
+    #print form.tableWidget.indexAt(form.tableWidget.rect.topLeft())
+
+    #if (form.tableWidget.rowCount() > 0) and (form.tableWidget.columnCount() > 0):
+        #form.tableWidget.scrollToItem(form.tableWidget.item(form.tableWidget.itemAt(0, 0).row(), 0))
+        #form.tableWidget.scrollToItem(form.tableWidget.item(0, 1))
+
+
+
+    scrollToTopLeftItem(form)
     form.tableWidget.resizeColumnsToContents()
     form.tableWidget.resizeRowsToContents()
     print "Auto sized"
 
+def scrollToTopLeftItem(form):
+
+    if form.tableWidget.rowCount() > 0:
+        column = None
+        for i in range(len(form.ig.jsonConfig['view']['columns'])):
+            if form.ig.jsonConfig['view']['columns'][i]['isHidden'] == False:
+                column = i
+                break
+        if column == None:
+            return
+        if form.tableWidget.isRowHidden(0):
+            form.tableWidget.showRow(0)
+            form.tableWidget.scrollToItem(form.tableWidget.item(0, i))
+            form.tableWidget.hideRow(0)
+        else:
+           form.tableWidget.scrollToItem(form.tableWidget.item(0, i))
 
 def tableWidgetSetResizeMode(form):
 

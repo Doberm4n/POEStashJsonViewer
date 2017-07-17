@@ -61,6 +61,7 @@ def setItemQuality(self, itemIndex):
                 dataQuality = dataQuality.replace('+', '')
     return unicode(dataQuality)
 
+
 def setSockets(self, itemIndex):
     return self.stashTabJson['items'][itemIndex]['frameType']
     print ""
