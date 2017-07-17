@@ -113,13 +113,20 @@
     </property>
     <widget class="QMenu" name="menuExport_to">
      <property name="title">
-      <string>Export to</string>
+      <string>Export all to</string>
      </property>
-     <addaction name="actionCsv"/>
+     <addaction name="actionExportAllToCsv"/>
      <addaction name="actionSingle_json"/>
+    </widget>
+    <widget class="QMenu" name="menuExport_view_to">
+     <property name="title">
+      <string>Export view to</string>
+     </property>
+     <addaction name="actionExportViewToCsv"/>
     </widget>
     <addaction name="actionCreate_empty_guide_file"/>
     <addaction name="menuExport_to"/>
+    <addaction name="menuExport_view_to"/>
    </widget>
    <widget class="QMenu" name="menuFilter">
     <property name="title">
@@ -236,7 +243,7 @@
     <string>Reset filter</string>
    </property>
   </action>
-  <action name="actionCsv">
+  <action name="actionExportAllToCsv">
    <property name="text">
     <string>csv</string>
    </property>
@@ -249,6 +256,11 @@
   <action name="actionOpen_single_json">
    <property name="text">
     <string>Open single json</string>
+   </property>
+  </action>
+  <action name="actionExportViewToCsv">
+   <property name="text">
+    <string>csv</string>
    </property>
   </action>
  </widget>

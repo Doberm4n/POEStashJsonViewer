@@ -94,7 +94,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         self.actionReset_filter.triggered.connect(self.resetFilter)
 
-        self.actionCsv.triggered.connect(lambda: exportToCsv.exportToCsv(self))
+        self.actionExportAllToCsv.triggered.connect(lambda: exportToCsv.exportAllToCsv(self))
+        self.actionExportViewToCsv.triggered.connect(lambda: exportToCsv.exportViewToCsv(self))
 
         self.actionSingle_json.triggered.connect(lambda: exportToSingleJson.exportToSingleJson(self))
 
@@ -563,7 +564,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             textLength = len(self.stashTabJson['items'])
             # for columns in range (len(self.ig.columnsHeaders)):
             #     self.tableWidget.insertColumn(columns)
-            for i in range (700):
+            for i in range (11):
                 print "=======================================Stash " + str(i) + " ======================================="
             #add rows, number equal to items count in json
                 for rows in range (textLength):

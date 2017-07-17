@@ -4,7 +4,7 @@ import csv
 from PyQt4 import QtGui
 
 #csv comma delimited with headers, UTF-8
-def exportToCsv(form):
+def exportAllToCsv(form):
     fileName = getCsvFileName()
     if fileName:
             with open(unicode(fileName), 'wb') as stream:
@@ -26,6 +26,34 @@ def exportToCsv(form):
                         else:
                             rowdata.append('')
                     csvWriter.writerow(rowdata)
+
+
+#csv comma delimited with headers, UTF-8
+def exportViewToCsv(form):
+    fileName = getCsvFileName()
+    if fileName:
+            with open(unicode(fileName), 'wb') as stream:
+                csvWriter = csv.writer(stream)
+                rowdata = []
+                #column headers
+                for columns in range(form.tableWidget.columnCount()):
+                    if not form.tableWidget.isColumnHidden(columns):
+                        columnHeaderText = unicode(form.tableWidget.horizontalHeaderItem(columns).text())
+                        rowdata.append(columnHeaderText.encode('utf-8'))
+                csvWriter.writerow(rowdata)
+
+                #rows
+                for rows in range(form.tableWidget.rowCount()):
+                    if not form.tableWidget.isRowHidden(rows):
+                        rowdata = []
+                        for columns in range(form.tableWidget.columnCount()):
+                            if not form.tableWidget.isColumnHidden(columns):
+                                item = form.tableWidget.item(rows, columns)
+                                if item:
+                                    rowdata.append(unicode(item.text()).encode('utf-8'))
+                                else:
+                                    rowdata.append('')
+                        csvWriter.writerow(rowdata)
 
 def getCsvFileName():
     newName = QtGui.QFileDialog.getSaveFileName(None, 'Export to .csv', directory=os.getcwd(), filter='*.csv')
