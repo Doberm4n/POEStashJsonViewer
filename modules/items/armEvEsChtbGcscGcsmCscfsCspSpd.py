@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
 
-def setItemArmEvEsChtb(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
+def setItemArmEvEsChtbGcscGcsmCscfsCspSpd(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
     if dataPropertiesImplicitExplicitLinesList:
         #if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
         #if dataPropertiesImplicitExplicitLines.find('Resistance') >= 0:
         temp = dataPropertiesImplicitExplicitLinesList
+
         #data = []
         #dataTotal = ''
         # data =
@@ -17,8 +18,20 @@ def setItemArmEvEsChtb(form, itemIndex, dataPropertiesImplicitExplicitLinesList)
         valueEvasion = ''
         valueEnergyShield = ''
         valueChanceToBlock = ''
+
+        dataGcsc = []
+        dataGcsm = []
+        dataCscfs = []
+        dataCsp = []
+        dataSpd = []
         # valueC = 0
         # valueCh = 0
+        valueGcsc = 0
+        valueGcsm = 0
+        valueCscfs = 0
+        valueCsp = 0
+        valueSpd = 0
+
 
         for i in range (len(temp)):
             if 'Armour:' in temp[i]:
@@ -38,28 +51,44 @@ def setItemArmEvEsChtb(form, itemIndex, dataPropertiesImplicitExplicitLinesList)
                 continue
 
 
+            if '% increased Global Critical Strike Chance' in temp[i]:
+                    dataGcsc.append(int(temp[i].split('%')[0]))
+                    continue
+
+            if '% to Global Critical Strike Multiplier' in temp[i]:
+                    dataGcsm.append(int(temp[i].split('%')[0]))
+                    continue
+
+            if '% increased Critical Strike Chance for Spells' in temp[i]:
+                    dataCscfs.append(int(temp[i].split('%')[0]))
+                    continue
+
+            if '% increased Cast Speed' in temp[i]:
+                    dataCsp.append(int(temp[i].split('%')[0]))
+                    continue
+
+            if '% increased Spell Damage' in temp[i]:
+                    dataSpd.append(int(temp[i].split('%')[0]))
+                    continue
 
 
-        # if dataAll:
-        #     valueAll = sum(dataAll)
 
-        # if dataF:
-        #     valueF = sum(dataF) + valueAll
-        # else:
-        #     valueF = valueAll
 
-        # if dataL:
-        #     valueL = sum(dataL) + valueAll
-        # else:
-        #     valueL = valueAll
 
-        # if dataC:
-        #     valueC = sum(dataC) + valueAll
-        # else:
-        #     valueC = valueAll
+        if dataGcsc:
+            valueGcsc = sum(dataGcsc)
 
-        # if dataCh:
-        #     valueCh = sum(dataCh)
+        if dataGcsm:
+            valueGcsm = sum(dataGcsm)
+
+        if dataCscfs:
+            valueCscfs = sum(dataCscfs)
+
+        if dataCsp:
+            valueCsp = sum(dataCsp)
+
+        if dataSpd:
+            valueSpd = sum(dataSpd)
 
         # valueTotal = valueF + valueL + valueC + valueCh
 
@@ -69,6 +98,12 @@ def setItemArmEvEsChtb(form, itemIndex, dataPropertiesImplicitExplicitLinesList)
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Ev'], QtGui.QTableWidgetItem(str(valueEvasion)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ES'], QtGui.QTableWidgetItem(str(valueEnergyShield)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChtB'], QtGui.QTableWidgetItem(str(valueChanceToBlock)))
+
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsC'], QtGui.QTableWidgetItem(str(valueGcsc)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsM'], QtGui.QTableWidgetItem(str(valueGcsm)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['CscfS'], QtGui.QTableWidgetItem(str(valueCscfs)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Csp'], QtGui.QTableWidgetItem(str(valueCsp)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['SpD'], QtGui.QTableWidgetItem(str(valueSpd)))
         # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resC'], QtGui.QTableWidgetItem(str(valueC)))
         # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resCh'], QtGui.QTableWidgetItem(str(valueCh)))
         #form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['csCh'], QtGui.QTableWidgetItem(str(dataCsCh[0])))

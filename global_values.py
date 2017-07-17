@@ -81,7 +81,17 @@ class globalValues():
 
                                {'columnHeader' : 'ES', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
 
-                               {'columnHeader' : 'ChtB', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
+                               {'columnHeader' : 'ChtB', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                                {'columnHeader' : 'GcsC', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                                 {'columnHeader' : 'GcsM', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                                  {'columnHeader' : 'CscfS', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                                   {'columnHeader' : 'Csp', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True},
+
+                                    {'columnHeader' : 'SpD', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
 
 
                           ]
