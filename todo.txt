@@ -63,7 +63,7 @@ Location (character / Stash Tab) (non calculated)
 
 Stack Quantity (non calculated)
 
-Sockets groups (non calculated)
+// Sockets groups (non calculated)
 
 Load multiple json
 
