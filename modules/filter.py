@@ -54,7 +54,7 @@ def filterTable(form, filters):
         #print unicode(form.tableWidget.item(0, form.ig.columnNameToIndex[columnHeader]).text())
         print columnHeader
         print filterType
-        print filterValue
+        #print filterValue
         print operand
         for j in range (form.tableWidget.rowCount()):
             print "=======================================Row " + " ======================================="
