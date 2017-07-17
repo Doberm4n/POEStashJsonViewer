@@ -370,7 +370,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.guideLineEdit.setText(os.path.basename(self.curGuide))
             #self.clearGuide()
             #clear rows
-            self.tableWidget.setVisible(False)
+
+            #self.tableWidget.setVisible(False)
+            self.tableWidget.setEnabled(False)
+
             self.tableWidget.setRowCount(0)
             UIMainLayout.tableWidgetDisableResizeToContents(self)
             #self.showAllColumns()
@@ -381,6 +384,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #UIMainLayout.tableWidgetSetResizeMode(self)
             UIMainLayout.tableWidgetContentsAutoSize(self)
             UIMainLayout.tableWidgetSetColumnsSelected(self)
+            self.tableWidget.setEnabled(True)
 
 
 
@@ -566,7 +570,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             # self.tableWidget.resizeRowsToContents()
 
             #self.tableWidgetSetResizeMode()
-            self.tableWidget.setVisible(True)
+
+
+            #self.tableWidget.setVisible(True)
+
+
             #self.tableWidget.setEnabled(True)
 
             #self.tableWidget.setColumnHidden()

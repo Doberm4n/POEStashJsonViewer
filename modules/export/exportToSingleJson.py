@@ -8,7 +8,7 @@ import json
 import tools
 
 def exportToSingleJson(form):
-    fileName = tools.getJsonFileName()
+    fileName = tools.getSingleJsonFileName()
     if fileName:
 
         data = {"common":{"singleJsonVersion":""},"rows": []}

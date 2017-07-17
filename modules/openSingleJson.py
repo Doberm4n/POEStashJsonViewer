@@ -15,7 +15,7 @@ def openSingleJson(form):
     else:
         directoryName = ''
 
-    fileName = tools.openJsonFileName(directoryName)
+    fileName = tools.openSingleJsonFileName(directoryName)
     if fileName:
 
         jsonData = tools.readJson(fileName)
