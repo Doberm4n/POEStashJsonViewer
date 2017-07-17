@@ -48,12 +48,12 @@ Calculated columns:
 // #% to Cold Resistance
 // #% to Chaos Resistance
 
-#% increased Global Critical Strike Chance
-#% to Global Critical Strike Multiplier
-#% increased Critical Strike Chance for Spells
+// #% increased Global Critical Strike Chance
+// #% to Global Critical Strike Multiplier
+// #% increased Critical Strike Chance for Spells
 
-#% increased Cast Speed
-#% increased Spell Damage
+// #% increased Cast Speed
+// #% increased Spell Damage
 Adds # to # #### Damage to Spells
 
 // # to maximum Life
