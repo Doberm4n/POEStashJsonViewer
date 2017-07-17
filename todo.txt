@@ -61,7 +61,7 @@ Adds # to # #### Damage to Spells
 
 Location (character / Stash Tab) (non calculated)
 
-Stack Quantity (non calculated)
+// Stack Quantity (non calculated)
 
 // Sockets groups (non calculated)
 
@@ -74,6 +74,8 @@ Load multiple json
 // Load single json
 
 Select all / Unselect all in columns select
+
+// Scroll to Top Left for proper autosize
 
 Adds
 
