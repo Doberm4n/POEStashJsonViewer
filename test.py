@@ -48,6 +48,106 @@ if not a:
 b = 'find'
 print b.split('f')[1].split('d')[0]
 
+a = [0]*5
+
+print a[1]
+print a[2]
+
+a = {'valuedwe': 5, 'valuerwerwe': 2}
+b = list(a.values())
+bb = list(a.keys())
+
+
+print bb[b.index(max(b))]
+
+print a[max(a, key=a.get)]
+
+a = [0, 5, 2, 1, 7]
+
+print max(a)
+
+a = ['']*5
+
+print a[1]
+#print max(enumerate(a['value']))
+
+listOne = ["hello","world"]
+listOne = ['-'.join(i) for i in listOne]
+
+print listOne
+
+a = ['1']
+#a.append('fjdkfjkld')
+if a[0]:
+    a[0] += ' fjdskfjkldshfdsh'
+print a
+
+a = []
+
+print len(a)
+
+a = {'fdjskfjdslk': ['fjsdklfjds'], 'fjdsk': []}
+
+for value in a.values():
+    if value:
+        print value
+
+print len(filter(None, a))
+#print a.count('')
+
+print len(a)
+
+a = [[1],[]]
+
+if a[1]:
+    print len(a[0])
+
+print a[0][0]
+
+a = []
+a.append([])
+print a
+a[0].append('fjkdsfjlksd')
+a.append([])
+a[1].append('jfkdsljlfk')
+
+print a[0][0]
+
+print len(filter(None, a))
+
+a = [[1], [0], [], [], [], []]
+
+#a = [[]]*5
+
+#print len(filter(None, a))
+
+#print len(a)
+
+bb = filter(None, a)
+
+print bb
+
+a[1][0] = 'lfkdkwrw'
+print a
+
+a = [0, 0]
+a[0] = 'fdsfklds' + 'kldsfjkdsl'
+
+print a
+
+a=[0]*5
+b = a
+print b
+
+
+
+if b[0] == 0:
+    print b[0]
+
+b[0] = 'fdskfjkldsfdsfd'
+
+print len(b[0])
+
 
 # patternStringFire = 'Adds\s\d+\s+to\s\d+\s+Fire Damage'
 # pattern = re.compile(pattern)

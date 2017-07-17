@@ -20,6 +20,20 @@ class globalValues():
 
                            {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'Integer', 'isCalc' : False},
 
+                           {'columnHeader' : 'Sockets', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                           {'columnHeader' : 'Linked', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                           {'columnHeader' : 'LinksVisual', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
+
+                           {'columnHeader' : 'sStr', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                           {'columnHeader' : 'sDex', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                           {'columnHeader' : 'sInt', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                           {'columnHeader' : 'sWh', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
                             {'columnHeader' : 'rLvl', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
 
                              {'columnHeader' : 'rStr', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},

@@ -25,6 +25,7 @@ from modules.items.allResistances import setItemResistances
 from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
 from modules.items.armEvEsChtbGcscGcsmCscfsCspSpd import setItemArmEvEsChtbGcscGcsmCscfsCspSpd
 from modules.items.allRequirements import setItemRequirements
+from modules.items.allSockets import setItemSockets
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
@@ -522,6 +523,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
                 setItemArmEvEsChtbGcscGcsmCscfsCspSpd(self, itemIndex, propertiesImplicitExplicitLinesList)
+
+                #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
+                setItemSockets(self, itemIndex)
                 print ""
 
 

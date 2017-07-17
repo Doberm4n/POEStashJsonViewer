@@ -21,11 +21,11 @@ change first digit operand for > instead of <
 
 Columns:
 
-Requirements:
-	Level,
-	Strength,
-	Dexterity,
-	Intelligence
+// Requirements:
+//	Level,
+//	Strength,
+//	Dexterity,
+//	Intelligence
 
 Calculated columns:
 
