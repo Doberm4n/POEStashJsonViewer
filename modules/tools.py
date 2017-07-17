@@ -23,10 +23,10 @@ def writeJson(dump, json_file):
              #print "Error: " + str(e)
 
 def getSingleJsonFileName():
-    return QtGui.QFileDialog.getSaveFileName(None, 'Save to single json', directory=os.getcwd(), filter='*.single.json')
+    return QtGui.QFileDialog.getSaveFileName(None, 'Save to single json', directory=os.getcwd(), filter='*.single_json')
 
 def openSingleJsonFileName(directoryName):
-    return unicode(QtGui.QFileDialog.getOpenFileName(None, "Select json", directory=directoryName, filter='*.single.json'))
+    return unicode(QtGui.QFileDialog.getOpenFileName(None, "Select json", directory=directoryName, filter='*.single_json'))
 
 
 # def tableWidgetSetResizeMode(form):

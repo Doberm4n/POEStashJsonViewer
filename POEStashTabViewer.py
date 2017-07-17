@@ -362,7 +362,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def browseGuide(self):
         print "browse"
-        self.curGuide = str(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.json', directory=self.curDir))
+        self.curGuide = unicode(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.json', directory=self.curDir))
         if self.curGuide:
             #guideJson = self.readJson('Configs\config.json')
             self.ig.jsonConfig['curGuide'] = self.curGuide

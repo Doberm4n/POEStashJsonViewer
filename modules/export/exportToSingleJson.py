@@ -3,9 +3,10 @@ import os,sys,inspect
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
+sys.path.insert(0,os.path.dirname(parentdir))
 #from PyQt4 import QtGui
 import json
-import tools
+import modules.tools as tools
 
 def exportToSingleJson(form):
     fileName = tools.getSingleJsonFileName()
@@ -28,4 +29,4 @@ def exportToSingleJson(form):
                         jsonData['rows'][i].append(unicode(itemValue.text()))
                     else:
                         jsonData['rows'][i].append('')
-        tools.writeJson(jsonData, fileName)
+        tools.writeJson(jsonData, unicode(fileName))

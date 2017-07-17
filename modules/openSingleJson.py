@@ -24,7 +24,7 @@ def openSingleJson(form):
 
 
         if not form.ig.jsonConfig['common']['configVersion'] == jsonData['common']['singleJsonVersion']:
-            QtGui.QMessageBox.warning(None, "Open single json", "Version mismatch. Single json cannot be opened. Please export to single json and then retry.")
+            QtGui.QMessageBox.warning(None, "Open single json", "Version mismatch. Single json cannot be opened. Please export data to single json again and then retry.")
             return
 
         form.tableWidget.setEnabled(False)
@@ -37,7 +37,7 @@ def openSingleJson(form):
                 form.tableWidget.insertRow(i)
                 for j in range(len(jsonData['rows'][i])):
                     itemValue = jsonData['rows'][i][j]
-                    print itemValue
+                    #print itemValue
                     if itemValue:
                         form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(unicode(itemValue)))
                     else:

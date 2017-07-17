@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 #from PyQt4 import QtGui
 
 def setItemPropertiesImplicitExplicit(form, itemIndex):
@@ -9,8 +10,8 @@ def setItemPropertiesImplicitExplicit(form, itemIndex):
     #dataProperties['fdsfds'] = 'frdsfs'
     #print dataProperties
     #dataProperties.append([])
-    a = form.tableWidget.item(0,0).text()
-    print unicode(a)
+    #a = form.tableWidget.item(0,0).text()
+    #print a
 
     properties = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Properties']).text()
     implicitModifiers = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Implicit Modifiers']).text()
