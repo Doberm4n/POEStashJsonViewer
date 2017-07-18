@@ -20,7 +20,7 @@ import modules.items.items as items
 import modules.tools as tools
 from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitExplicit
 from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
-from modules.items.apScsCh import setItemApScsCh
+from modules.items.apsCsch import setItemApsCsch
 from modules.items.allResistances import setItemResistances
 from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
 from modules.items.armEvEsChtbGcscGcsmCscfsCspSpdQty import setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty
@@ -365,12 +365,18 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def browseGuide(self):
         print "browse"
-        self.curGuide = unicode(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.json', directory=self.curDir))
-        if self.curGuide:
+        self.curJsonFiles = QtGui.QFileDialog.getOpenFileNames(self, "Select .json files", filter='*.json', directory=self.curDir)
+        #self.curGuide = unicode(self.curGuide)
+        #print unicode(self.curGuide[0])
+        if self.curJsonFiles:
             #guideJson = self.readJson('Configs\config.json')
-            self.ig.jsonConfig['curGuide'] = self.curGuide
+            self.ig.jsonConfig['curGuide'] = unicode(self.curJsonFiles[0])
             self.writeJson(self.ig.jsonConfig, 'Configs\config.json')
-            self.guideLineEdit.setText(os.path.basename(self.curGuide))
+            l = len(self.curJsonFiles)
+            if l == 1:
+                self.guideLineEdit.setText(os.path.basename(unicode(self.curJsonFiles[0])))
+            else:
+                self.guideLineEdit.setText(str(l) + ' json files')
             #self.clearGuide()
             #clear rows
 
@@ -380,7 +386,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.tableWidget.setRowCount(0)
             UIMainLayout.tableWidgetDisableResizeToContents(self)
             #self.showAllColumns()
-            self.loadGuide(self.curGuide)
+            self.loadJson(self.curJsonFiles)
 
             # self.tableWidgetSetResizeMode()
             # self.setColumnsSelected(self.ig.jsonConfig)
@@ -469,7 +475,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #Rarity
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Rarity'], QtGui.QTableWidgetItem(items.setItemRarity(self, itemIndex)))
 
-            #Quality
+            #QualityglobalRowCount
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QtGui.QTableWidgetItem(items.setItemQuality(self, itemIndex)))
 
             #Requirements
@@ -514,7 +520,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
 
                 #APS, Critical Strike Chance
-                setItemApScsCh(self, itemIndex, propertiesImplicitExplicitLinesList)
+                setItemApsCsch(self, itemIndex, propertiesImplicitExplicitLinesList)
 
                 #all Resistances (resTotal, resAll, resF, resL, resC, resCh), values for Fire, Lightning, Cold resistances includes value from '% to all elemental resistances' modifier
                 setItemResistances(self, itemIndex, propertiesImplicitExplicitLines, propertiesImplicitExplicitLinesList)
@@ -539,122 +545,128 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def processData(self, data):
         print ""
 
-    def loadGuide(self, guide):
+    def loadJson(self, jsonFileNames):
         #try:
             self.stashJson = {}
             characterJson = {}
 
-            self.stashTabJson = self.readJson(guide)
+            jsonFilesCount = len(jsonFileNames)
+            #globalRowCount = 0
 
-            #for stashTabs in range (len(self.stashTabJson)):
+            for jsonFiles in range(jsonFilesCount):
 
-                #self.stashJson[1000000000] = self.readJson(guide)
-            text = []
+                self.stashTabJson = self.readJson(jsonFileNames[jsonFiles])
 
-                ######################################################## self.clearTabs()
-                ######################################################## self.clearMenuActionReset()
-                ######################################################## self.clearMenuActionProgress()
+                #for stashTabs in range (len(self.stashTabJson)):
 
-            #self.tableWidget.setVisible(False)
+                    #self.stashJson[1000000000] = self.readJson(guide)
+                text = []
 
-                #add defined columns
-            if not self.stashTabJson.has_key('items'):
-                self.statusbar.showMessage('Wrong json file')
-                return
-            textLength = len(self.stashTabJson['items'])
-            # for columns in range (len(self.ig.columnsHeaders)):
-            #     self.tableWidget.insertColumn(columns)
-            for i in range (11):
-                print "=======================================Stash " + str(i) + " ======================================="
-            #add rows, number equal to items count in json
-                for rows in range (textLength):
-                    self.tableWidget.insertRow(rows)
-                    self.setItem(rows)
-                #for columns in range (len(self.ig.columnsHeaders)):
-                    #fill rows with data
-                    #print rows, columns, item
-                    #self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
-            #self.tableWidget.repaint()
-            # self.tabWidget.update()
-            # self.tableWidget.resizeColumnsToContents()
-            # self.tableWidget.resizeRowsToContents()
+                    ######################################################## self.clearTabs()
+                    ######################################################## self.clearMenuActionReset()
+                    ######################################################## self.clearMenuActionProgress()
 
-            #self.tableWidgetSetResizeMode()
+                #self.tableWidget.setVisible(False)
 
+                    #add defined columns
+                if not self.stashTabJson.has_key('items'):
+                    self.statusbar.showMessage('Wrong json file: ' + unicode(jsonFileNames[jsonFiles]))
+                    return
 
-            #self.tableWidget.setVisible(True)
+                itemsCount = len(self.stashTabJson['items'])
+                # for columns in range (len(self.ig.columnsHeaders)):
+                #     self.tableWidget.insertColumn(columns)
+                    #print "=======================================Stash " + str(i) + " ======================================="
+                #add rows, number equal to items count in json
+                for itemIndex in range(itemsCount):
+                    self.tableWidget.insertRow(itemIndex)
+                    self.setItem(itemIndex)
+                        #globalRowCount += 1
+                    #for columns in range (len(self.ig.columnsHeaders)):
+                        #fill rows with data
+                        #print rows, columns, item
+                        #self.tableWidget.setItem(rows, columns, QtGui.QTableWidgetItem(item))
+                #self.tableWidget.repaint()
+                # self.tabWidget.update()
+                # self.tableWidget.resizeColumnsToContents()
+                # self.tableWidget.resizeRowsToContents()
 
-
-            #self.tableWidget.setEnabled(True)
-
-            #self.tableWidget.setColumnHidden()
-            #self.tableWidget.setRowHidden(1, True)
-            #self.tableWidgetContentsAutoSize()
+                #self.tableWidgetSetResizeMode()
 
 
+                #self.tableWidget.setVisible(True)
 
 
+                #self.tableWidget.setEnabled(True)
 
-            # if (not self.firstTab) and (textLength > 0):
-            #       self.tabWidget.setCurrentIndex(tabs)
-            #       self.firstTab = True
-            # if textLength > 0:
-            #     self.menuActionResets[tabs] = QtGui.QAction(self)
-            #     self.menuActionResets[tabs].setObjectName(_fromUtf8("actionReset_" + str(tabs)))
-            #     self.menuReset_progress.addAction(self.menuActionResets[tabs])
-            #     self.menuActionResets[tabs].setText(_translate("MainWindow", "Reset " + guideJson['guide']['tabs'][tabs]['name'], None))
-            #     self.menuActionProgress[tabs] = QtGui.QAction(self)
-            #     self.menuActionProgress[tabs].setObjectName(_fromUtf8("actionProgress_" + str(tabs)))
-            #     self.menuComplete_progress.addAction(self.menuActionProgress[tabs])
-            #     self.menuActionProgress[tabs].setText(_translate("MainWindow", "Complete " + guideJson['guide']['tabs'][tabs]['name'], None))
-            i = 0
-            #################if textLength == 0:
-                #print "Length = 0"
-                #############################self.tabWidget.setTabEnabled(tabs, False)
-                #self.tabWidget.widget(0).hide()
-                #tabs_count = self.tabWidget.count()
-                #print "tabs_count = " + str(tabs_count)
-            #print "Length " + str(tabs) + " " + str(textLength)
+                #self.tableWidget.setColumnHidden()
+                #self.tableWidget.setRowHidden(1, True)
+                #self.tableWidgetContentsAutoSize()
 
 
 
-            # for i in range (textLength):
-            #     self.buttonsText[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
-            #     self.buttonsComplete[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
-            #     self.buttonsText[tabs, i].setObjectName(_fromUtf8("guideStringPushButton_" + str(i)))
-            #     self.buttonsComplete[tabs, i].setObjectName(_fromUtf8("resetPushButton_" + str(i)))
-            #     self.buttonsText[tabs, i].setText(_translate("MainWindow", "guideStringPushButton", None))
-            #     self.buttonsComplete[tabs, i].setText(_translate("MainWindow", "resetPushButton", None))
-            #     self.buttonsText[tabs, i].setStyleSheet(self.completedStylesheet + self.uncompletedStylesheet)
-            #     self.gridLayouts[tabs].addWidget(self.buttonsText[tabs, i], i, 0, 1, 1)
-            #     self.gridLayouts[tabs].addWidget(self.buttonsComplete[tabs, i], i, 1, 1, 1)
-            #     tempString = guideJson['guide']['tabs'][tabs]['text'][i]['string']
-            #     if  tempString.find(u'\u25e6') >= 0:
-            #         tempString = "     " + tempString
-            #     self.buttonsText[tabs, i].setText(tempString)
-            #     self.buttonsText[tabs, i].setEnabled(not guideJson['guide']['tabs'][tabs]['text'][i]['isCompleted'])
-            #     self.buttonsText[tabs, i].installEventFilter(self)
-            #     self.buttonsComplete[tabs, i].setText("Reset")
-            #     self.buttonsText[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsTextClick(tabs, i))
-            #     self.buttonsComplete[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsCompleteClick(tabs, i))
 
-            # if textLength > 0:
-            #     if self.menuActionResets[tabs].triggered:
-            #         self.menuActionResets[tabs].triggered.disconnect()
-            #     self.menuActionResets[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionResetClick(tabs, i))
 
-            #     if self.menuActionProgress[tabs].triggered:
-            #         self.menuActionProgress[tabs].triggered.disconnect()
-            #     self.menuActionProgress[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionCompleteClick(tabs, i))
-            # if not self.firstTab:
+                # if (not self.firstTab) and (textLength > 0):
+                #       self.tabWidget.setCurrentIndex(tabs)
+                #       self.firstTab = True
+                # if textLength > 0:
+                #     self.menuActionResets[tabs] = QtGui.QAction(self)
+                #     self.menuActionResets[tabs].setObjectName(_fromUtf8("actionReset_" + str(tabs)))
+                #     self.menuReset_progress.addAction(self.menuActionResets[tabs])
+                #     self.menuActionResets[tabs].setText(_translate("MainWindow", "Reset " + guideJson['guide']['tabs'][tabs]['name'], None))
+                #     self.menuActionProgress[tabs] = QtGui.QAction(self)
+                #     self.menuActionProgress[tabs].setObjectName(_fromUtf8("actionProgress_" + str(tabs)))
+                #     self.menuComplete_progress.addAction(self.menuActionProgress[tabs])
+                #     self.menuActionProgress[tabs].setText(_translate("MainWindow", "Complete " + guideJson['guide']['tabs'][tabs]['name'], None))
+                #i = 0
+                #################if textLength == 0:
+                    #print "Length = 0"
+                    #############################self.tabWidget.setTabEnabled(tabs, False)
+                    #self.tabWidget.widget(0).hide()
+                    #tabs_count = self.tabWidget.count()
+                    #print "tabs_count = " + str(tabs_count)
+                #print "Length " + str(tabs) + " " + str(textLength)
+
+
+
+                # for i in range (textLength):
+                #     self.buttonsText[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
+                #     self.buttonsComplete[tabs, i] = QtGui.QPushButton(self.groupBoxes[tabs])
+                #     self.buttonsText[tabs, i].setObjectName(_fromUtf8("guideStringPushButton_" + str(i)))
+                #     self.buttonsComplete[tabs, i].setObjectName(_fromUtf8("resetPushButton_" + str(i)))
+                #     self.buttonsText[tabs, i].setText(_translate("MainWindow", "guideStringPushButton", None))
+                #     self.buttonsComplete[tabs, i].setText(_translate("MainWindow", "resetPushButton", None))
+                #     self.buttonsText[tabs, i].setStyleSheet(self.completedStylesheet + self.uncompletedStylesheet)
+                #     self.gridLayouts[tabs].addWidget(self.buttonsText[tabs, i], i, 0, 1, 1)
+                #     self.gridLayouts[tabs].addWidget(self.buttonsComplete[tabs, i], i, 1, 1, 1)
+                #     tempString = guideJson['guide']['tabs'][tabs]['text'][i]['string']
+                #     if  tempString.find(u'\u25e6') >= 0:
+                #         tempString = "     " + tempString
+                #     self.buttonsText[tabs, i].setText(tempString)
+                #     self.buttonsText[tabs, i].setEnabled(not guideJson['guide']['tabs'][tabs]['text'][i]['isCompleted'])
+                #     self.buttonsText[tabs, i].installEventFilter(self)
+                #     self.buttonsComplete[tabs, i].setText("Reset")
+                #     self.buttonsText[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsTextClick(tabs, i))
+                #     self.buttonsComplete[tabs, i].clicked.connect(lambda clicked, tabs=tabs, i=i: self.buttonsCompleteClick(tabs, i))
+
+                # if textLength > 0:
+                #     if self.menuActionResets[tabs].triggered:
+                #         self.menuActionResets[tabs].triggered.disconnect()
+                #     self.menuActionResets[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionResetClick(tabs, i))
+
+                #     if self.menuActionProgress[tabs].triggered:
+                #         self.menuActionProgress[tabs].triggered.disconnect()
+                #     self.menuActionProgress[tabs].triggered.connect(lambda clicked, tabs=tabs, i=i: self.menuActionCompleteClick(tabs, i))
+                # if not self.firstTab:
+                #     self.tabWidget.hide()
+                # self.setWindowTitle(self.windowTitle + " - " + os.path.basename(guide) + ' (' + os.path.dirname(guide) + ')')
+                # guideInfo = guideJson['common']['info']
+                # self.guideLineEdit.setText(guideInfo['name'] + "" + guideInfo['version'] + "(" + guideInfo['date'] + " " + guideInfo['time'] + ")" + guideInfo['author'] + "" + guideInfo['notes'] + "")
+                # self.statusbar.clearMessage()
+            # except Exception, e:
             #     self.tabWidget.hide()
-            # self.setWindowTitle(self.windowTitle + " - " + os.path.basename(guide) + ' (' + os.path.dirname(guide) + ')')
-            # guideInfo = guideJson['common']['info']
-            # self.guideLineEdit.setText(guideInfo['name'] + "" + guideInfo['version'] + "(" + guideInfo['date'] + " " + guideInfo['time'] + ")" + guideInfo['author'] + "" + guideInfo['notes'] + "")
-            # self.statusbar.clearMessage()
-        # except Exception, e:
-        #     self.tabWidget.hide()
-        #     self.statusbar.showMessage("Error in loading guide: " + str(e))
+            #     self.statusbar.showMessage("Error in loading guide: " + str(e))
 
     def showAbout(self):
         #global formAbout

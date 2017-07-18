@@ -59,6 +59,19 @@ Adds # to # #### Damage to Spells
 // # to maximum Life
 // # to maximum Mana
 
+# to Armour
+# to Evasion Rating
+# to maximum Energy Shield
+
+#% increased Armour
+#% increased Armour and Evasion
+#% increased Armour and Energy Shield
+#% increased Armour, Evasion and Energy Shield
+#% increased Evasion Rating
+#% increased Evasion and Energy Shield
+#% increased Energy Shield (but not 'Recharge Rate')
+
+
 Location (character / Stash Tab) (non calculated)
 
 // Stack Quantity (non calculated)
@@ -76,6 +89,12 @@ Load multiple json
 Select all / Unselect all in columns select
 
 // Scroll to Top Left for proper autosize
+
+
+
+
+
+
 
 Adds
 

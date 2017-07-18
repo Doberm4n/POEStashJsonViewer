@@ -148,6 +148,10 @@ b[0] = 'fdskfjkldsfdsfd'
 
 print len(b[0])
 
+#files = unicode(QtGui.QFileDialog.getOpenFileNames(None, "Select .json files", filter='*.json', directory=os.getcwd()))
+
+#print files
+
 
 # patternStringFire = 'Adds\s\d+\s+to\s\d+\s+Fire Damage'
 # pattern = re.compile(pattern)

@@ -8,10 +8,7 @@ import modules.calc.dpsCalc as dpsCalc
 
 def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitExplicit):
 
-    dataQuality = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Quality']).text()
-    if dataQuality:
-        dataQuality = 'Quality: +' + dataQuality + '\n'
-    data = dataQuality + unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
+
 
     # unicodeData = unicode(self.POEWeaponDataTextEdit.toPlainText())
  #        if self.POEDPSCalc.Calc(unicodeData):
@@ -20,6 +17,10 @@ def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitE
  #            self.POEWeaponDataTextEdit.setPlainText('Wrong data')
  #            self.resetData()
     if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
+        dataQuality = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Quality']).text()
+        if dataQuality:
+            dataQuality = 'Quality: +' + dataQuality + '\n'
+        data = dataQuality + unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
         _dpsCalc = dpsCalc.dpsCalc()
         if _dpsCalc.Calc(unicode(data)):
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem(str(_dpsCalc.totalDPS)))

@@ -1,133 +1,243 @@
-Name,Type,iLvl,Rarity,Quality,Sockets,Linked,LinksVisual,sWh,rLvl,rStr,rDex,rInt,Properties,Implicit Modifiers,Explicit Modifiers,PropertiesImplicitExplicit,DPS,eDPS,pDPS,fDPS,lDPS,cDPS,ChDPS,APS,csCh,resTotal,resAll,resF,resL,resC,resCh,toAttrTotal,toStr,toDex,toInt,toMaxLife,toMaxMana,Arm,Ev,ES,ChtB,GcsC,GcsM,CscfS,Csp,SpD
+Name,Type,iLvl,Rarity,Quality,Qty,Linked,LinksVisual,PropertiesImplicitExplicit,DPS,eDPS,pDPS,fDPS,lDPS,cDPS,ChDPS,APS,csCh,resTotal,resAll,resF,resL,resC,resCh,toAttrTotal,toStr,toDex,toInt,toMaxLife,toMaxMana,Arm,Ev,ES,ChtB,GcsC,GcsM,CscfS,Csp,SpD
+"Thousand Ribbons Tempest Stinger•fwwrweMjölner
+Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe",Body Armour,57,Unique,,,0,"I, D","Evasion Rating: 17
+Energy Shield: 30
+
+Socketed Gems are Supported by level 5 Elemental Proliferation
+Adds 2 to 3 Fire Damage to Attacks
+Adds 2 to 3 Cold Damage to Attacks
+Adds 1 to 4 Lightning Damage to Attacks
+10% reduced Cast Speed
++17 to Evasion Rating
++6 to maximum Life
++6 to maximum Mana
++19 to maximum Energy Shield
++8% to Fire Resistance
++5% to Cold Resistance
++5% to Lightning Resistance",,,,,,,,,,18,0,8,5,5,0,0,0,0,0,6.0,6.0,,17,30,,0,0,0,0,0
+Crystal Ore Map,Map,63,Normal,,,0,,Map Tier: 1,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
 Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
+(1H Weapon)",57,Normal,,,2,I-S,"One Handed Mace
 Physical Damage: 37-69
 Critical Strike Chance: 5.00%
 Attacks per Second: 1.15
 Weapon Range: 9
 
 15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
+"Damnation Braid
+Gold Amulet",Amulet,58,Rare,,,0,,"13% increased Rarity of Items found
+
+Adds 9 to 16 Physical Damage to Attacks
++13 to Intelligence
++140 to Accuracy Rating
+15% increased Evasion Rating",,,,,,,,,,,,,,,,13,0,0,13,0.0,6.5,,,,,0,0,0,0,0
+"Sundance
+Clasped Boots",Boots,57,Unique,,,2,D-I,"Evasion Rating: 79
+Energy Shield: 13
+
+10% increased Attack Speed
+84% increased Evasion Rating
+23% increased Rarity of Items found
++39% to Fire Resistance
+20% increased Movement Speed",,,,,,,,,,39,0,39,0,0,0,0,0,0,0,0.0,0.0,,79,13,,0,0,0,0,0
+Superior Ambush Mitts,Gloves,61,Normal,5,,3,D-S-I,"Quality: +5%
+Evasion Rating: 75
+Energy Shield: 22",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,75,22,,0,0,0,0,0
+"Chalice of Horrors
+War Buckler",Shield,57,Unique,,,3,D-I-D,"Chance to Block: 31%
+Evasion Rating: 171
+Energy Shield: 54
+
++1 to Level of Socketed Curse Gems
+36% increased Evasion Rating
++45 to maximum Life
++54 to maximum Energy Shield
+100% increased Curse Duration
++5% Chance to Block
+10% Chance to Cause Monster to Flee on Block",,,,,,,,,,,,,,,,0,0,0,0,45.0,0.0,,171,54,31,0,0,0,0,0
+Panicked Grand Mana Flask of Gluttony,Flask,59,Magic,10,,0,,"Quality: +10%
+Recovers 173 Mana over 10.00 Seconds
+Consumes 8 of 30 Charges on use
+Currently has 0 Charges
+
+25% reduced Amount Recovered
+Instant Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Life during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,0,G,"Has 1 Socket
+
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,203,-20,68,75,60,0,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,0,G,"Has 1 Socket
+
++20% to all Elemental Resistances
+Socketed Gems have Elemental Equilibrium
+Socketed Gems have 25% reduced Elemental Equilibrium effect
+-20% to all Elemental Resistances
++88% to Fire Resistance when Socketed with a Red Gem
++80% to Cold Resistance when Socketed with a Green Gem
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White",,,,,,,,,,263,0,88,95,80,0,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Malachai's Artifice
+Unset Ring",Ring,40,Unique,,,0,G,"+1 to Strength and Dexterity
+
++5 to all Attributes
++1 to Dexterity
++100 to Level of Socketed Strength Gems
++88% to Fire Resistance when Socketed with a Red Gem
+Damage Penetrates 80% Cold Resistance
++95% to Lightning Resistance when Socketed with a Blue Gem
+All Sockets are White
++50 to maximum Life
++50 to maximum Mana
++50 to maximum Life
++50 to maximum Mana
+Armour: 11",,,,,,,,,,183,0,88,95,0,0,18,6,7,5,103.0,102.5,11,,,,0,0,0,0,0
+Superior Bismuth Flask,Flask,48,Normal,7,,0,,"Quality: +7%
+Lasts 5.40 Seconds
+Consumes 20 of 50 Charges on use
+Currently has 50 Charges",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+Bubbling Hallowed Life Flask,Flask,56,Magic,11,,0,,"Quality: +11%
+Recovers 1104 Life over 3.40 Seconds
+Consumes 10 of 30 Charges on use
+Currently has 30 Charges
+
+50% reduced Amount Recovered
+135% increased Recovery Speed
+50% of Recovery applied Instantly",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Vortex Vise
+Serpentscale Gauntlets",Gloves,48,Rare,,,3,D-S-S,"Armour: 68
+Evasion Rating: 68
+
+Adds 3 to 7 Physical Damage to Attacks
+Adds 8 to 16 Fire Damage to Attacks
+12% increased Rarity of Items found
++23% to Fire Resistance
++10% to Cold Resistance
++14 Life gained on Kill",,,,,,,,,,33,0,23,0,10,0,0,0,0,0,0.0,0.0,68,68,,,0,0,0,0,0
+Quicksilver Flask of Heat,Flask,42,Magic,,,0,,"Lasts 4.00 Seconds
+Consumes 20 of 50 Charges on use
+Currently has 50 Charges
+
+Immunity to Freeze and Chill during Flask effect
+Removes Freeze and Chill on use",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Beast Lock
+Rustic Sash",Unknown,49,Rare,,,0,,"14% increased Physical Damage
+
++9 to Strength
++65 to maximum Life
+4.8 Life Regenerated per second
++20% to Lightning Resistance",,,,,,,,,,20,0,0,20,0,0,9,9,0,0,69.5,0.0,,,,,0,0,0,0,0
+"Chimeric Song
+Karui Chopper",Unknown,58,Rare,,,0,"S, S","Two Handed Axe
+Physical Damage: 220-344
 Critical Strike Chance: 5.00%
 Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
+Weapon Range: 11
+
+175% increased Physical Damage
+0.38% of Physical Attack Damage Leeched as Life
+31% increased Stun Duration on Enemies
++65 to Accuracy Rating",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+Cautious Sanctified Life Flask of Craving,Flask,51,Magic,9,,0,,"Quality: +9%
+Recovers 1591 Life over 3.00 Seconds
+Consumes 15 of 30 Charges on use
+Currently has 30 Charges
+
+100% increased Recovery when on Low Life
+0.4% of Physical Attack Damage Leeched as Mana during Flask effect",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Woe Hoof
+Steelscale Boots",Boots,45,Rare,,,2,D-S,"Armour: 64
+Evasion Rating: 64
+
+12% increased Armour and Evasion
++68 to maximum Life
++19% to Fire Resistance
++21% to Lightning Resistance
+25% increased Movement Speed
+21% increased Stun and Block Recovery",,,,,,,,,,40,0,19,21,0,0,0,0,0,0,68.0,0.0,64,64,,,0,0,0,0,0
+Portal Scroll,Currency,0,Currency,, 25,0,,"Stack Size: 25/40
+
+Creates a portal to town",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Hate Twirl
+Coral Ring",Ring,30,Rare,,,0,,"+30 to maximum Life
+
+Adds 2 to 28 Lightning Damage to Attacks
++16 to maximum Energy Shield
++11% to Chaos Resistance
++1 Mana gained on Kill",,,,,,,,,,11,0,0,0,0,11,0,0,0,0,30.0,0.0,,,,,0,0,0,0,0
+"Sorrow Twirl
+Two-Stone Ring",Ring,59,Rare,,,0,,"+14% to Fire and Lightning Resistances
+
+Adds 6 to 9 Physical Damage to Attacks
+46% increased Mana Regeneration Rate
++36 to maximum Energy Shield
++6% to all Elemental Resistances
++27% to Fire Resistance",,,,,,,,,,73,6,47,20,6,0,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+Alteration Shard,Currency,0,Currency,, 6,0,,Stack Size: 6/20,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+Scroll Fragment,Currency,0,Currency,, 1,0,,Stack Size: 1/5,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+Cartographer's Chisel,Map,0,Currency,, 1,0,,"Stack Size: 1/20
+
+Improves the quality of a map",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+Chaos Orb,Currency,0,Currency,, 10,0,,"Stack Size: 10/10
+
+Reforges a rare item with new random properties",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Survival Instincts
+Viridian Jewel",Jewel,1,Unique,,,0,,"Limited to: 1
+
++20 to Dexterity
++6% to all Elemental Resistances",,,,,,,,,,18,6,6,6,6,0,20,0,20,0,0.0,0.0,,,,,0,0,0,0,0
+Stone Hammer,"One Handed Mace
+(1H Weapon)",15,Normal,,,0,S,"One Handed Mace
+Physical Damage: 17-32
 Critical Strike Chance: 5.00%
 Attacks per Second: 1.15
 Weapon Range: 9
 
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
+15% reduced Enemy Stun Threshold",33.8,0,33.8,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+Wool Shoes,Boots,17,Magic,,,3,I-S-D,Energy Shield: 4,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,4,,0,0,0,0,0
+"Kraken Glance
+Gladiator Helmet",Helmet,52,Rare,,,4,D-S-S-I,"Armour: 177
 
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
++8 to Intelligence
++26 to Armour
++54 to maximum Life
+12% increased Rarity of Items found
+17% increased Stun and Block Recovery",,,,,,,,,,,,,,,,8,0,0,8,54.0,4.0,177,,,,0,0,0,0,0
+Catalysed Sanctified Mana Flask of Staunching,Flask,51,Magic,,,0,,"Recovers 1050 Mana over 9.30 Seconds
+Consumes 10 of 40 Charges on use
+Currently has 40 Charges
 
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
+50% increased Recovery Speed
+Immunity to Bleeding during Flask effect
+Removes Bleeding on use",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Agony Gorget
+Jade Amulet",Amulet,48,Rare,,,0,,"+23 to Dexterity
 
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
+Adds 5 to 12 Physical Damage to Attacks
++19 to all Attributes
++97 to Accuracy Rating
++8% to all Elemental Resistances",,,,,,,,,,24,8,8,8,8,0,80,19,42,19,9.5,9.5,,,,,0,0,0,0,0
+Rusted Coif,Helmet,15,Normal,,,3,D-S-I,"Armour: 14
+Energy Shield: 5",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,14,,5,,0,0,0,0,0
+Chain Belt,Unknown,15,Rare,,,0,,+13 to maximum Energy Shield,,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+"Wrath Hide
+Sun Plate",Body Armour,50,Rare,1,,0,"S, S","Quality: +1%
+Armour: 345
 
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
-
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
-
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
-
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
-
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
-Rock Breaker,"One Handed Mace
-(1H Weapon)",57,Normal,,2,2,I-S,0,41,134,,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9",15% reduced Enemy Stun Threshold,,"One Handed Mace
-Physical Damage: 37-69
-Critical Strike Chance: 5.00%
-Attacks per Second: 1.15
-Weapon Range: 9
-
-15% reduced Enemy Stun Threshold",73.1,0,73.1,0,0,0,0,1.15, 5.00,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0
+6% increased Armour
++43 to maximum Life
++18% to Fire Resistance
++33% to Cold Resistance
++12% to Chaos Resistance
+6% increased Stun and Block Recovery
+Reflects 1 Physical Damage to Melee Attackers",,,,,,,,,,63,0,18,0,33,12,0,0,0,0,43.0,0.0,345,,,,0,0,0,0,0
+Quicksilver Flask,Flask,4,Normal,,,0,,"Lasts 4.00 Seconds
+Consumes 20 of 50 Charges on use
+Currently has 0 Charges",,,,,,,,,,,,,,,,0,0,0,0,0.0,0.0,,,,,0,0,0,0,0

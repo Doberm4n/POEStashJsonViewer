@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
 
-def setItemApScsCh(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
+def setItemApsCsch(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
     if dataPropertiesImplicitExplicitLinesList:
         if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
             temp = dataPropertiesImplicitExplicitLinesList
