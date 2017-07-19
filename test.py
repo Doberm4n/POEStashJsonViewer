@@ -148,6 +148,13 @@ b[0] = 'fdskfjkldsfdsfd'
 
 print len(b[0])
 
+b =1
+
+a = ("'fwdf'sdfdsd '" + str(b) + "' dfsdfsdfs'")
+
+print a
+
+
 #files = unicode(QtGui.QFileDialog.getOpenFileNames(None, "Select .json files", filter='*.json', directory=os.getcwd()))
 
 #print files

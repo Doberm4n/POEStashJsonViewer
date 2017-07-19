@@ -116,7 +116,8 @@
       <string>Export all to</string>
      </property>
      <addaction name="actionExportAllToCsv"/>
-     <addaction name="actionSingle_json"/>
+     <addaction name="actionExportAllToSingleJson"/>
+     <addaction name="actionExportAllToMySQLDatabase"/>
     </widget>
     <widget class="QMenu" name="menuExport_view_to">
      <property name="title">
@@ -248,7 +249,7 @@
     <string>csv</string>
    </property>
   </action>
-  <action name="actionSingle_json">
+  <action name="actionExportAllToSingleJson">
    <property name="text">
     <string>single json</string>
    </property>
@@ -261,6 +262,11 @@
   <action name="actionExportViewToCsv">
    <property name="text">
     <string>csv</string>
+   </property>
+  </action>
+  <action name="actionExportAllToMySQLDatabase">
+   <property name="text">
+    <string>MySQL Database</string>
    </property>
   </action>
  </widget>

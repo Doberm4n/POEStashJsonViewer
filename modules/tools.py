@@ -25,6 +25,9 @@ def writeJson(dump, json_file):
 def getSingleJsonFileName():
     return QtGui.QFileDialog.getSaveFileName(None, 'Save to single json', directory=os.getcwd(), filter='*.single_json')
 
+def getMySQLDatabaseFileName():
+    return QtGui.QFileDialog.getSaveFileName(None, 'Save to MySQL Database', directory=os.getcwd(), filter='*.db')
+
 def openSingleJsonFileName(directoryName):
     return unicode(QtGui.QFileDialog.getOpenFileName(None, "Select json", directory=directoryName, filter='*.single_json'))
 

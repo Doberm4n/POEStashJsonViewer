@@ -56,7 +56,7 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
         self.loadColumnsToColumnsListWidget(form)
 
         #self.loadColumnsToColumnsListWidget(form)
-        print "test ewqewqewqewqeqw"
+        #print "test ewqewqewqewqeqw"
 
 
     def loadColumnsToColumnsListWidget(self, form):

@@ -29,7 +29,9 @@ from modules.items.allSockets import setItemSockets
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
+import modules.export.exportToMySQLDatabase as exportToMySQLDataBase
 import modules.openSingleJson as openSingleJson
+
 #import modules.DPSCalc as DPSCalcModule
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
@@ -97,7 +99,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionExportAllToCsv.triggered.connect(lambda: exportToCsv.exportAllToCsv(self))
         self.actionExportViewToCsv.triggered.connect(lambda: exportToCsv.exportViewToCsv(self))
 
-        self.actionSingle_json.triggered.connect(lambda: exportToSingleJson.exportToSingleJson(self))
+        self.actionExportAllToSingleJson.triggered.connect(lambda: exportToSingleJson.exportToSingleJson(self))
+        self.actionExportAllToMySQLDatabase.triggered.connect(lambda: exportToMySQLDataBase.exportToMySQLDatabase(self, 'QSQLITE'))
 
         self.actionOpen_single_json.triggered.connect(lambda: openSingleJson.openSingleJson(self))
 
@@ -331,7 +334,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #print "Yes"
                 self.curGuide = self.ig.jsonConfig["curGuide"]
                 curGuideFilename = os.path.basename(self.curGuide)
-                self.guideLineEdit.setText(curGuideFilename)
+                #self.guideLineEdit.setText(curGuideFilename)
                 self.curDir = os.path.dirname(self.curGuide)
 
                 #self.setColumnsSelected(self.ig.jsonConfig)
@@ -555,7 +558,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
             for jsonFiles in range(jsonFilesCount):
 
-                self.stashTabJson = self.readJson(jsonFileNames[jsonFiles])
+                self.stashTabJson = self.readJson(unicode(jsonFileNames[jsonFiles]))
 
                 #for stashTabs in range (len(self.stashTabJson)):
 
