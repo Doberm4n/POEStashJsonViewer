@@ -11,7 +11,7 @@ import modules.tools as tools
 def exportToSQLiteDatabase(form, driverType):
     fileName = tools.getMySQLDatabaseFileName()
     if fileName:
-
+        form.tableWidget.setEnabled(False)
         if os.path.isfile(fileName):
             os.remove(unicode(fileName))
 
@@ -46,8 +46,9 @@ def exportToSQLiteDatabase(form, driverType):
 
         query.exec_(dataCreateTableQuery)
 
-        for i in range(form.tableWidget.rowCount()):
-            form.statusbar.showMessage('Processing row: ' +  str(i))
+        rowCount = form.tableWidget.rowCount()
+        for i in range(rowCount):
+            form.statusbar.showMessage('Processing row: ' +  str(i) + ' of ' + str(rowCount))
             dataDatabaseValues = ''
             dataDatabaseKeys = ''
             for j in range(l):
@@ -87,7 +88,9 @@ def exportToSQLiteDatabase(form, driverType):
                 # query.exec_("insert into sportsmen values(101, 'Roger', 'Federer')")
         db.removeDatabase(driverType)
         db.close()
+        form.tableWidget.setEnabled(True)
         form.statusbar.showMessage('Export to SQLite Database complete')
+
 
         # temp = json.dumps(data)
         # jsonData = json.loads(temp)
