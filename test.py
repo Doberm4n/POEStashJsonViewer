@@ -154,7 +154,17 @@ a = ("'fwdf'sdfdsd '" + str(b) + "' dfsdfsdfs'")
 
 print a
 
-
+a = []
+print a
+for i in range(7):
+    a.append([])
+#a[0].append(0)
+a[0].append('eqwe')
+a[0].append(1)
+b = 'Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe'
+#a[2] = 'flds'
+#a[1].append(["'fdsj'"])
+print a
 #files = unicode(QtGui.QFileDialog.getOpenFileNames(None, "Select .json files", filter='*.json', directory=os.getcwd()))
 
 #print files
