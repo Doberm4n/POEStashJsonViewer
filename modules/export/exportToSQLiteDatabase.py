@@ -8,7 +8,7 @@ from PyQt4 import QtSql
 #import json
 import modules.tools as tools
 
-def exportToMySQLDatabase(form, driverType):
+def exportToSQLiteDatabase(form, driverType):
     fileName = tools.getMySQLDatabaseFileName()
     if fileName:
 
@@ -16,6 +16,7 @@ def exportToMySQLDatabase(form, driverType):
             os.remove(unicode(fileName))
 
         db = QtSql.QSqlDatabase.addDatabase(driverType)
+
         db.setDatabaseName(fileName)
 
 
@@ -46,6 +47,7 @@ def exportToMySQLDatabase(form, driverType):
         query.exec_(dataCreateTableQuery)
 
         for i in range(form.tableWidget.rowCount()):
+            form.statusbar.showMessage('Processing row: ' +  str(i))
             dataDatabaseValues = ''
             dataDatabaseKeys = ''
             for j in range(l):
@@ -70,7 +72,7 @@ def exportToMySQLDatabase(form, driverType):
 
             dataInsertValuesQuery = 'INSERT INTO stash (' + dataDatabaseKeys + ') VALUES (' + dataDatabaseValues + ')'
 
-            print unicode(dataInsertValuesQuery)
+            #print unicode(dataInsertValuesQuery)
 
                 # query.prepare('UPDATE "%s" SET value=:val WHERE property=:var' % tbl)
                 # query.bindValue(':val', val)
@@ -85,6 +87,7 @@ def exportToMySQLDatabase(form, driverType):
                 # query.exec_("insert into sportsmen values(101, 'Roger', 'Federer')")
         db.removeDatabase(driverType)
         db.close()
+        form.statusbar.showMessage('Export to SQLite Database complete')
 
         # temp = json.dumps(data)
         # jsonData = json.loads(temp)

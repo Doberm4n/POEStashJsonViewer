@@ -9,9 +9,9 @@ w = QTextBrowser()
 # DB type, host, user, password...
 db = QSqlDatabase.addDatabase("QMYSQL");
 db.setHostName("localhost")
-db.setDatabaseName("test")
+db.setDatabaseName("testdbmysql")
 db.setUserName("root")
-db.setPassword("")
+db.setPassword("admin")
 ok = db.open()
 
 # True if connected
@@ -22,6 +22,9 @@ else:
 
 # do a query "on" a DB connection
 query = QSqlQuery(db)
+query.exec_("CREATE TABLE `testdbmysql`.`new_table` (`idnew_table` INT UNSIGNED NOT NULL, PRIMARY KEY (`idnew_table`));")
+#CREATE TABLE `testdbmysql`.`erw` (
+ # );
 if query.exec_("SHOW TABLES"):
 	w.insertHtml('<br />')
 	while query.next():

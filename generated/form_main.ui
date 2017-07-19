@@ -117,7 +117,7 @@
      </property>
      <addaction name="actionExportAllToCsv"/>
      <addaction name="actionExportAllToSingleJson"/>
-     <addaction name="actionExportAllToMySQLDatabase"/>
+     <addaction name="actionExportAllToSQLiteDatabase"/>
     </widget>
     <widget class="QMenu" name="menuExport_view_to">
      <property name="title">
@@ -266,7 +266,12 @@
   </action>
   <action name="actionExportAllToMySQLDatabase">
    <property name="text">
-    <string>MySQL Database</string>
+    <string>MySQL Database (need MySQL Server running)</string>
+   </property>
+  </action>
+  <action name="actionExportAllToSQLiteDatabase">
+   <property name="text">
+    <string>SQLite Database</string>
    </property>
   </action>
  </widget>

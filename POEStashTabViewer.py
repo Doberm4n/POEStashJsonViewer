@@ -29,7 +29,7 @@ from modules.items.allSockets import setItemSockets
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
-import modules.export.exportToMySQLDatabase as exportToMySQLDataBase
+import modules.export.exportToSQLiteDatabase as exportToSQLiteDataBase
 import modules.openSingleJson as openSingleJson
 
 #import modules.DPSCalc as DPSCalcModule
@@ -100,7 +100,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionExportViewToCsv.triggered.connect(lambda: exportToCsv.exportViewToCsv(self))
 
         self.actionExportAllToSingleJson.triggered.connect(lambda: exportToSingleJson.exportToSingleJson(self))
-        self.actionExportAllToMySQLDatabase.triggered.connect(lambda: exportToMySQLDataBase.exportToMySQLDatabase(self, 'QSQLITE'))
+        self.actionExportAllToSQLiteDatabase.triggered.connect(lambda: exportToSQLiteDataBase.exportToSQLiteDatabase(self, 'QSQLITE'))
 
         self.actionOpen_single_json.triggered.connect(lambda: openSingleJson.openSingleJson(self))
 
