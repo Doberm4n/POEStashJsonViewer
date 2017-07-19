@@ -73,7 +73,7 @@ def exportToSQLiteDatabase(form, driverType):
 
             dataInsertValuesQuery = 'INSERT INTO stash (' + dataDatabaseKeys + ') VALUES (' + dataDatabaseValues + ')'
 
-            #print unicode(dataInsertValuesQuery)
+            print unicode(dataInsertValuesQuery)
 
                 # query.prepare('UPDATE "%s" SET value=:val WHERE property=:var' % tbl)
                 # query.bindValue(':val', val)
