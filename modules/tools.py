@@ -47,6 +47,13 @@ def printTime(start):
             mins = mins % 60
             return "used: " + str(hours) + "h " + str(mins) + "m " + str(secs) + "s."
 
+def dialogYesNo(self, title, question):
+        result = QtGui.QMessageBox.question(self, title, question, QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
+        if result == QtGui.QMessageBox.Yes:
+            return True
+        else:
+            return False
+
 
 # def tableWidgetSetResizeMode(form):
 

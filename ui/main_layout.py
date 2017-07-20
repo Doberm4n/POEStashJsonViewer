@@ -150,6 +150,12 @@ def tableWidgetSetResizeMode(form):
         form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
         #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
 
+def setFixedColumnsWidth(self):
+    for i in range (self.tableWidget.columnCount()):
+        self.tableWidget.setColumnWidth(i, 125)
+        self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
+
+
 def tableWidgetDisableResizeToContents(form):
     for i in range (form.tableWidget.columnCount()):
         # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
