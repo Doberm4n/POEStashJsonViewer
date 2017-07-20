@@ -126,79 +126,9 @@
     <string>Open</string>
    </property>
   </action>
-  <action name="actionAct_1">
-   <property name="text">
-    <string>Act 1</string>
-   </property>
-  </action>
-  <action name="actionAct_2">
-   <property name="text">
-    <string>Act 2</string>
-   </property>
-  </action>
-  <action name="actionAct_3">
-   <property name="text">
-    <string>Act 3</string>
-   </property>
-  </action>
-  <action name="actionAct_4">
-   <property name="text">
-    <string>Act 4</string>
-   </property>
-  </action>
-  <action name="actionAct_5">
-   <property name="text">
-    <string>Act 5</string>
-   </property>
-  </action>
-  <action name="actionAct_6">
-   <property name="text">
-    <string>Act 6</string>
-   </property>
-  </action>
-  <action name="actionAct_7">
-   <property name="text">
-    <string>Act 7</string>
-   </property>
-  </action>
-  <action name="actionAct_8">
-   <property name="text">
-    <string>Act 8</string>
-   </property>
-  </action>
-  <action name="actionAct_9">
-   <property name="text">
-    <string>Act 9</string>
-   </property>
-  </action>
-  <action name="actionAct_10">
-   <property name="text">
-    <string>Act 10</string>
-   </property>
-  </action>
-  <action name="actionReset_All">
-   <property name="text">
-    <string>Reset all</string>
-   </property>
-  </action>
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
-   </property>
-  </action>
-  <action name="actionCreate_empty_guide_file">
-   <property name="text">
-    <string>Create guide file</string>
-   </property>
-  </action>
-  <action name="actionImport_text_to_guide">
-   <property name="text">
-    <string>Import text to guide</string>
-   </property>
-  </action>
-  <action name="actionComplete_All">
-   <property name="text">
-    <string>Complete all</string>
    </property>
   </action>
   <action name="actionEdit_filter">
@@ -234,11 +164,6 @@
   <action name="actionExportViewToCsv">
    <property name="text">
     <string>csv</string>
-   </property>
-  </action>
-  <action name="actionExportAllToMySQLDatabase">
-   <property name="text">
-    <string>MySQL Database (need MySQL Server running)</string>
    </property>
   </action>
   <action name="actionExportAllToSQLiteDatabase">

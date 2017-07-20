@@ -51,7 +51,7 @@ form = None
 formAbout = None
 formFilter = None
 version = '0.9.0'
-link = '<a href="https://github.com/Doberm4n/PoEStashTabViewer">GitHub</a>'
+link = '<a href="https://github.com/Doberm4n/POEStashJsonViewer">GitHub</a>'
 
 
 try:
@@ -76,11 +76,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.prepareGui()
 
         #self.openGuidePushButton.clicked.connect(self.browseGuide)
-        self.actionReset_All.triggered.connect(self.menuActionResetAll)
-        self.actionComplete_All.triggered.connect(self.menuActionCompleteAll)
+        #self.actionReset_All.triggered.connect(self.menuActionResetAll)
+        #self.actionComplete_All.triggered.connect(self.menuActionCompleteAll)
         self.actionOpenJson.triggered.connect(self.browseGuide)
         self.actionAbout.triggered.connect(self.showAbout)
-        self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
+        #self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
 
         #self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetSetResizeMode(self))
         self.actionAutosizeColumns.triggered.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
@@ -406,10 +406,10 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.completedStylesheet = "QPushButton:!enabled {font-family: Verdana; font-size: 8pt; color: green; text-align: left;  padding: 5;}"
         self.uncompletedStylesheet = "QPushButton:enabled {font-family: Verdana; font-size: 8pt; text-align: left; border: 1px solid grey; background-color: white; padding: 5; font-weight: 1bold } QPushButton:hover {background-color: rgb(187, 255, 177);}"
         self.disabledtabsylesheet = ""
-        self.actionsReset = [self.actionAct_1, self.actionAct_2, self.actionAct_3, self.actionAct_4, self.actionAct_5, self.actionAct_6, self.actionAct_7, self.actionAct_8, self.actionAct_9, self.actionAct_10, self.actionReset_All]
+        #self.actionsReset = [self.actionAct_1, self.actionAct_2, self.actionAct_3, self.actionAct_4, self.actionAct_5, self.actionAct_6, self.actionAct_7, self.actionAct_8, self.actionAct_9, self.actionAct_10, self.actionReset_All]
         self.menuActionResets = {}
         self.menuActionProgress = {}
-        self.windowTitle = 'PoE Leveling Guide'
+        #self.windowTitle = 'PoE Leveling Guide'
         self.tabWidget.setStyleSheet(self.disabledtabsylesheet)
 
         self.actionOpenJson.setShortcut("Ctrl+O")

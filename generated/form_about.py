@@ -65,7 +65,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(_translate("Dialog", "About", None))
-        self.labelAbout.setText(_translate("Dialog", "Leveling Guide for Path of Exile", None))
+        self.labelAbout.setText(_translate("Dialog", "Stash Json Viewer for PoE", None))
         self.versionLabel.setText(_translate("Dialog", "v.0.9", None))
         self.linkLabel.setText(_translate("Dialog", "link", None))
         self.picLabel.setText(_translate("Dialog", "TextLabel", None))

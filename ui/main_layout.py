@@ -23,7 +23,7 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 def applyLayout(self):
-    self.setWindowTitle(self.windowTitle)
+    #self.setWindowTitle(self.windowTitle)
     # self.buttonsText = None
     # self.buttonsComplete = None
     # self.buttonsText = {}
