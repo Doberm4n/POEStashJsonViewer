@@ -137,7 +137,6 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 UIMainLayout.tableWidgetSetColumnsSelected(self)
                 self.tableWidget.setEnabled(True)
 
-
     def prepareGui(self):
 
         self.tabWidget.hide()
@@ -207,7 +206,6 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
                 setItemSockets(self, itemIndex)
-
 
     def loadJson(self, jsonFileNames):
         #try:
@@ -284,6 +282,7 @@ def main():
     t = QtCore.QTimer()
     t.singleShot(0,form.onQApplicationStarted)
     app.exec_()
+
 
 if __name__ == '__main__':
     main()
