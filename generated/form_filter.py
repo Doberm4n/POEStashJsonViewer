@@ -80,7 +80,7 @@ class Ui_Dialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(_translate("Dialog", "About", None))
+        Dialog.setWindowTitle(_translate("Dialog", "Filters", None))
         self.filterGroupBox.setTitle(_translate("Dialog", "Edit filters", None))
         self.addFilterStringPushButton.setText(_translate("Dialog", "Add", None))
         self.applyFilterPushButton.setText(_translate("Dialog", "Apply filter", None))

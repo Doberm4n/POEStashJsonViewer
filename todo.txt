@@ -92,6 +92,8 @@ Adds # to # #### Damage to Spells
 
 Menu autosize columns
 
+http://www.iconarchive.com/show/onebit-icons-by-icojam.html
+
 // Scroll to Top Left for proper autosize
 
 

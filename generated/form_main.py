@@ -44,6 +44,7 @@ class Ui_MainWindow(object):
         self.savedFiltersComboBox.setObjectName(_fromUtf8("savedFiltersComboBox"))
         self.verticalLayout_2.addWidget(self.savedFiltersComboBox)
         self.label = QtGui.QLabel(self.centralwidget)
+        self.label.setText(_fromUtf8(""))
         self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label.setObjectName(_fromUtf8("label"))
         self.verticalLayout_2.addWidget(self.label)
@@ -119,7 +120,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "Stash Json Viewer for PoE", None))
-        self.label.setText(_translate("MainWindow", "Progress:", None))
         self.menuGuide.setTitle(_translate("MainWindow", "Guide", None))
         self.menuHelp.setTitle(_translate("MainWindow", "Help", None))
         self.menuTools.setTitle(_translate("MainWindow", "Tools", None))

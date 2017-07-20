@@ -26,8 +26,8 @@ def setItemLocation(self, itemIndex):
     elif self.stashTabJson.has_key('character'):
             league = unicode(self.stashTabJson['character']['league'])
             if not league in self.ig.leagues:
-                self.ig.league.append(league)
-            return  unicode(self.stashTabJson['character']['name']) + '\n(Character)'
+                self.ig.leagues.append(league)
+            return unicode(self.stashTabJson['character']['name']) + '\n(Character)'
 
 def setItemType(self, itemIndex):
         itemType = "Unknown"

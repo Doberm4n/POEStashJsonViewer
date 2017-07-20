@@ -603,7 +603,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 # self.tableWidget.resizeColumnsToContents()
                 # self.tableWidget.resizeRowsToContents()
             if self.ig.leagues:
-                self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), unicode(self.tabWidget.tabText(self.tabWidget.indexOf(self.tabs)) + ' (' + self.ig.league + ' League)'))
+                self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), unicode(self.tabWidget.tabText(self.tabWidget.indexOf(self.tabs)) + ' ' + unicode('[%s]' % ', '.join(map(str, self.ig.leagues))) + ' '))
                 #self.tableWidgetSetResizeMode()
 
 
