@@ -4,6 +4,7 @@ from PyQt4 import QtGui
 from json import load
 from json import loads
 import json
+from time import time
 
 def readJson(json_file):
         if json_file:
@@ -30,6 +31,21 @@ def getMySQLDatabaseFileName():
 
 def openSingleJsonFileName(directoryName):
     return unicode(QtGui.QFileDialog.getOpenFileName(None, "Select json", directory=directoryName, filter='*.single_json'))
+
+def printTime(start):
+    end = time()
+    duration = end - start
+    if duration < 60:
+        return "used: " + str(round(duration, 2)) + "s."
+    else:
+        mins = int(duration / 60)
+        secs = round(duration % 60, 2)
+        if mins < 60:
+            return "used: " + str(mins) + "m " + str(secs) + "s."
+        else:
+            hours = int(duration / 3600)
+            mins = mins % 60
+            return "used: " + str(hours) + "h " + str(mins) + "m " + str(secs) + "s."
 
 
 # def tableWidgetSetResizeMode(form):
