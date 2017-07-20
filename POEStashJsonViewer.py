@@ -565,7 +565,11 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             jsonFilesCount = len(jsonFileNames)
             #globalRowCount = 0
 
+
+
             for jsonFiles in range(jsonFilesCount):
+
+                self.statusbar.showMessage('Processing ' + os.path.basename(unicode(jsonFileNames[jsonFiles])))
 
                 self.stashTabJson = self.readJson(unicode(jsonFileNames[jsonFiles]))
 
@@ -591,6 +595,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                     #print "=======================================Stash " + str(i) + " ======================================="
                 #add rows, number equal to items count in json
                 for itemIndex in range(itemsCount):
+
+                    self.statusbar.showMessage('Processing ' + os.path.basename(unicode(jsonFileNames[jsonFiles])) + ' (item ' + str(itemIndex+1) + ' of ' + str(itemsCount) + ')')
+
                     self.tableWidget.insertRow(itemIndex)
                     self.setItem(itemIndex)
                         #globalRowCount += 1
@@ -609,15 +616,13 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
                 #self.tableWidget.setVisible(True)
 
+            self.statusbar.showMessage('Load complete')
 
                 #self.tableWidget.setEnabled(True)
 
                 #self.tableWidget.setColumnHidden()
                 #self.tableWidget.setRowHidden(1, True)
                 #self.tableWidgetContentsAutoSize()
-
-
-
 
 
                 # if (not self.firstTab) and (textLength > 0):
