@@ -90,9 +90,9 @@ Adds # to # #### Damage to Spells
 
 // Select all / Unselect all in columns select
 
-Menu autosize columns
+// Menu autosize columns
 
-http://www.iconarchive.com/show/onebit-icons-by-icojam.html
+// http://www.iconarchive.com/show/onebit-icons-by-icojam.html
 
 // Scroll to Top Left for proper autosize
 
