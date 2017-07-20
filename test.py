@@ -172,7 +172,7 @@ print a
 #print files
 
 a = ['', 'fdsfds', '2', '', 'fdfs']
-a = []
+a = [ ]
 print '2' in a
 #print a.isfloat()
 
