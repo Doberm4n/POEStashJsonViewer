@@ -55,7 +55,7 @@ def exportToSQLiteDatabase(form, driverType):
         #query.exec_(dataCreateTableQuery)
         rowCount = form.tableWidget.rowCount()
         for i in range(rowCount):
-            form.statusbar.showMessage('Processing row: ' +  str(i+1) + ' of ' + str(rowCount))
+            form.statusbar.showMessage('Processing ' + os.path.basename(unicode(fileName))  + ' (item ' + str(i+1) + ' of ' + str(rowCount) + ')')
             #print 'Processing row: ' +  str(i+1) + ' of ' + str(rowCount)
 
             dataDatabaseValues = ''

@@ -389,14 +389,14 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.tableWidget.setRowCount(0)
             UIMainLayout.tableWidgetDisableResizeToContents(self)
             #self.showAllColumns()
-            self.loadJson(self.curJsonFiles)
+            if self.loadJson(self.curJsonFiles):
 
             # self.tableWidgetSetResizeMode()
             # self.setColumnsSelected(self.ig.jsonConfig)
             #UIMainLayout.tableWidgetSetResizeMode(self)
-            UIMainLayout.tableWidgetContentsAutoSize(self)
-            UIMainLayout.tableWidgetSetColumnsSelected(self)
-            self.tableWidget.setEnabled(True)
+                UIMainLayout.tableWidgetContentsAutoSize(self)
+                UIMainLayout.tableWidgetSetColumnsSelected(self)
+                self.tableWidget.setEnabled(True)
 
 
 
@@ -587,7 +587,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                     #add defined columns
                 if not self.stashTabJson.has_key('items'):
                     self.statusbar.showMessage('Wrong json file: ' + unicode(jsonFileNames[jsonFiles]))
-                    return
+                    return False
 
                 itemsCount = len(self.stashTabJson['items'])
                 # for columns in range (len(self.ig.columnsHeaders)):
@@ -617,6 +617,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #self.tableWidget.setVisible(True)
 
             self.statusbar.showMessage('Load complete')
+            return True
 
                 #self.tableWidget.setEnabled(True)
 

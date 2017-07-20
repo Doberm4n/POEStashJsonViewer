@@ -11,7 +11,7 @@ import modules.tools as tools
 def exportToSingleJson(form):
     fileName = tools.getSingleJsonFileName()
     if fileName:
-
+        form.tableWidget.setEnabled(False)
         data = {"common":{"singleJsonVersion":""},"rows": []}
         temp = json.dumps(data)
         jsonData = json.loads(temp)
@@ -20,7 +20,10 @@ def exportToSingleJson(form):
 
         jsonData['common']['singleJsonVersion'] = form.ig.jsonConfig['common']['configVersion']
 
-        for i in range(form.tableWidget.rowCount()):
+
+        l = form.tableWidget.rowCount()
+        for i in range(l):
+                form.statusbar.showMessage('Processing ' + os.path.basename(unicode(fileName))  + ' (item ' + str(i+1) + ' of ' + str(l) + ')')
                 #jsonItemValues = []
                 jsonData['rows'].append([])
                 for j in range(form.tableWidget.columnCount()):
@@ -30,3 +33,5 @@ def exportToSingleJson(form):
                     else:
                         jsonData['rows'][i].append('')
         tools.writeJson(jsonData, unicode(fileName))
+        form.statusbar.showMessage('Export complete')
+        form.tableWidget.setEnabled(True)
