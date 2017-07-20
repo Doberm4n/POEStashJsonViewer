@@ -162,9 +162,9 @@ class globalValues():
                         # '',
                         # '',
 
-        self.operandsText = {'String' : ['contains', 'match'], 'Integer' : ['<', '>', '=', '<>'], 'Float' : ['<', '>', '=', '<>']}
+        self.operandsText = {'String' : ['contains', 'match'], 'Integer' : ['>', '<', '=', '<>'], 'Float' : ['>', '<', '=', '<>']}
 
-        self.operandsChars = {'<' : operator.lt, '>' : operator.gt, '=' : operator.eq, '<>' : operator.ne, 'contains' : operator.contains}
+        self.operandsChars = {'>' : operator.gt, '<' : operator.lt, '=' : operator.eq, '<>' : operator.ne, 'contains' : operator.contains}
 
         self.filtersDir = os.getcwd() + '\\Filters'
 

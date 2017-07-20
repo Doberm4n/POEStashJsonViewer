@@ -34,7 +34,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         #print form.ig.operandsText
         self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
 
-        self.addFilterStringPushButton.clicked.connect(self.addFilterLine)
+        self.addFilterStringPushButton.clicked.connect(lambda: self.addFilterLine(form))
         self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form))
 
         self.saveFilterPushButton.clicked.connect(lambda: self.saveFilter(form))
@@ -78,14 +78,25 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         for i in range (len(operandsText)):
             self.operandsComboBox.addItem(operandsText[i])
 
-    def addFilterLine(self, main):
+    def addFilterLine(self, form):
         #check isDigit
         print self.filterLinesTextEdit.toPlainText()
+        filterValue = unicode(self.valueLineEdit.text())
+        if self.operandsComboBox.currentText() in form.ig.operandsText['Integer']:
+            if (not self.isFloat(filterValue)) and (not filterValue.isdigit()):
+                return
         if self.filterLinesTextEdit.toPlainText() == '':
-            self.filterLinesTextEdit.setText(self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + self.valueLineEdit.text())
+            self.filterLinesTextEdit.setText(self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + filterValue)
         else:
-            self.filterLinesTextEdit.setText(self.filterLinesTextEdit.toPlainText() + '\n' + self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + self.valueLineEdit.text())
+            self.filterLinesTextEdit.setText(self.filterLinesTextEdit.toPlainText() + '\n' + self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + filterValue)
         print "rewrklwekrlewk;l"
+
+    def isFloat(self, element):
+        partition=element.partition('.')
+        if (partition[0].isdigit() and partition[1]=='.' and partition[2].isdigit()) or (partition[0]=='' and partition[1]=='.' and partition[2].isdigit()) or (partition[0].isdigit() and partition[1]=='.' and partition[2]==''):
+            return True
+        else:
+            return False
 
 
 

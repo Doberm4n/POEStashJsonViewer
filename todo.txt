@@ -86,6 +86,8 @@ Location (character / Stash Tab) (non calculated)
 
 // Load single json
 
+export to SQLite Database
+
 Select all / Unselect all in columns select
 
 // Scroll to Top Left for proper autosize

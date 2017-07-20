@@ -14,6 +14,7 @@ from json import load
 from json import loads
 import json
 import operator
+#from fastnumbers import isfloat
 
 sub1 = "python string!"
 sub2 = "an arg"
@@ -169,6 +170,10 @@ print a
 #if ewqeqw:
     #print
 #print files
+
+a = ['1.1', '1']
+print '2' in a
+print a.isfloat()
 
 
 # patternStringFire = 'Adds\s\d+\s+to\s\d+\s+Fire Damage'
