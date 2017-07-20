@@ -31,7 +31,9 @@ def openSingleJson(form):
         form.tableWidget.setRowCount(0)
         UIMainLayout.tableWidgetDisableResizeToContents(form)
 
-        for i in range(len(jsonData['rows'])):
+        l = len(jsonData['rows'])
+        for i in range(l):
+                form.statusbar.showMessage('Processing ' + os.path.basename(unicode(fileName))  + ' (item ' + str(i+1) + ' of ' + str(l) + ')')
                 #jsonItemValues = []
                 #jsonData['rows'].append([])
                 form.tableWidget.insertRow(i)
@@ -43,6 +45,7 @@ def openSingleJson(form):
                     else:
                         form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(''))
                 #tools.writeJson(jsonData, fileName)
+        form.statusbar.showMessage('Load complete')
 
         UIMainLayout.tableWidgetContentsAutoSize(form)
 

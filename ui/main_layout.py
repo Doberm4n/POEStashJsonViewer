@@ -111,8 +111,10 @@ def tableWidgetContentsAutoSize(form):
 
 
     scrollToTopLeftItem(form)
+    form.statusbar.showMessage('Autosizing rows and columns...')
     form.tableWidget.resizeColumnsToContents()
     form.tableWidget.resizeRowsToContents()
+    form.statusbar.showMessage('Ready')
     print "Auto sized"
 
 def scrollToTopLeftItem(form):
