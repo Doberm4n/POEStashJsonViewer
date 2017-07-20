@@ -18,6 +18,15 @@ def setItemNameAndTypeLine(self, itemIndex):
             dataName = dataName + typeLine
             return dataName
 
+def setItemLocation(self, itemIndex):
+    if self.stashTabJson.has_key('tabs'):
+        for i in range(len(self.stashTabJson['tabs'])):
+            if self.stashTabJson['tabs'][i]['selected']:
+                return  unicode(self.stashTabJson['tabs'][i]['n']) + '\n(Stash Tab)'
+    elif self.stashTabJson.has_key('character'):
+            self.ig.league = unicode(self.stashTabJson['character']['league'])
+            return  unicode(self.stashTabJson['character']['name']) + '\n(Character)'
+
 def setItemType(self, itemIndex):
         itemType = "Unknown"
         for i in range (len(self.ig.itemTypes)):

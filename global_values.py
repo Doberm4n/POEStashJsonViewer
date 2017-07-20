@@ -10,6 +10,8 @@ class globalValues():
 
         self.columnsHeaders = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'String', 'isCalc' : False},
 
+                            {'columnHeader' : 'Location', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
+
                              {'columnHeader' : 'Type', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
 
                            #{'columnHeader' : 'Type', 'jsonName' : 'typeLine'  , 'type' : 'str', 'isCalc' : False},
@@ -165,6 +167,8 @@ class globalValues():
         self.operandsChars = {'<' : operator.lt, '>' : operator.gt, '=' : operator.eq, '<>' : operator.ne, 'contains' : operator.contains}
 
         self.filtersDir = os.getcwd() + '\\Filters'
+
+        self.league = None
 
 
 

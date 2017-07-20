@@ -166,7 +166,8 @@ b = 'Thousand Ribbons Tempest Stinger•fwwrweMjölnerSimple Robe'
 #a[1].append(["'fdsj'"])
 print a
 #files = unicode(QtGui.QFileDialog.getOpenFileNames(None, "Select .json files", filter='*.json', directory=os.getcwd()))
-
+#if ewqeqw:
+    #print
 #print files
 
 

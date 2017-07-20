@@ -472,6 +472,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             #Type
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
 
+            #Location
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Location'], QtGui.QTableWidgetItem(items.setItemLocation(self, itemIndex)))
+
             #iLvl
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QtGui.QTableWidgetItem(items.setIlvl(self, itemIndex)))
 
@@ -550,6 +553,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def loadJson(self, jsonFileNames):
         #try:
+            self.ig.league = None
+            self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), 'Stash')
             self.stashJson = {}
             characterJson = {}
 
@@ -593,7 +598,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 # self.tabWidget.update()
                 # self.tableWidget.resizeColumnsToContents()
                 # self.tableWidget.resizeRowsToContents()
-
+            if self.ig.league:
+                self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), unicode(self.tabWidget.tabText(self.tabWidget.indexOf(self.tabs)) + ' (' + self.ig.league + ' League)'))
                 #self.tableWidgetSetResizeMode()
 
 
