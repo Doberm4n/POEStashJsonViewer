@@ -63,12 +63,17 @@ def exportToSQLiteDatabase(form, driverType):
             for j in range(l):
 
                 dataValue = form.tableWidget.item(i, j)
-                if not dataValue:
+                dataType = form.ig.columnsHeaders[j]['type']
+                if (not dataValue) and (not dataType == 'String'):
+                    dataValue = '0'
+                elif (not dataValue.text()) and (not dataType == 'String'):
+                    dataValue = '0'
+                elif not dataValue.text():
                     dataValue = ''
                 else:
                     dataValue = dataValue.text()
+                    dataValue.replace("'", "''")
 
-                dataValue.replace("'", "''")
 
                 if j < (l-1):
                     dataDatabaseKeys = dataDatabaseKeys + "'" + form.ig.columnsHeaders[j]['columnHeader'] + "', "
