@@ -22,23 +22,9 @@
      <number>9</number>
     </property>
     <item>
-     <widget class="QPushButton" name="openGuidePushButton">
-      <property name="text">
-       <string>Open guide</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QLineEdit" name="guideLineEdit">
       <property name="enabled">
        <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>PushButton</string>
       </property>
      </widget>
     </item>
@@ -84,22 +70,8 @@
     <property name="title">
      <string>Guide</string>
     </property>
-    <widget class="QMenu" name="menuReset_progress">
-     <property name="title">
-      <string>Reset progress</string>
-     </property>
-     <addaction name="actionReset_All"/>
-    </widget>
-    <widget class="QMenu" name="menuComplete_progress">
-     <property name="title">
-      <string>Complete progress</string>
-     </property>
-     <addaction name="actionComplete_All"/>
-    </widget>
     <addaction name="menuActionOpen"/>
     <addaction name="actionOpen_single_json"/>
-    <addaction name="menuReset_progress"/>
-    <addaction name="menuComplete_progress"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -141,6 +113,7 @@
      <string>View</string>
     </property>
     <addaction name="actionSelect_columns"/>
+    <addaction name="actionAutosizeColumns"/>
    </widget>
    <addaction name="menuGuide"/>
    <addaction name="menuView"/>
@@ -272,6 +245,11 @@
   <action name="actionExportAllToSQLiteDatabase">
    <property name="text">
     <string>SQLite Database</string>
+   </property>
+  </action>
+  <action name="actionAutosizeColumns">
+   <property name="text">
+    <string>Autosize columns</string>
    </property>
   </action>
  </widget>

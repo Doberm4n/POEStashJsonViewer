@@ -90,6 +90,8 @@ Adds # to # #### Damage to Spells
 
 // Select all / Unselect all in columns select
 
+Menu autosize columns
+
 // Scroll to Top Left for proper autosize
 
 

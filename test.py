@@ -171,9 +171,10 @@ print a
     #print
 #print files
 
-a = ['1.1', '1']
+a = ['', 'fdsfds', '2', '', 'fdfs']
+a = []
 print '2' in a
-print a.isfloat()
+#print a.isfloat()
 
 
 # patternStringFire = 'Adds\s\d+\s+to\s\d+\s+Fire Damage'

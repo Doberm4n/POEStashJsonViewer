@@ -75,7 +75,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         self.prepareGui()
 
-        self.openGuidePushButton.clicked.connect(self.browseGuide)
+        #self.openGuidePushButton.clicked.connect(self.browseGuide)
         self.actionReset_All.triggered.connect(self.menuActionResetAll)
         self.actionComplete_All.triggered.connect(self.menuActionCompleteAll)
         self.menuActionOpen.triggered.connect(self.browseGuide)
@@ -83,7 +83,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
 
         #self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetSetResizeMode(self))
-        self.pushButton.clicked.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
+        self.actionAutosizeColumns.triggered.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
 
 
 
@@ -417,6 +417,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         self.actionReset_filter.setShortcut("F7")
 
+        self.actionAutosizeColumns.setShortcut("F5")
+
     # def clearButtons(self):
     #     for tabs in range (10):
     #             for widget in self.groupBoxes_original[tabs].children():
@@ -553,7 +555,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
     def loadJson(self, jsonFileNames):
         #try:
-            self.ig.league = None
+            self.ig.leagues = []
             self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), 'Stash')
             self.stashJson = {}
             characterJson = {}
@@ -598,7 +600,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 # self.tabWidget.update()
                 # self.tableWidget.resizeColumnsToContents()
                 # self.tableWidget.resizeRowsToContents()
-            if self.ig.league:
+            if self.ig.leagues:
                 self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), unicode(self.tabWidget.tabText(self.tabWidget.indexOf(self.tabs)) + ' (' + self.ig.league + ' League)'))
                 #self.tableWidgetSetResizeMode()
 

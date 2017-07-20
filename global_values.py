@@ -168,7 +168,7 @@ class globalValues():
 
         self.filtersDir = os.getcwd() + '\\Filters'
 
-        self.league = None
+        self.leagues = []
 
 
 
