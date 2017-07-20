@@ -15,9 +15,9 @@ form enable after filter
 
 set fixed width for columns / add option to enable disable columns and row autosize
 
-check entered values types in filter_layout
+// check entered values types in filter_layout
 
-change first digit operand for > instead of <
+// change first digit operand for > instead of <
 
 Columns:
 
@@ -72,7 +72,7 @@ Adds # to # #### Damage to Spells
 #% increased Energy Shield (but not 'Recharge Rate')
 
 
-Location (character / Stash Tab) (non calculated)
+// Location (character / Stash Tab) (non calculated)
 
 // Stack Quantity (non calculated)
 
@@ -86,9 +86,9 @@ Location (character / Stash Tab) (non calculated)
 
 // Load single json
 
-export to SQLite Database
+// export to SQLite Database
 
-Select all / Unselect all in columns select
+// Select all / Unselect all in columns select
 
 // Scroll to Top Left for proper autosize
 
