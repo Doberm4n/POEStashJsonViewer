@@ -78,7 +78,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         #self.openGuidePushButton.clicked.connect(self.browseGuide)
         self.actionReset_All.triggered.connect(self.menuActionResetAll)
         self.actionComplete_All.triggered.connect(self.menuActionCompleteAll)
-        self.menuActionOpen.triggered.connect(self.browseGuide)
+        self.actionOpenJson.triggered.connect(self.browseGuide)
         self.actionAbout.triggered.connect(self.showAbout)
         self.actionCreate_empty_guide_file.triggered.connect(lambda: export.createGuideAndImportText(self))
 
@@ -102,7 +102,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionExportAllToSingleJson.triggered.connect(lambda: exportToSingleJson.exportToSingleJson(self))
         self.actionExportAllToSQLiteDatabase.triggered.connect(lambda: exportToSQLiteDataBase.exportToSQLiteDatabase(self, 'QSQLITE'))
 
-        self.actionOpen_single_json.triggered.connect(lambda: openSingleJson.openSingleJson(self))
+        self.actionOpenSingleJson.triggered.connect(lambda: openSingleJson.openSingleJson(self))
 
 
 
@@ -145,7 +145,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
         UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
 
-        self.tableWidget.setEnabled(True)
+        #self.tableWidget.setEnabled(True)
 
         self.statusbar.showMessage('Loaded')
         print "Started"
@@ -411,6 +411,8 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.menuActionProgress = {}
         self.windowTitle = 'PoE Leveling Guide'
         self.tabWidget.setStyleSheet(self.disabledtabsylesheet)
+
+        self.actionOpenJson.setShortcut("Ctrl+O")
 
         self.actionEdit_filter.setShortcut("F3")
         self.actionSelect_columns.setShortcut("F2")

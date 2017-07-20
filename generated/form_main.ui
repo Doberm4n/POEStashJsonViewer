@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PoE Leveling Guide</string>
+   <string>Stash Json Viewer for PoE</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -70,8 +70,8 @@
     <property name="title">
      <string>Guide</string>
     </property>
-    <addaction name="menuActionOpen"/>
-    <addaction name="actionOpen_single_json"/>
+    <addaction name="actionOpenJson"/>
+    <addaction name="actionOpenSingleJson"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -97,7 +97,6 @@
      </property>
      <addaction name="actionExportViewToCsv"/>
     </widget>
-    <addaction name="actionCreate_empty_guide_file"/>
     <addaction name="menuExport_to"/>
     <addaction name="menuExport_view_to"/>
    </widget>
@@ -122,7 +121,7 @@
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="menuActionOpen">
+  <action name="actionOpenJson">
    <property name="text">
     <string>Open</string>
    </property>
@@ -227,7 +226,7 @@
     <string>single json</string>
    </property>
   </action>
-  <action name="actionOpen_single_json">
+  <action name="actionOpenSingleJson">
    <property name="text">
     <string>Open single json</string>
    </property>

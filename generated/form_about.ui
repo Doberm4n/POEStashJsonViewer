@@ -68,7 +68,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Leveling Guide for Path of Exile</string>
+    <string>Stash Json Viewer for PoE</string>
    </property>
   </widget>
   <widget class="QLabel" name="versionLabel">
