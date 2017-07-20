@@ -41,6 +41,12 @@ class Ui_Dialog(object):
         self.savePushButton = QtGui.QPushButton(Dialog)
         self.savePushButton.setGeometry(QtCore.QRect(385, 465, 75, 23))
         self.savePushButton.setObjectName(_fromUtf8("savePushButton"))
+        self.selectAllColumnsPushButton = QtGui.QPushButton(Dialog)
+        self.selectAllColumnsPushButton.setGeometry(QtCore.QRect(10, 465, 75, 23))
+        self.selectAllColumnsPushButton.setObjectName(_fromUtf8("selectAllColumnsPushButton"))
+        self.unselectAllColumnsPushButton = QtGui.QPushButton(Dialog)
+        self.unselectAllColumnsPushButton.setGeometry(QtCore.QRect(90, 465, 75, 23))
+        self.unselectAllColumnsPushButton.setObjectName(_fromUtf8("unselectAllColumnsPushButton"))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -48,4 +54,6 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(_translate("Dialog", "About", None))
         self.savePushButton.setText(_translate("Dialog", "Ok", None))
+        self.selectAllColumnsPushButton.setText(_translate("Dialog", "Select all", None))
+        self.unselectAllColumnsPushButton.setText(_translate("Dialog", "Unselect all", None))
 

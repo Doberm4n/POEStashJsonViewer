@@ -60,6 +60,32 @@
     <string>Ok</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="selectAllColumnsPushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>465</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Select all</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="unselectAllColumnsPushButton">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>465</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Unselect all</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

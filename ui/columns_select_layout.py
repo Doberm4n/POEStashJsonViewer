@@ -21,6 +21,10 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
         self.columnsSelectListWidget.clicked.connect(self.setCheckBox)
 
         self.savePushButton.clicked.connect(lambda: self.saveColumnsSelection(form))
+
+        self.selectAllColumnsPushButton.clicked.connect(self.selectAllColumns)
+        self.unselectAllColumnsPushButton.clicked.connect(self.unselectAllColumns)
+
         # #form.tableWidget.setVisible(False)
         # #print form.tableWidget.columnsCount()
         # #self.linkLabel.linkActivated.connect(self.openURL)
@@ -98,6 +102,15 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
         #UIMainLayout.tableWidgetSetResizeMode(form)
 
         self.close()
+
+
+    def selectAllColumns(self):
+        for i in range (self.columnsSelectListWidget.count()):
+            self.columnsSelectListWidget.item(i).setCheckState(2)
+
+    def unselectAllColumns(self):
+        for i in range (self.columnsSelectListWidget.count()):
+            self.columnsSelectListWidget.item(i).setCheckState(0)
 
     # def loadOperandsText(self, form):
     #     self.operandsComboBox.clear()
