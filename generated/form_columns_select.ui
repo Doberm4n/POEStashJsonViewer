@@ -21,18 +21,18 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>370</width>
-    <height>167</height>
+    <width>473</width>
+    <height>498</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1370</width>
-    <height>1167</height>
+    <width>473</width>
+    <height>498</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>About</string>
+   <string>Columns select</string>
   </property>
   <widget class="QListWidget" name="columnsSelectListWidget">
    <property name="geometry">

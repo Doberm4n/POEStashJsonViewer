@@ -32,8 +32,8 @@ class Ui_Dialog(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
         Dialog.setSizePolicy(sizePolicy)
-        Dialog.setMinimumSize(QtCore.QSize(370, 167))
-        Dialog.setMaximumSize(QtCore.QSize(1370, 1167))
+        Dialog.setMinimumSize(QtCore.QSize(473, 498))
+        Dialog.setMaximumSize(QtCore.QSize(473, 498))
         self.columnsSelectListWidget = QtGui.QListWidget(Dialog)
         self.columnsSelectListWidget.setGeometry(QtCore.QRect(10, 10, 451, 446))
         self.columnsSelectListWidget.setViewMode(QtGui.QListView.ListMode)
@@ -52,7 +52,7 @@ class Ui_Dialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(_translate("Dialog", "About", None))
+        Dialog.setWindowTitle(_translate("Dialog", "Columns select", None))
         self.savePushButton.setText(_translate("Dialog", "Ok", None))
         self.selectAllColumnsPushButton.setText(_translate("Dialog", "Select all", None))
         self.unselectAllColumnsPushButton.setText(_translate("Dialog", "Unselect all", None))

@@ -7,17 +7,17 @@ from PyQt4.QtCore import QEvent
 from PyQt4.QtCore import QObject
 #import res.res
 import sys
-import re
+#import re
 import os
 from json import load
-from json import loads
+#from json import loads
 import json
 import gc
 import time
 import res.res
 import global_values
 import modules.items.items as items
-import modules.tools as tools
+#import modules.tools as tools
 from modules.items.propertiesImplicitExplicit import setItemPropertiesImplicitExplicit
 from modules.items.dpsPdpsEdpsFdpsLdpsCdpsChDps import setItemDpsPdpsEdpsFdpsLdpsCdpsChDps
 from modules.items.apsCsch import setItemApsCsch
@@ -39,9 +39,9 @@ import ui.main_layout as UIMainLayout
 import ui.filter_layout as UIFilterLayout
 import ui.columns_select_layout as UIColumnsSelectLayout
 #import generated.about as GUIAbout
-from Tkinter import Tk
+#from Tkinter import Tk
 import ctypes
-import export
+#import export
 
 
 myappid = 'mycompany.myproduct.subproduct.version'
@@ -333,7 +333,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             if self.ig.jsonConfig['curGuide']:
                 #print "Yes"
                 self.curGuide = self.ig.jsonConfig["curGuide"]
-                curGuideFilename = os.path.basename(self.curGuide)
+                #curGuideFilename = os.path.basename(self.curGuide)
                 #self.guideLineEdit.setText(curGuideFilename)
                 self.curDir = os.path.dirname(self.curGuide)
 
@@ -719,7 +719,7 @@ class aboutDialog(QtGui.QDialog, GUIAbout.Ui_Dialog):
         self.versionLabel.setText("v." + version)
         self.linkLabel.setText(link)
         pic = self.picLabel
-        pic.setPixmap(QtGui.QPixmap(":todo-icon32.png"))
+        pic.setPixmap(QtGui.QPixmap(":database-icon32.png"))
 
     def openURL(self, linkStr):
         QDesktopServices.openUrl(QUrl(linkStr))
@@ -728,8 +728,8 @@ class aboutDialog(QtGui.QDialog, GUIAbout.Ui_Dialog):
 def main():
     app = QtGui.QApplication(sys.argv)
     appIco = QtGui.QIcon()
-    appIco.addFile(':todo-icon16.png', QtCore.QSize(16,16))
-    appIco.addFile(':todo-icon32.png', QtCore.QSize(32,32))
+    appIco.addFile(':database-icon16.png', QtCore.QSize(16,16))
+    appIco.addFile(':database-icon32.png', QtCore.QSize(32,32))
     app.setWindowIcon(appIco)
     form = POEStashTabViewerApp()
     form.showMaximized()
