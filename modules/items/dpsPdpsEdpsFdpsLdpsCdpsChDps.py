@@ -5,17 +5,7 @@ parentdir = os.path.dirname(currentdir)
 from PyQt4 import QtGui
 import modules.calc.dpsCalc as dpsCalc
 
-
 def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitExplicit):
-
-
-
-    # unicodeData = unicode(self.POEWeaponDataTextEdit.toPlainText())
- #        if self.POEDPSCalc.Calc(unicodeData):
- #            self.populateData()
- #        else:
- #            self.POEWeaponDataTextEdit.setPlainText('Wrong data')
- #            self.resetData()
     if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
         dataQuality = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Quality']).text()
         if dataQuality:
@@ -30,56 +20,11 @@ def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitE
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueLightning)))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueCold)))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueChaos)))
-        # self.eDPSLabel.setText("eDPS: " + str(self.POEDPSCalc.valueElemental))
-        # self.cDPSLabel.setText("cDPS: " + str(self.POEDPSCalc.valueChaos))
-        # self.fireDPSLabel.setText(str(self.POEDPSCalc.valueFire))
-        # self.lightningDPSLabel.setText(str(self.POEDPSCalc.valueLightning))
-        # self.coldDPSLabel.setText(str(self.POEDPSCalc.valueCold))
-        # self.totalDPSLabel.setText(str(self.POEDPSCalc.totalDPS))
         else:
-
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem('Wrong data'))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QtGui.QTableWidgetItem('Wrong data'))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem('Wrong data'))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QtGui.QTableWidgetItem('Wrong data'))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem('Wrong data'))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem('Wrong data'))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem('Wrong data'))
-        #set for not None value
-    #else:
-        #form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem(''))
-        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QtGui.QTableWidgetItem(''))
-        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem(''))
-        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QtGui.QTableWidgetItem(''))
-        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem(''))
-        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem(''))
-        # form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem(''))
-
-    #def setEmptyStringValues(form):
-
-    #dataExplicitModifiers = []
-    #dataProperties.update({'propertiesLines' : []})
-    # propertiesImplicitExplicitLines = ''
-    # #dataProperties['propertiesLines'].append({'key': '', 'keyNext': ''})
-    # #dataProperties['fdsfds'] = 'frdsfs'
-    # #print dataProperties
-    # #dataProperties.append([])
-    # a = form.tableWidget.item(0,0).text()
-    # print unicode(a)
-
-    # properties = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Properties']).text()
-    # implicitModifiers = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Implicit Modifiers']).text()
-    # explicitModifiers = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Explicit Modifiers']).text()
-
-    # if properties and (implicitModifiers or explicitModifiers):
-    #     properties = properties + '\n\n'
-    # if implicitModifiers and explicitModifiers:
-    #     implicitModifiers = implicitModifiers + '\n\n'
-    # if explicitModifiers:
-    #     explicitModifiers = explicitModifiers
-
-
-    # propertiesImplicitExplicitLines =  properties + implicitModifiers + explicitModifiers
-
-    # return propertiesImplicitExplicitLines
-    # print ""
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem('0'))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QtGui.QTableWidgetItem('0'))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem('0'))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QtGui.QTableWidgetItem('0'))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem('0'))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem('0'))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem('0'))

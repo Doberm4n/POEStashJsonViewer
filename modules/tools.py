@@ -2,7 +2,6 @@
 import os
 from PyQt4 import QtGui
 from json import load
-from json import loads
 import json
 from time import time
 
@@ -54,9 +53,7 @@ def dialogYesNo(self, title, question):
         else:
             return False
 
-
 # def tableWidgetSetResizeMode(form):
-
 #         for i in range (form.tableWidget.columnCount()):
 #             # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
 #             # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
@@ -64,9 +61,9 @@ def dialogYesNo(self, title, question):
 #             #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
 #             #      continue
 #             #print unicode(self.tableWidget.item(0,0).text())
-
 #             form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
 #         for j in range (form.tableWidget.rowCount()):
 #         #print ""
 #             form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
+
 

@@ -23,19 +23,6 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 def applyLayout(self):
-    #self.setWindowTitle(self.windowTitle)
-    # self.buttonsText = None
-    # self.buttonsComplete = None
-    # self.buttonsText = {}
-    # self.buttonsComplete = {}
-    #self.tabs = {}
-    #self.verticalLayout = {}
-    # self.scrollArea = {}
-    # self.scrollAreaWidgetContent = {}
-    # self.groupBox = {}
-    # self.formLayout = {}
-    # self.gridLayout = {}
-    # self.firstTab = False
     self.tabWidget.show()
     self.tabs = QtGui.QWidget()
     self.tabs.setObjectName(_fromUtf8("tab"))
@@ -48,7 +35,6 @@ def applyLayout(self):
     self.tabWidget.addTab(self.tabs, _fromUtf8(""))
     self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), _translate("MainWindow", "Stash", None))
     self.verticalLayout.addWidget(self.groupBox)
-    #add tableWidget
     self.tableWidget = QtGui.QTableWidget(self.groupBox)
     self.tableWidget.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
     self.tableWidget.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
@@ -58,58 +44,19 @@ def applyLayout(self):
     self.tableWidget.horizontalHeader().setVisible(True)
     self.tableWidget.verticalHeader().setVisible(True)
     self.tableWidget.setSortingEnabled(True)
-    #self.tableWidget.setVisible(False)
     self.tableWidget.setEnabled(False)
+
     #add defined columns with headers from global_values
     for columns in range (len(self.ig.columnsHeaders)):
-        # if (not self.ig.jsonConfig['common']['calculateSpecifiedColumns']) and (self.ig.columnsHeaders[columns]['isCalc']):
-        #     continue
         self.tableWidget.insertColumn(columns)
         item = QtGui.QTableWidgetItem(self.ig.columnsHeaders[columns]['columnHeader'])
         self.tableWidget.setHorizontalHeaderItem(columns, item)
         item = self.tableWidget.horizontalHeaderItem(columns)
-
     self.savedFiltersComboBox.currentIndexChanged.connect(lambda: loadAndApplyFilter(self))
 
 
-    #self.savedFiltersComboBox.setMinimumWidth(700)
-    # self.openGuidePushButton.setMaximumHeight(20)
-    # self.savedFiltersComboBox.setMaximumHeight(18)
-
-    #self.toolBar.addWidget(self.openGuidePushButton)
-    #self.toolBar.addSeparator()
-    #self.toolBar.addWidget(self.savedFiltersComboBox)
-    #self.toolBar.setMinimumHeight(25)
-    #self.toolBar.setStyleSheet('QToolBar{spacing:5px;}')
-    # self.openGuidePushButton.setGeometry(5, 5, 20, 20)
-    # self.savedFiltersComboBox.setGeometry(5,20, 20, 20)
-
-    # self.tableWidget.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(2, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(3, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(4, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(5, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(6, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(7, QtGui.QHeaderView.ResizeToContents)
-    # self.tableWidget.horizontalHeader().setResizeMode(8, QtGui.QHeaderView.ResizeToContents)
-    #set autoSize
-    #self.tableWidget.resizeColumnsToContents()
-    #self.tableWidget.resizeRowsToContents()
 
 def tableWidgetContentsAutoSize(form):
-    #print form.tableWidget.itemAt(1, 1)
-    #print form.tableWidget.columnAt(0)
-    #print form.tableWidget.visualColumn(0)#.text()
-    #print form.tableWidget.rowAt(0)
-    #print form.tableWidget.indexAt(form.tableWidget.rect.topLeft())
-
-    #if (form.tableWidget.rowCount() > 0) and (form.tableWidget.columnCount() > 0):
-        #form.tableWidget.scrollToItem(form.tableWidget.item(form.tableWidget.itemAt(0, 0).row(), 0))
-        #form.tableWidget.scrollToItem(form.tableWidget.item(0, 1))
-
-
-
     scrollToTopLeftItem(form)
     form.statusbar.showMessage('Autosizing rows and columns...')
     form.tableWidget.resizeColumnsToContents()
@@ -118,7 +65,6 @@ def tableWidgetContentsAutoSize(form):
     print "Auto sized"
 
 def scrollToTopLeftItem(form):
-
     if form.tableWidget.rowCount() > 0:
         column = None
         for i in range(len(form.ig.jsonConfig['view']['columns'])):
@@ -137,50 +83,25 @@ def scrollToTopLeftItem(form):
 def tableWidgetSetResizeMode(form):
 
     for i in range (form.tableWidget.columnCount()):
-        # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
-        # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
-        #      self.tableWidget.setColumnWidth(i, 27)
-        #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
-        #      continue
-        #print unicode(self.tableWidget.item(0,0).text())
-
         form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.ResizeToContents)
     for j in range (form.tableWidget.rowCount()):
-    #print ""
         form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.ResizeToContents)
-        #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
 
 def setFixedColumnsWidth(self):
     for i in range (self.tableWidget.columnCount()):
         self.tableWidget.setColumnWidth(i, 125)
         self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
 
-
 def tableWidgetDisableResizeToContents(form):
     for i in range (form.tableWidget.columnCount()):
-        # if self.ig.columnsHeaders[i]['columnHeader'] == 'iLvl' or \
-        # self.ig.columnsHeaders[i]['columnHeader'] == 'Rarity':
-        #      self.tableWidget.setColumnWidth(i, 27)
-        #      self.tableWidget.item(0,2).setTextAlignment(QtCore.Qt.AlignCenter)
-        #      continue
-        #print unicode(self.tableWidget.item(0,0).text())
-
         form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.Fixed)
     for j in range (form.tableWidget.rowCount()):
-    #print ""
         form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.Fixed)
-        #self.tableWidget.horizontalHeader().setDefaultSectionSize(20)
 
 def tableWidgetSetColumnsSelected(form):
      for i in range (form.tableWidget.columnCount()):
             if form.ig.jsonConfig['view']['columns'][i]['isHidden']:
-            #self.columnsSelectListWidget.item(i).checkState() == Qt.Checked:
                 form.tableWidget.hideColumn(i)
-
-            # else:
-            #     form.tableWidget.hideColumn(i)
-            #     self.jsonConfig['view']['columns'][i]['isHidden'] = True
-            #     print "Checked " + self.columnsSelectListWidget.item(i).text()
 
 def loadFiltersToSavedFiltersComboBox(form):
         form.savedFiltersComboBox.clear()
@@ -190,9 +111,7 @@ def loadFiltersToSavedFiltersComboBox(form):
                 print os.path.splitext(file)[0]
                 form.savedFiltersComboBox.addItem(os.path.splitext(file)[0])
         if not form.savedFiltersComboBox.currentText():
-
-            print ""
-
+            return
 
 def loadAndApplyFilter(form):
     print "Checking currentIndex"
@@ -202,7 +121,6 @@ def loadAndApplyFilter(form):
             print "Current text"
             filterJsonData = tools.readJson(filterJsonFileName)
             applyFilter(form, filterJsonData)
-
 
 def applyFilter(form, filterJsonData):
     form.statusbar.showMessage('Applying filter...')

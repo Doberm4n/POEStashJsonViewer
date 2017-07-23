@@ -11,6 +11,7 @@ def exportAllToCsv(form):
             with open(unicode(fileName), 'wb') as stream:
                 csvWriter = csv.writer(stream)
                 rowdata = []
+
                 #column headers
                 for columns in range(form.tableWidget.columnCount()):
                     columnHeaderText = unicode(form.tableWidget.horizontalHeaderItem(columns).text())
@@ -41,6 +42,7 @@ def exportViewToCsv(form):
             with open(unicode(fileName), 'wb') as stream:
                 csvWriter = csv.writer(stream)
                 rowdata = []
+
                 #column headers
                 for columns in range(form.tableWidget.columnCount()):
                     if not form.tableWidget.isColumnHidden(columns):

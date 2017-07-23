@@ -14,8 +14,6 @@ class globalValues():
 
                              {'columnHeader' : 'Type', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
 
-                           #{'columnHeader' : 'Type', 'jsonName' : 'typeLine'  , 'type' : 'str', 'isCalc' : False},
-
                            {'columnHeader' : 'iLvl', 'jsonName' : 'ilvl'  , 'type' : 'Integer', 'isCalc' : False},
 
                            {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'String', 'isCalc' : False},
@@ -46,12 +44,7 @@ class globalValues():
 
                                {'columnHeader' : 'rInt', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
 
-                          # {'columnHeader' : 'Sockets', 'jsonName' : 'sockets'  , 'type' : 'str', 'isCalc' : False}
-
                             {'columnHeader' : 'Properties', 'jsonName' : ''  , 'type' : 'String', 'isCalc' : False},
-
-
-
 
                           {'columnHeader' : 'Implicit Modifiers', 'jsonName' : 'implicitMods'  , 'type' : 'String', 'isCalc' : False},
 
@@ -119,13 +112,11 @@ class globalValues():
 
                                     {'columnHeader' : 'SpD', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : True}
 
-
                           ]
+
         #assign columns headers to columns indices
         self.columnNameToIndex = {}
         for i in range (len(self.columnsHeaders)):
-            # if (not self.jsonConfig['common']['calculateSpecifiedColumns']) and (self.columnsHeaders[i]['isCalc']):
-            #     continue
             self.columnNameToIndex[self.columnsHeaders[i]['columnHeader']] = i
         print self.columnNameToIndex
 
@@ -157,11 +148,6 @@ class globalValues():
                           {'typeName' : 'Jewel', 'items' : ['Jewels']} #Jewels
                          ]
 
-                        # 'One Handed Mace', 'Two Handed Mace',
-                        # '',
-                        # '',
-                        # '',
-
         self.operandsText = {'String' : ['contains', 'match'], 'Integer' : ['>', '<', '=', '<>'], 'Float' : ['>', '<', '=', '<>']}
 
         self.operandsChars = {'>' : operator.gt, '<' : operator.lt, '=' : operator.eq, '<>' : operator.ne, 'contains' : operator.contains}
@@ -169,8 +155,3 @@ class globalValues():
         self.filtersDir = os.getcwd() + '\\Filters'
 
         self.leagues = []
-
-
-
-        #self.types.sort
-        #print self.types

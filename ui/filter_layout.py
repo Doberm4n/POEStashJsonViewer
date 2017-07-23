@@ -8,49 +8,24 @@ from PyQt4 import QtCore
 import json
 from json import loads
 import generated.form_filter as GUIFilter
-
 import modules.tools as tools
 import modules.filter as tableWidgetFilters
-
 import ui.main_layout as UIMainLayout
 
-#import ui.main_layout as UIMainLayout
 
 class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
     def __init__(self, form):
-        #global version
-        #global link
         super(self.__class__, self).__init__()
         self.setupUi(self)
         self.setWindowFlags(QtCore.Qt.WindowTitleHint)
         self.closePushButton.clicked.connect(self.close)
-        #form.tableWidget.setVisible(False)
-        #print form.tableWidget.columnsCount()
-        #self.linkLabel.linkActivated.connect(self.openURL)
-        #self.versionLabel.setText("v." + version)
-        #self.linkLabel.setText(link)
-        #pic = self.picLabel
-        #pic.setPixmap(QtGui.QPixmap(":todo-icon32.png"))
-        #print form.ig.operandsText
         self.columnsHeadersComboBox.currentIndexChanged.connect(lambda: self.loadOperandsText(form))
-
         self.addFilterStringPushButton.clicked.connect(lambda: self.addFilterLine(form))
         self.applyFilterPushButton.clicked.connect(lambda: self.applyFilter(form))
-
         self.saveFilterPushButton.clicked.connect(lambda: self.saveFilter(form))
         self.loadFilterPushButton.clicked.connect(lambda: self.loadFilter(form))
-
         self.clearFilterPushButton.clicked.connect(self.clearFilterLinesTextEdit)
-
-        #self.filtersDir = parentdir + '\\Filters'
-
         self.prepareGui(form)
-
-
-
-
-        #print form.tableWidget.horizontalHeaderItem(0).text()
-        #print unicode(form.tableWidget.item(0, 0).text())
 
     def prepareGui(self, form):
         self.filterLinesTextEdit.setEnabled(False)
@@ -58,28 +33,18 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.loadColumnsToFilterComboBox(form)
         self.loadFiltersToSavedFiltersComboBox(form)
 
-
     def loadColumnsToFilterComboBox(self, form):
         for i in range (form.tableWidget.columnCount()):
            self.columnsHeadersComboBox.addItem(form.tableWidget.horizontalHeaderItem(i).text())
-        print ""
 
     def loadOperandsText(self, form):
         self.operandsComboBox.clear()
-        #print form.ig.operandsText
         currentText = unicode(self.columnsHeadersComboBox.currentText())
-        #print currentText
-        #print form.ig.columnNameToIndex[currentText]
-
-         #['type']
-
-        #print form.ig.operandsText[form.ig.columnsHeaders[form.ig.columnNameToIndex[self.columnsHeadersComboBox.currentText()]]['type']]
         operandsText = form.ig.operandsText[form.ig.columnsHeaders[form.ig.columnNameToIndex[currentText]]['type']]
         for i in range (len(operandsText)):
             self.operandsComboBox.addItem(operandsText[i])
 
     def addFilterLine(self, form):
-        #check isDigit
         print self.filterLinesTextEdit.toPlainText()
         filterValue = unicode(self.valueLineEdit.text())
         if self.operandsComboBox.currentText() in form.ig.operandsText['Integer']:
@@ -89,7 +54,6 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             self.filterLinesTextEdit.setText(self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + filterValue)
         else:
             self.filterLinesTextEdit.setText(self.filterLinesTextEdit.toPlainText() + '\n' + self.columnsHeadersComboBox.currentText() + ' [' + self.operandsComboBox.currentText() + '] ' + filterValue)
-        print "rewrklwekrlewk;l"
 
     def isFloat(self, element):
         partition=element.partition('.')
@@ -98,17 +62,11 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         else:
             return False
 
-
-
     def getFilterFileName(self):
         newName = QtGui.QFileDialog.getSaveFileName(None, 'Save filter', directory=os.getcwd() + '\\Filters', filter='*.filter')
         return newName
 
     def saveFilter(self, form):
-        print currentdir
-        print parentdir
-        print os.getcwd()
-
         filterLines = self.filterLinesTextEdit.toPlainText()
         if filterLines:
             data = {"filter":{"filterLines":[]}}
@@ -123,7 +81,6 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
                 tools.writeJson(jsonData, filterFileName)
                 self.loadFiltersToSavedFiltersComboBox(form)
                 UIMainLayout.loadFiltersToSavedFiltersComboBox(form)
-                #writeConfigAndLoadGuide(self, filterFileName)
 
     def loadFilter(self, form):
         if self.savedFiltersComboBox.currentText():
@@ -137,10 +94,6 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
                         self.filterLinesTextEdit.setText(unicode(filterJsonData['filter']['filterLines'][i]))
                     else:
                         self.filterLinesTextEdit.setText(self.filterLinesTextEdit.toPlainText() + '\n' + unicode(filterJsonData['filter']['filterLines'][i]))
-        #filterFileName = str(QtGui.QFileDialog.getOpenFileName(self, "Select guide", filter='*.filter', directory=self.curDir))
-
-
-        #
 
     def loadFiltersToSavedFiltersComboBox(self, form):
         self.savedFiltersComboBox.clear()
@@ -148,11 +101,9 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
                 print os.path.splitext(file)[0]
                 self.savedFiltersComboBox.addItem(os.path.splitext(file)[0])
-        print ""
 
     def clearFilterLinesTextEdit(self):
         self.filterLinesTextEdit.clear()
-        print ""
 
     def applyFilter(self, form):
         form.statusbar.showMessage('Applying filter...')
