@@ -4,6 +4,7 @@ build/
 dist/
 release/
 *.spec
+MyStash/
 *.7z
 *.rar
 *.exe
