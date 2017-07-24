@@ -66,9 +66,9 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuGuide">
+   <widget class="QMenu" name="menuOpen">
     <property name="title">
-     <string>Guide</string>
+     <string>File</string>
     </property>
     <addaction name="actionOpenJson"/>
     <addaction name="actionOpenSingleJson"/>
@@ -114,7 +114,7 @@
     <addaction name="actionSelect_columns"/>
     <addaction name="actionAutosizeColumns"/>
    </widget>
-   <addaction name="menuGuide"/>
+   <addaction name="menuOpen"/>
    <addaction name="menuView"/>
    <addaction name="menuFilter"/>
    <addaction name="menuTools"/>
@@ -123,7 +123,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpenJson">
    <property name="text">
-    <string>Open</string>
+    <string>Open json(s)</string>
    </property>
   </action>
   <action name="actionAbout">
