@@ -36,6 +36,9 @@
         <pointsize>11</pointsize>
        </font>
       </property>
+      <property name="maxVisibleItems">
+       <number>20</number>
+      </property>
      </widget>
     </item>
     <item>

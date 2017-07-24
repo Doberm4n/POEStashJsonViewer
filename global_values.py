@@ -133,9 +133,23 @@ class globalValues():
 
 
         self.itemTypes = [{'typeName' : 'Essence', 'items' : ['Essence']}, #Essences
+                            {'typeName' : 'Divination', 'items' : ['Divination']}, #Divination
+                            {'typeName' : 'Quiver', 'items' : ['Quivers']}, #Quivers
+                            {'typeName' : 'Belt', 'items' : ['Belts']}, #Belts
                           {'typeName' : 'Flask', 'items' : ['Flask']}, #Flasks
-                          {'typeName' : 'One Handed Mace\n(1H Weapon)', 'items' : ['One Handed Mace']}, #Maces
-                          {'typeName' : 'Two Handed Mace\n(2H Weapon)', 'items' : ['Two Handed Mace']},
+                          {'typeName' : 'One Handed Mace\n(1H Weapon)', 'items' : ['OneHandMaces']}, #Maces
+                          {'typeName' : 'Two Handed Mace\n(2H Weapon)', 'items' : ['TwoHandMaces']},
+                          {'typeName' : 'One Handed Sword\n(1H Weapon)', 'items' : ['OneHandSwords']}, #Swords
+                          {'typeName' : 'Two Handed Sword\n(2H Weapon)', 'items' : ['TwoHandSwords']},
+                           {'typeName' : 'One Handed Axe\n(1H Weapon)', 'items' : ['OneHandAxes']}, #Axes
+                            {'typeName' : 'Two Handed Axe\n(2H Weapon)', 'items' : ['TwoHandAxes']},
+                            {'typeName' : 'Wand\n(1H Weapon)', 'items' : ['Wands']}, #Wands
+                            {'typeName' : 'Scepter\n(1H Weapon)', 'items' : ['Scepters']}, #Scepters
+                            {'typeName' : 'Dagger\n(1H Weapon)', 'items' : ['Daggers']}, #Daggers
+                            {'typeName' : 'Bow\n(2H Weapon)', 'items' : ['Bows']}, #Bows
+                            {'typeName' : 'Stave\n(2H Weapon)', 'items' : ['Staves']}, #Staves
+                             {'typeName' : 'Rapier\n(1H Weapon)', 'items' : ['Rapiers']}, #Rapiers
+                             {'typeName' : 'Claw\n(1H Weapon)', 'items' : ['Claws']}, #Claws
                           {'typeName' : 'Map', 'items' : ['Map']},  #Maps
                           {'typeName' : 'Boots', 'items' : ['Boots']}, #Boots
                           {'typeName' : 'Gloves', 'items' : ['Gloves']}, #Gloves

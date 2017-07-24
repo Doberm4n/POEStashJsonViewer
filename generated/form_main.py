@@ -41,6 +41,7 @@ class Ui_MainWindow(object):
         font.setFamily(_fromUtf8("Verdana"))
         font.setPointSize(11)
         self.savedFiltersComboBox.setFont(font)
+        self.savedFiltersComboBox.setMaxVisibleItems(20)
         self.savedFiltersComboBox.setObjectName(_fromUtf8("savedFiltersComboBox"))
         self.verticalLayout_2.addWidget(self.savedFiltersComboBox)
         self.label = QtGui.QLabel(self.centralwidget)
