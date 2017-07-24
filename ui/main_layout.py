@@ -62,7 +62,6 @@ def tableWidgetContentsAutoSize(form):
     form.tableWidget.resizeColumnsToContents()
     form.tableWidget.resizeRowsToContents()
     form.statusbar.showMessage('Ready')
-    print "Auto sized"
 
 def scrollToTopLeftItem(form):
     if form.tableWidget.rowCount() > 0:
@@ -108,17 +107,14 @@ def loadFiltersToSavedFiltersComboBox(form):
         form.savedFiltersComboBox.addItem('Saved filter selection')
         for file in os.listdir(form.ig.filtersDir):
             if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
-                print os.path.splitext(file)[0]
                 form.savedFiltersComboBox.addItem(os.path.splitext(file)[0])
         if not form.savedFiltersComboBox.currentText():
             return
 
 def loadAndApplyFilter(form):
-    print "Checking currentIndex"
     if (form.savedFiltersComboBox.currentText()) and (form.savedFiltersComboBox.currentText() != 'Saved filter selection'):
         filterJsonFileName = os.path.join(form.ig.filtersDir, unicode(form.savedFiltersComboBox.currentText()) + '.filter')
         if os.path.isfile(filterJsonFileName):
-            print "Current text"
             filterJsonData = tools.readJson(filterJsonFileName)
             applyFilter(form, filterJsonData)
 

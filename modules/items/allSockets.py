@@ -20,17 +20,10 @@ def setItemSockets(form, itemIndex):
             elif tempColor == 'D': valueColorDex += 1
             elif tempColor == 'I': valueColorInt += 1
             else: valueColorWhite += 1
-            print colors
             groups[tempGroup] += 1
-            print colors
-            print 'tempColor ' + tempColor
-            print tempGroup
             if colors[tempGroup] == 0:
                 colors[tempGroup] = tempColor
-                print 'tempColor'
             else:
-                print colors[tempGroup]
-                print tempColor
                 colors[tempGroup] += ('-' + tempColor)
         for i in range(len(colors)):
             if colors[i] != 0:

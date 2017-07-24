@@ -118,7 +118,6 @@ class globalValues():
         self.columnNameToIndex = {}
         for i in range (len(self.columnsHeaders)):
             self.columnNameToIndex[self.columnsHeaders[i]['columnHeader']] = i
-        print self.columnNameToIndex
 
         self.rarity = ['Normal', 'Magic', 'Rare', 'Unique', 'Gem', 'Currency', 'Divination', 'Unknown', 'Prophecy']
 

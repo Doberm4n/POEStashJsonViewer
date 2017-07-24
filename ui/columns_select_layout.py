@@ -23,7 +23,6 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
         self.prepareGui(form)
 
     def setCheckBox(self, index):
-        print self.columnsSelectListWidget.itemFromIndex(index).checkState()
         if self.columnsSelectListWidget.itemFromIndex(index).checkState() == Qt.Unchecked:
             self.columnsSelectListWidget.itemFromIndex(index).setCheckState(2)
         else:
@@ -53,7 +52,6 @@ class columnsSelectDialog(QtGui.QDialog, GUIColumnsSelect.Ui_Dialog):
             elif self.columnsSelectListWidget.item(i).checkState() == Qt.Unchecked and not form.tableWidget.isColumnHidden(i):
                 form.tableWidget.hideColumn(i)
                 form.ig.jsonConfig['view']['columns'][i]['isHidden'] = True
-                print "Checked " + self.columnsSelectListWidget.item(i).text()
         tools.writeJson(form.ig.jsonConfig, 'Configs\config.json')
         UIMainLayout.tableWidgetContentsAutoSize(form)
         self.close()

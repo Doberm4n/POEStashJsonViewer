@@ -27,7 +27,6 @@ def exportToSQLiteDatabase(form, driverType):
                 dataDatabaseKeysAndType = dataDatabaseKeysAndType + "'" + form.ig.columnsHeaders[i]['columnHeader'] + "'" + dataType + ', '
             else:
                 dataDatabaseKeysAndType = dataDatabaseKeysAndType + "'" + form.ig.columnsHeaders[i]['columnHeader'] + "'" + dataType
-        print dataDatabaseKeysAndType
         c.execute('create table allStash (id INTEGER PRIMARY KEY AUTOINCREMENT, ' + dataDatabaseKeysAndType + ')')
         rowCount = form.tableWidget.rowCount()
         for i in range(rowCount):

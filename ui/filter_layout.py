@@ -45,7 +45,6 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             self.operandsComboBox.addItem(operandsText[i])
 
     def addFilterLine(self, form):
-        print self.filterLinesTextEdit.toPlainText()
         filterValue = unicode(self.valueLineEdit.text())
         if self.operandsComboBox.currentText() in form.ig.operandsText['Integer']:
             if (not self.isFloat(filterValue)) and (not filterValue.isdigit()):
@@ -75,7 +74,6 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
             filterLines = unicode(filterLines).splitlines()
             for i in range (len(filterLines)):
                 jsonData['filter']['filterLines'].append(filterLines[i])
-            print filterLines
             filterFileName = self.getFilterFileName()
             if filterFileName:
                 tools.writeJson(jsonData, filterFileName)
@@ -86,7 +84,6 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         if self.savedFiltersComboBox.currentText():
             filterJsonFileName = os.path.join(form.ig.filtersDir, unicode(self.savedFiltersComboBox.currentText()) + '.filter')
             if os.path.isfile(filterJsonFileName):
-                print "Current text"
                 filterJsonData = tools.readJson(filterJsonFileName)
                 self.clearFilterLinesTextEdit()
                 for i in range (len(filterJsonData['filter']['filterLines'])):
@@ -99,7 +96,6 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         self.savedFiltersComboBox.clear()
         for file in os.listdir(form.ig.filtersDir):
             if os.path.isfile(os.path.join(form.ig.filtersDir, file)) and (file.endswith('.filter')):
-                print os.path.splitext(file)[0]
                 self.savedFiltersComboBox.addItem(os.path.splitext(file)[0])
 
     def clearFilterLinesTextEdit(self):

@@ -6,11 +6,9 @@ sys.path.insert(0,parentdir)
 import operator
 
 def applyFilter(form, filterLines):
-        print filterLines
         if filterLines != '':
             filters = {}
             filters.update({'filters' : []})
-            print 'Length: ' + str(len(filterLines))
             for i in range (len(filterLines)):
                 filters['filters'].append({'columnHeader' : None, 'operand' : None, 'filterValue' : None, 'filterType' : None})
                 temp = filterLines[i].split(' [')
@@ -21,7 +19,6 @@ def applyFilter(form, filterLines):
                     filters['filters'][i]['operand'] = filters['filters'][i]['operand'].replace('match', '=')
                 filters['filters'][i]['filterValue'] = temp[1].split('] ')[1]
                 filters['filters'][i]['operand'] = form.ig.operandsChars[filters['filters'][i]['operand']]
-            print filters['filters']
             filterTable(form, filters)
 
 def filterTable(form, filters):
@@ -32,9 +29,6 @@ def filterTable(form, filters):
         operand = filters['filters'][i]['operand']
         if not filterValue:
             continue
-        print columnHeader
-        print filterType
-        print operand
         for j in range (form.tableWidget.rowCount()):
             if form.tableWidget.isRowHidden(j) == True:
                 continue

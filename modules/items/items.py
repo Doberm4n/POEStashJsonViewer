@@ -2,7 +2,6 @@
 
 def cleanString(self, data, str):
         temp = data.split(str)
-        print len(temp)
         return temp[len(temp)-1]
 
 def setItemNameAndTypeLine(self, itemIndex):
@@ -33,15 +32,12 @@ def setItemType(self, itemIndex):
         for i in range (len(self.ig.itemTypes)):
                 for j in range (len(self.ig.itemTypes[i]['items'])):
                     compareStr = self.ig.itemTypes[i]['items'][j].lower()
-                    print compareStr
                     if (self.stashTabJson['items'][itemIndex]['icon'].lower().find(compareStr) >= 0) or \
                        (self.stashTabJson['items'][itemIndex]['name'].lower().find(compareStr) >= 0) or \
                        (self.stashTabJson['items'][itemIndex]['typeLine'].lower().find(compareStr) >= 0):
-                       print self.ig.itemTypes[i]['typeName']
                        return self.ig.itemTypes[i]['typeName']
                     if self.stashTabJson['items'][itemIndex].has_key('properties'):
                         if self.stashTabJson['items'][itemIndex]['properties'][0]['name'].lower().find(compareStr) >= 0:
-                            print self.ig.itemTypes[i]['typeName']
                             return self.ig.itemTypes[i]['typeName']
         return itemType
 
@@ -71,22 +67,16 @@ def setItemProperties(self, itemIndex):
     if self.stashTabJson['items'][itemIndex].has_key('properties'):
         for i in range (len(self.stashTabJson['items'][itemIndex]['properties'])):
                 dataProperties['propertiesLines'].append({'name' : '', 'value' : ''})
-                print dataProperties['propertiesLines'][0]
                 dataProperties['propertiesLines'][i]['name'] = self.stashTabJson['items'][itemIndex]['properties'][i]['name']
-                print dataProperties['propertiesLines'][i]['name']
                 if dataProperties['propertiesLines'][i]['name'].find('%0') >= 0:
                     substValues = []
                     for subst in range (len(self.stashTabJson['items'][itemIndex]['properties'][i]['values'])):
                         substValues.append(unicode(self.stashTabJson['items'][itemIndex]['properties'][i]['values'][subst][0]))
                     for substIndex in range (len(substValues)):
                         dataProperties['propertiesLines'][i]['name'] = dataProperties['propertiesLines'][i]['name'].replace('%' + str(substIndex), '{' + str(substIndex) + '}')
-                        print dataProperties['propertiesLines'][i]['name']
                     dataProperties['propertiesLines'][i]['name'] = dataProperties['propertiesLines'][i]['name'].format(*substValues)
-                    print substValues
-                    print dataProperties['propertiesLines'][i]['name']
                     dataProperties['propertiesLines'][i]['value'] = ''
                 else:
-                    print 'i= ' + str(i)
                     if len(self.stashTabJson['items'][itemIndex]['properties'][i]['values']) > 0:
                         dataProperties['propertiesLines'][i]['value'] = ': ' + unicode(self.stashTabJson['items'][itemIndex]['properties'][i]['values'][0][0])
                     else:
@@ -96,7 +86,6 @@ def setItemProperties(self, itemIndex):
                     propertiesLines = propertiesLines + dataProperties['propertiesLines'][i]['name'] + dataProperties['propertiesLines'][i]['value'] + '\n'
                 else:
                     propertiesLines = propertiesLines + dataProperties['propertiesLines'][i]['name'] + dataProperties['propertiesLines'][i]['value']
-    print dataProperties['propertiesLines']
     return propertiesLines
 
 def setItemImplicitModifiers(self, itemIndex):
@@ -110,7 +99,6 @@ def setItemImplicitModifiers(self, itemIndex):
                 else:
                     implicitModifiersLines = implicitModifiersLines + dataImplicitModifiers[i]
     return implicitModifiersLines
-    print ""
 
 def setItemExplicitModifiers(self, itemIndex):
     dataExplicitModifiers = []
