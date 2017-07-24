@@ -138,6 +138,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 UIMainLayout.tableWidgetSetColumnsSelected(self)
                 self.tableWidget.setSortingEnabled(True)
                 UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
+                self.guideLineEdit.setText(self.guideLineEdit.text() + ' (' + str(self.tableWidget.rowCount()) + ' items)')
                 self.tableWidget.setEnabled(True)
 
     def prepareGui(self):
