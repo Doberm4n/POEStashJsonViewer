@@ -131,10 +131,12 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.guideLineEdit.setText(str(l) + ' json files')
             self.tableWidget.setEnabled(False)
             self.tableWidget.setRowCount(0)
+            self.tableWidget.setSortingEnabled(False)
             UIMainLayout.tableWidgetDisableResizeToContents(self)
             if self.loadJson(self.curJsonFiles):
                 UIMainLayout.tableWidgetContentsAutoSize(self)
                 UIMainLayout.tableWidgetSetColumnsSelected(self)
+                self.tableWidget.setSortingEnabled(True)
                 self.tableWidget.setEnabled(True)
 
     def prepareGui(self):
@@ -187,6 +189,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 #get required values
                 propertiesImplicitExplicitLines = unicode(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['PropertiesImplicitExplicit']).text())
                 propertiesImplicitExplicitLinesList = propertiesImplicitExplicitLines.splitlines()
+                typeName = unicode(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['Type']).text())
 
                 #dpsPdpsEdpsFdpsLdpsCdpsChDps
                 setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(self, itemIndex, propertiesImplicitExplicitLines)
@@ -196,13 +199,13 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 setItemApsCsch(self, itemIndex, propertiesImplicitExplicitLinesList)
 
                 #all Resistances (resTotal, resAll, resF, resL, resC, resCh), values for Fire, Lightning, Cold resistances includes value from '% to all elemental resistances' modifier
-                setItemResistances(self, itemIndex, propertiesImplicitExplicitLines, propertiesImplicitExplicitLinesList)
+                setItemResistances(self, itemIndex, propertiesImplicitExplicitLines, propertiesImplicitExplicitLinesList, typeName)
 
                 #all Attributes (toAttrTotal, toStr, toDex, toInt), values for Str, Dex, Int attributes includes value from 'to all Attributes' modifier
-                setItemAttributesLifeMana(self, itemIndex, propertiesImplicitExplicitLinesList)
+                setItemAttributesLifeMana(self, itemIndex, propertiesImplicitExplicitLinesList, typeName)
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
-                setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(self, itemIndex, propertiesImplicitExplicitLinesList)
+                setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(self, itemIndex, propertiesImplicitExplicitLinesList, typeName)
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
                 setItemSockets(self, itemIndex)

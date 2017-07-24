@@ -96,6 +96,8 @@ Adds # to # #### Damage to Spells
 
 // Scroll to Top Left for proper autosize
 
+return false in dpscalc if rarity < rare
+
 
 
 

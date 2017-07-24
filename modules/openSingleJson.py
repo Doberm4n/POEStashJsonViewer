@@ -22,6 +22,7 @@ def openSingleJson(form):
             return
         form.tableWidget.setEnabled(False)
         form.tableWidget.setRowCount(0)
+        form.tableWidget.setSortingEnabled(False)
         UIMainLayout.tableWidgetDisableResizeToContents(form)
         l = len(jsonData['rows'])
         for i in range(l):
@@ -35,4 +36,5 @@ def openSingleJson(form):
                         form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(''))
         form.statusbar.showMessage('Load complete')
         UIMainLayout.tableWidgetContentsAutoSize(form)
+        form.tableWidget.setSortingEnabled(True)
         form.tableWidget.setEnabled(True)

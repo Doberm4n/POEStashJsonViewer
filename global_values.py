@@ -120,7 +120,7 @@ class globalValues():
             self.columnNameToIndex[self.columnsHeaders[i]['columnHeader']] = i
         print self.columnNameToIndex
 
-        self.rarity = ['Normal', 'Magic', 'Rare', 'Unique', 'Gem', 'Currency']
+        self.rarity = ['Normal', 'Magic', 'Rare', 'Unique', 'Gem', 'Currency', 'Divination', 'Unknown', 'Prophecy']
 
         self.itemTypes = [
                         'Flask', #Flasks
@@ -132,7 +132,8 @@ class globalValues():
         ]
 
 
-        self.itemTypes = [{'typeName' : 'Flask', 'items' : ['Flask']}, #Flasks
+        self.itemTypes = [{'typeName' : 'Essence', 'items' : ['Essence']}, #Essences
+                          {'typeName' : 'Flask', 'items' : ['Flask']}, #Flasks
                           {'typeName' : 'One Handed Mace\n(1H Weapon)', 'items' : ['One Handed Mace']}, #Maces
                           {'typeName' : 'Two Handed Mace\n(2H Weapon)', 'items' : ['Two Handed Mace']},
                           {'typeName' : 'Map', 'items' : ['Map']},  #Maps

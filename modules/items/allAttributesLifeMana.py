@@ -2,7 +2,7 @@
 from __future__ import division
 from PyQt4 import QtGui
 
-def setItemAttributesLifeMana(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
+def setItemAttributesLifeMana(form, itemIndex, dataPropertiesImplicitExplicitLinesList, typeName):
     if dataPropertiesImplicitExplicitLinesList:
         temp = dataPropertiesImplicitExplicitLinesList
         dataAll = []
@@ -19,11 +19,13 @@ def setItemAttributesLifeMana(form, itemIndex, dataPropertiesImplicitExplicitLin
         valueLifeTotal = 0
         valueManaTotal = 0
         for i in range (len(temp)):
-            if (' to ' in temp[i]) and ('Strength' in temp[i]) and not ('Level' in temp[i]):
+            if typeName == 'Essence':
+                break
+            if (' to ' in temp[i]) and ('Strength' in temp[i]) and not ('Level' in temp[i]) and not ("Strength's" in temp[i]) and not ('Transformed' in temp[i]):
                 dataS.append(int(temp[i].split(' to ')[0]))
-            if (' to ' in temp[i]) and ('Dexterity' in temp[i]) and not ('Level' in temp[i]):
+            if (' to ' in temp[i]) and ('Dexterity' in temp[i]) and not ('Level' in temp[i]) and not ('Transformed' in temp[i]) and not ('per' in temp[i]) and not ('least' in temp[i]):
                 dataD.append(int(temp[i].split(' to ')[0]))
-            if (' to ' in temp[i]) and ('Intelligence' in temp[i]) and not ('Level' in temp[i]):
+            if (' to ' in temp[i]) and ('Intelligence' in temp[i]) and not ('Level' in temp[i]) and not ('Transformed' in temp[i]):
                 dataI.append(int(temp[i].split(' to ')[0]))
             elif (' to all Attributes' in temp[i]):
                 dataAll.append(int(temp[i].split(' to ')[0]))

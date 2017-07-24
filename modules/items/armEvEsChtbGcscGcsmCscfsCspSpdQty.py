@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
 
-def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
+def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImplicitExplicitLinesList, typeName):
     if dataPropertiesImplicitExplicitLinesList:
         temp = dataPropertiesImplicitExplicitLinesList
         valueArmour = ''
@@ -20,6 +20,8 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         valueSpd = 0
         valueStackQuantity = ''
         for i in range (len(temp)):
+            if typeName == 'Essence':
+                break
             if 'Armour:' in temp[i]:
                 valueArmour = int(temp[i].split(':')[1].split('%')[0])
                 continue
@@ -41,7 +43,7 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
             if '% increased Critical Strike Chance for Spells' in temp[i]:
                     dataCscfs.append(int(temp[i].split('%')[0]))
                     continue
-            if '% increased Cast Speed' in temp[i]:
+            if ('% increased Cast Speed' in temp[i]) and not ('Minions' in temp[i]) and not ('nearby' in temp[i]):
                     dataCsp.append(int(temp[i].split('%')[0]))
                     continue
             if '% increased Spell Damage' in temp[i]:
