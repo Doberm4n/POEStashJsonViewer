@@ -20,6 +20,8 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         valueSpd = 0
         valueStackQuantity = ''
         for i in range (len(temp)):
+            if 'Stack Size' in temp[i]:
+                valueStackQuantity = temp[i].split(':')[1].split('/')[0]
             if typeName == 'Essence':
                 break
             if 'Armour:' in temp[i]:
@@ -49,8 +51,7 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
             if '% increased Spell Damage' in temp[i]:
                     dataSpd.append(int(temp[i].split('%')[0]))
                     continue
-            if 'Stack Size' in temp[i]:
-                valueStackQuantity = temp[i].split(':')[1].split('/')[0]
+
         if dataGcsc:
             valueGcsc = sum(dataGcsc)
 
