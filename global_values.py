@@ -170,3 +170,7 @@ class globalValues():
         self.filtersDir = os.getcwd() + '\\Filters'
 
         self.leagues = []
+
+        self.itemCount = 0
+
+        self.itemFound = 0

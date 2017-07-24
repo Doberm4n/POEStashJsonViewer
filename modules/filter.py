@@ -44,22 +44,27 @@ def filterTable(form, filters):
                 itemValue = ''
             if not itemValue:
                 form.tableWidget.hideRow(j)
+                form.ig.itemFound -= 1
                 continue
             if (filterType == 'String') and (operand == operator.contains):
                 if (not operand(unicode(itemValue).lower(), filterValue.lower())):
                     form.tableWidget.hideRow(j)
+                    form.ig.itemFound -= 1
             elif (filterType == 'String'):
                     if (not operand(unicode(itemValue), filterValue)):
                         form.tableWidget.hideRow(j)
+                        form.ig.itemFound -= 1
             else:
                     filterValue = float(filterValue)
                     if (not operand(float(itemValue), filterValue)):
                         form.tableWidget.hideRow(j)
+                        form.ig.itemFound -= 1
 
 def resetFilter(form):
     form.statusbar.showMessage('Reset filter...')
     for i in range (form.tableWidget.rowCount()):
         form.tableWidget.showRow(i)
+    form.ig.itemFound = form.ig.itemCount
     form.statusbar.showMessage('Filter reset complete')
 
 

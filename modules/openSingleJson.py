@@ -39,5 +39,7 @@ def openSingleJson(form):
         UIMainLayout.tableWidgetContentsAutoSize(form)
         form.tableWidget.setSortingEnabled(True)
         UIMainLayout.loadFiltersToSavedFiltersComboBox(form)
+        form.ig.itemCount = form.tableWidget.rowCount()
+        form.ig.itemFound = form.ig.itemFound
         form.guideLineEdit.setText(form.guideLineEdit.text() + ' (' + str(form.tableWidget.rowCount()) + ' items)')
         form.tableWidget.setEnabled(True)

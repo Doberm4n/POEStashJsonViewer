@@ -111,7 +111,7 @@ class filterDialog(QtGui.QDialog, GUIFilter.Ui_Dialog):
         tableWidgetFilters.resetFilter(form)
         tableWidgetFilters.applyFilter(form, unicode(self.filterLinesTextEdit.toPlainText()).splitlines())
         UIMainLayout.tableWidgetContentsAutoSize(form)
-        form.statusbar.showMessage('Filter applied')
+        form.statusbar.showMessage('Filter applied' + ' (' + str(form.ig.itemFound) + ' items found)')
 
 
 

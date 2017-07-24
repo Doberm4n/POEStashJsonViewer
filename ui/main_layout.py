@@ -128,4 +128,4 @@ def applyFilter(form, filterJsonData):
     tableWidgetFilters.resetFilter(form)
     tableWidgetFilters.applyFilter(form, filterJsonData['filter']['filterLines'])
     tableWidgetContentsAutoSize(form)
-    form.statusbar.showMessage('Filter applied')
+    form.statusbar.showMessage('Filter applied' + ' (' + str(form.ig.itemFound) + ' items found)')
