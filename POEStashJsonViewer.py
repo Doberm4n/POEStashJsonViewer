@@ -137,6 +137,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 UIMainLayout.tableWidgetContentsAutoSize(self)
                 UIMainLayout.tableWidgetSetColumnsSelected(self)
                 self.tableWidget.setSortingEnabled(True)
+                UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
                 self.tableWidget.setEnabled(True)
 
     def prepareGui(self):

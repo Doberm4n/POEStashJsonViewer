@@ -14,6 +14,7 @@ def openSingleJson(form):
         directoryName = ''
     fileName = tools.openSingleJsonFileName(directoryName)
     if fileName:
+        form.guideLineEdit.setText(os.path.basename(unicode(fileName)))
         jsonData = tools.readJson(fileName)
         form.ig.jsonConfig['curGuide'] = fileName
         tools.writeJson(form.ig.jsonConfig, 'Configs\config.json')
@@ -37,4 +38,5 @@ def openSingleJson(form):
         form.statusbar.showMessage('Load complete')
         UIMainLayout.tableWidgetContentsAutoSize(form)
         form.tableWidget.setSortingEnabled(True)
+        UIMainLayout.loadFiltersToSavedFiltersComboBox(form)
         form.tableWidget.setEnabled(True)
