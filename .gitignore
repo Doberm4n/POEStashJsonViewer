@@ -5,6 +5,7 @@ dist/
 release/
 *.spec
 MyStash/
+Guides/
 *.7z
 *.rar
 *.exe
