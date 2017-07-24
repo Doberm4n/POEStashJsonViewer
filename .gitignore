@@ -6,6 +6,7 @@ release/
 *.spec
 MyStash/
 Guides/
+todo*
 *.7z
 *.rar
 *.exe
