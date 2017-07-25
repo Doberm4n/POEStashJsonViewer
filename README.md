@@ -1,4 +1,4 @@
-# POEStashJsonViewer (offline parse, view and search stash and character inventory item json data)
+# POEStashJsonViewer (offline parse, view and search stash and character inventory item json data for Path of Exile)
 
 This app accepts user-saved .json file(s) after using PoE API.
 
