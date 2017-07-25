@@ -6,6 +6,7 @@ sys.path.insert(0,parentdir)
 from PyQt4 import QtGui
 import modules.tools as tools
 import ui.main_layout as UIMainLayout
+from modules.tabs.currency.currency import setCurrency
 
 def openSingleJson(form):
     if form.ig.jsonConfig['curGuide']:
@@ -23,7 +24,9 @@ def openSingleJson(form):
             return
         form.tableWidget.setEnabled(False)
         form.tableWidget.setRowCount(0)
+        form.tableWidgetCurrency.setRowCount(0)
         form.tableWidget.setSortingEnabled(False)
+        form.tableWidgetCurrency.setSortingEnabled(False)
         UIMainLayout.tableWidgetDisableResizeToContents(form)
         l = len(jsonData['rows'])
         for i in range(l):
@@ -36,10 +39,14 @@ def openSingleJson(form):
                     else:
                         form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(''))
         form.statusbar.showMessage('Load complete')
+        setCurrency(form)
         UIMainLayout.tableWidgetContentsAutoSize(form)
+        UIMainLayout.tableWidgetSetColumnsSelected(form)
         form.tableWidget.setSortingEnabled(True)
+        form.tableWidgetCurrency.setSortingEnabled(True)
         UIMainLayout.loadFiltersToSavedFiltersComboBox(form)
         form.ig.itemCount = form.tableWidget.rowCount()
         form.ig.itemFound = form.ig.itemFound
         form.guideLineEdit.setText(form.guideLineEdit.text() + ' (' + str(form.tableWidget.rowCount()) + ' items)')
         form.tableWidget.setEnabled(True)
+        form.tableWidgetCurrency.setEnabled(True)

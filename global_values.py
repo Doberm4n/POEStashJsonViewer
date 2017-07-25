@@ -120,8 +120,6 @@ class globalValues():
         #Currency tab columns
         self.columnsHeadersCurrency = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'String', 'isCalc' : False},
 
-                                    {'columnHeader' : 'Quantity', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
-
                                     {'columnHeader' : 'Total', 'jsonName' : 'name'  , 'type' : 'Integer', 'isCalc' : False}
 
                           ]
@@ -150,6 +148,7 @@ class globalValues():
 
         self.itemTypes = [{'typeName' : 'Essence', 'items' : ['Essence']}, #Essences
                             {'typeName' : 'Divination', 'items' : ['Divination']}, #Divination
+                            {'typeName' : 'Currency', 'items' : ['Currency']}, #Currency
                             {'typeName' : 'Quiver', 'items' : ['Quivers']}, #Quivers
                             {'typeName' : 'Belt', 'items' : ['Belts']}, #Belts
                           {'typeName' : 'Flask', 'items' : ['Flask']}, #Flasks
@@ -175,7 +174,6 @@ class globalValues():
                           {'typeName' : 'Amulet', 'items' : ['Amulet']}, #Amulets
                           {'typeName' : 'Ring', 'items' : ['Ring']}, #Rings
                           {'typeName' : 'Gem', 'items' : ['Gems']}, #Gems
-                          {'typeName' : 'Currency', 'items' : ['Currency']}, #Currency
                           {'typeName' : 'Jewel', 'items' : ['Jewels']} #Jewels
                          ]
 

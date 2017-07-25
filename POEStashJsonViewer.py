@@ -24,6 +24,7 @@ from modules.items.armEvEsChtbGcscGcsmCscfsCspSpdQty import setItemArmEvEsChtbGc
 from modules.items.allRequirements import setItemRequirements
 from modules.items.allSockets import setItemSockets
 from modules.items.mTier import setItemMapTier
+from modules.tabs.currency.currency import setCurrency
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
@@ -42,7 +43,7 @@ ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 # form = None
 # formAbout = None
 # formFilter = None
-version = '0.9.0 alpha(240717_1)'
+version = '0.9.0 alpha(260717_2)'
 link = '<a href="https://github.com/Doberm4n/POEStashJsonViewer">GitHub</a>'
 
 
@@ -132,17 +133,22 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.guideLineEdit.setText(str(l) + ' json files')
             self.tableWidget.setEnabled(False)
             self.tableWidget.setRowCount(0)
+            self.tableWidgetCurrency.setRowCount(0)
             self.tableWidget.setSortingEnabled(False)
+            self.tableWidgetCurrency.setSortingEnabled(False)
             UIMainLayout.tableWidgetDisableResizeToContents(self)
             if self.loadJson(self.curJsonFiles):
+                setCurrency(self)
                 UIMainLayout.tableWidgetContentsAutoSize(self)
                 UIMainLayout.tableWidgetSetColumnsSelected(self)
                 self.tableWidget.setSortingEnabled(True)
+                self.tableWidgetCurrency.setSortingEnabled(True)
                 UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
                 self.ig.itemCount = self.tableWidget.rowCount()
                 self.ig.itemFound = self.ig.itemCount
                 self.guideLineEdit.setText(self.guideLineEdit.text() + ' (' + str(self.tableWidget.rowCount()) + ' items)')
                 self.tableWidget.setEnabled(True)
+                self.tableWidgetCurrency.setEnabled(True)
 
     def prepareGui(self):
 
