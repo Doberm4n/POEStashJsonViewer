@@ -221,7 +221,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def loadJson(self, jsonFileNames):
         #try:
             self.ig.leagues = []
-            self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), 'Stash')
+            self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabsStash), 'Stash')
             self.stashJson = {}
             jsonFilesCount = len(jsonFileNames)
             for jsonFiles in range(jsonFilesCount):
@@ -238,7 +238,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                     self.tableWidget.insertRow(itemIndex)
                     self.setItem(itemIndex)
             if self.ig.leagues:
-                self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), unicode(self.tabWidget.tabText(self.tabWidget.indexOf(self.tabs)) + ' ' + unicode('[%s]' % ', '.join(map(str, self.ig.leagues))) + ' '))
+                self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabsStash), unicode(self.tabWidget.tabText(self.tabWidget.indexOf(self.tabsStash)) + ' ' + unicode('[%s]' % ', '.join(map(str, self.ig.leagues))) + ' '))
             self.statusbar.showMessage('Load complete')
             return True
 

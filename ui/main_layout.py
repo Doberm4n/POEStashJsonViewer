@@ -24,29 +24,50 @@ except AttributeError:
 
 def applyLayout(self):
     self.tabWidget.show()
-    self.tabs = QtGui.QWidget()
-    self.tabs.setObjectName(_fromUtf8("tab"))
-    self.verticalLayout = QtGui.QVBoxLayout(self.tabs)
+    self.tabsStash = QtGui.QWidget()
+    self.tabsStash.setObjectName(_fromUtf8("tab"))
+    self.tabsCurrency = QtGui.QWidget()
+    self.tabsCurrency.setObjectName(_fromUtf8("tabCurrency"))
+    self.verticalLayout = QtGui.QVBoxLayout(self.tabsStash)
     self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-    self.groupBox = QtGui.QGroupBox(self.tabs)
+    self.verticalLayoutCurrency = QtGui.QVBoxLayout(self.tabsCurrency)
+    self.verticalLayoutCurrency.setObjectName(_fromUtf8("verticalLayoutCurrency"))
+    self.groupBox = QtGui.QGroupBox(self.tabsStash)
     self.groupBox.setObjectName(_fromUtf8("groupBox"))
+    self.groupBoxCurrency = QtGui.QGroupBox(self.tabsCurrency)
+    self.groupBoxCurrency.setObjectName(_fromUtf8("groupBoxCurrency"))
     self.verticalLayout2 = QtGui.QVBoxLayout(self.groupBox)
     self.verticalLayout2.setObjectName(_fromUtf8("verticalLayout2"))
-    self.tabWidget.addTab(self.tabs, _fromUtf8(""))
-    self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabs), _translate("MainWindow", "Stash", None))
+    self.verticalLayoutCurrency2 = QtGui.QVBoxLayout(self.groupBoxCurrency)
+    self.verticalLayoutCurrency2.setObjectName(_fromUtf8("verticalLayoutCurrency2"))
+    self.tabWidget.addTab(self.tabsStash, _fromUtf8(""))
+    self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabsStash), _translate("MainWindow", "Stash", None))
+    self.tabWidget.addTab(self.tabsCurrency, _fromUtf8(""))
+    self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabsCurrency), _translate("MainWindow", "Currency", None))
     self.verticalLayout.addWidget(self.groupBox)
+    self.verticalLayoutCurrency.addWidget(self.groupBoxCurrency)
     self.tableWidget = QtGui.QTableWidget(self.groupBox)
     self.tableWidget.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
     self.tableWidget.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
     self.tableWidget.setShowGrid(True)
     self.tableWidget.setObjectName(_fromUtf8("tableWidget"))
+    self.tableWidgetCurrency = QtGui.QTableWidget(self.groupBoxCurrency)
+    self.tableWidgetCurrency.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+    self.tableWidgetCurrency.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
+    self.tableWidgetCurrency.setShowGrid(True)
+    self.tableWidgetCurrency.setObjectName(_fromUtf8("tableWidgetCurrency"))
     self.verticalLayout2.addWidget(self.tableWidget)
+    self.verticalLayoutCurrency2.addWidget(self.tableWidgetCurrency)
     self.tableWidget.horizontalHeader().setVisible(True)
     self.tableWidget.verticalHeader().setVisible(True)
     self.tableWidget.setSortingEnabled(True)
     self.tableWidget.setEnabled(False)
+    self.tableWidgetCurrency.horizontalHeader().setVisible(True)
+    self.tableWidgetCurrency.verticalHeader().setVisible(True)
+    self.tableWidgetCurrency.setSortingEnabled(True)
+    self.tableWidgetCurrency.setEnabled(False)
 
-    #add defined columns with headers from global_values
+    #add defined columns with headers from global_values for Stash
     for columns in range (len(self.ig.columnsHeaders)):
         self.tableWidget.insertColumn(columns)
         item = QtGui.QTableWidgetItem(self.ig.columnsHeaders[columns]['columnHeader'])
@@ -54,7 +75,13 @@ def applyLayout(self):
         item = self.tableWidget.horizontalHeaderItem(columns)
     self.savedFiltersComboBox.currentIndexChanged.connect(lambda: loadAndApplyFilter(self))
 
-
+    #add defined columns with headers from global_values for Currency
+    for columns in range (len(self.ig.columnsHeadersCurrency)):
+        self.tableWidgetCurrency.insertColumn(columns)
+        item = QtGui.QTableWidgetItem(self.ig.columnsHeadersCurrency[columns]['columnHeader'])
+        self.tableWidgetCurrency.setHorizontalHeaderItem(columns, item)
+        item = self.tableWidgetCurrency.horizontalHeaderItem(columns)
+    #self.savedFiltersComboBox.currentIndexChanged.connect(lambda: loadAndApplyFilter(self))
 
 def tableWidgetContentsAutoSize(form):
     scrollToTopLeftItem(form)

@@ -8,6 +8,7 @@ class globalValues():
         #load config
         self.jsonConfig = tools.readJson('Configs\config.json')
 
+        #Stash tab columns
         self.columnsHeaders = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'String', 'isCalc' : False},
 
                             {'columnHeader' : 'Location', 'jsonName' : 'None'  , 'type' : 'String', 'isCalc' : False},
@@ -116,10 +117,24 @@ class globalValues():
 
                           ]
 
-        #assign columns headers to columns indices
+        #Currency tab columns
+        self.columnsHeadersCurrency = [{'columnHeader' : 'Name', 'jsonName' : 'name'  , 'type' : 'String', 'isCalc' : False},
+
+                                    {'columnHeader' : 'Quantity', 'jsonName' : 'None'  , 'type' : 'Integer', 'isCalc' : False},
+
+                                    {'columnHeader' : 'Total', 'jsonName' : 'name'  , 'type' : 'Integer', 'isCalc' : False}
+
+                          ]
+
+        #assign columns headers to columns indices for Stash
         self.columnNameToIndex = {}
         for i in range (len(self.columnsHeaders)):
             self.columnNameToIndex[self.columnsHeaders[i]['columnHeader']] = i
+
+        #assign columns headers to columns indices for Currency
+        self.columnNameToIndexCurrency = {}
+        for i in range (len(self.columnsHeadersCurrency)):
+            self.columnNameToIndexCurrency[self.columnsHeadersCurrency[i]['columnHeader']] = i
 
         self.rarity = ['Normal', 'Magic', 'Rare', 'Unique', 'Gem', 'Currency', 'Divination', 'Unknown', 'Prophecy']
 
