@@ -23,6 +23,7 @@ from modules.items.allAttributesLifeMana import setItemAttributesLifeMana
 from modules.items.armEvEsChtbGcscGcsmCscfsCspSpdQty import setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty
 from modules.items.allRequirements import setItemRequirements
 from modules.items.allSockets import setItemSockets
+from modules.items.mTier import setItemMapTier
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
@@ -213,6 +214,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
                 setItemSockets(self, itemIndex)
+
+                #MapTier
+                setItemMapTier(self, itemIndex, propertiesImplicitExplicitLinesList, typeName)
 
     def loadJson(self, jsonFileNames):
         #try:

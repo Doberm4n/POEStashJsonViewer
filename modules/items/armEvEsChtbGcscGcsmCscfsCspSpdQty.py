@@ -22,6 +22,7 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         for i in range (len(temp)):
             if 'Stack Size' in temp[i]:
                 valueStackQuantity = temp[i].split(':')[1].split('/')[0]
+                continue
             if typeName == 'Essence':
                 break
             if 'Armour:' in temp[i]:

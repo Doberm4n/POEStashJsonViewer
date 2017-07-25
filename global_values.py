@@ -16,6 +16,8 @@ class globalValues():
 
                            {'columnHeader' : 'iLvl', 'jsonName' : 'ilvl'  , 'type' : 'Integer', 'isCalc' : False},
 
+                           {'columnHeader' : 'mTier', 'jsonName' : 'ilvl'  , 'type' : 'Integer', 'isCalc' : False},
+
                            {'columnHeader' : 'Rarity', 'jsonName' : 'frameType'  , 'type' : 'String', 'isCalc' : False},
 
                            {'columnHeader' : 'Quality', 'jsonName' : ''  , 'type' : 'Integer', 'isCalc' : False},
