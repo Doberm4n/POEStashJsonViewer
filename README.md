@@ -14,7 +14,7 @@ Features:
 - exporting view to csv;
 - relatively fast (tested on ~7000 items).
 
-![alt text](https://github.com/Doberm4n/POEStashJsonViewer/blob/master/screenshots/columnsSelectWindow_1.png)
+![alt text](https://github.com/Doberm4n/POEStashJsonViewer/blob/master/screenshots/mainWindow_2.png)
 
 Notes:
 
