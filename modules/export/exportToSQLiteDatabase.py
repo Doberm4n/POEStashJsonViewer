@@ -13,7 +13,7 @@ def exportToSQLiteDatabase(form, driverType):
     if fileName:
         form.tableWidget.setEnabled(False)
         #start = time()
-        if os.path.isfile(fileName):
+        if os.path.isfile(unicode(fileName)):
             os.remove(unicode(fileName))
         conn = sqlite3.connect(unicode(fileName))
         c = conn.cursor()
