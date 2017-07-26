@@ -22,7 +22,7 @@ Notes:
 - POEStashJsonViewer is offline app;
 - POEStashJsonViewer curently is alpha, so you may encounter some bugs;
 - You can report bugs on GitHub - https://github.com/Doberm4n/POEStashJsonViewer;
-- As usual if there is a problem with parsing of specific item all I need is a .json file to check.
+- Usually if there is a problem with parsing an specific item - all I need is a .json file to check.
 
 Download:
 
