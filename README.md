@@ -30,4 +30,5 @@ Download:
 or
 2. You can download standalone package with .exe, builded with PyInstaller (https://github.com/Doberm4n/POEStashJsonViewer/releases).
 
-ToDo: https://github.com/Doberm4n/POEStashJsonViewer/projects/1
+ToDo: 
+https://github.com/Doberm4n/POEStashJsonViewer/projects/1
