@@ -8,6 +8,7 @@ Features:
 - open single json files, created with this app for faster loading data;
 - show item location, properties, modifiers and so on;
 - calculating different values for items (DPS, resistances, attributes, sockets, Life/Mana and so on);
+- calculating total stack value of each currency;
 - column selection and sorting;
 - creating, saving, loading and applying filters (note: using only AND statement between conditions);
 - exporting all data to csv, SQLite Database (you can use advanced filtering by using SQLite DB managers) and single json file (for faster next load);
