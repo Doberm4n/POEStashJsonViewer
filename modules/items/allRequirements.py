@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def setItemRequirements(form, itemIndex):
     if form.stashTabJson['items'][itemIndex].has_key('requirements'):
@@ -21,7 +22,8 @@ def setItemRequirements(form, itemIndex):
             if 'Int' in temp:
                 valueInt = form.stashTabJson['items'][itemIndex]['requirements'][i]['values'][0][0]
                 continue
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rLvl'], QtGui.QTableWidgetItem(str(valueLvl)))
+        if valueLvl:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rLvl'], QCI(valueLvl))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rStr'], QtGui.QTableWidgetItem(str(valueStr)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rDex'], QtGui.QTableWidgetItem(str(valueDex)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rInt'], QtGui.QTableWidgetItem(str(valueInt)))

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def setItemSockets(form, itemIndex):
     if form.stashTabJson['items'][itemIndex].has_key('sockets'):
@@ -32,7 +33,7 @@ def setItemSockets(form, itemIndex):
         for i in range(l):
             if i < (l-1):
                 if len(dataVisualSockets[i]) > 1:
-                    valueVisualSockets = valueVisualSockets + dataVisualSockets[i] + '\n'
+                    valueVisualSockets = valueVisualSockets + dataVisualSockets[i] + ',\n'
                 else:
                     valueVisualSockets = valueVisualSockets + dataVisualSockets[i] + ', '
             else:
@@ -40,13 +41,13 @@ def setItemSockets(form, itemIndex):
         valueMaxGroups = max(groups)
         if  valueMaxGroups > 1:
             valueMaxLinked = valueMaxGroups
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Sockets'], QtGui.QTableWidgetItem(str(valueSocketsCount)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Linked'], QtGui.QTableWidgetItem(str(valueMaxLinked)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Sockets'], QCI(valueSocketsCount))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Linked'], QCI(valueMaxLinked))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['LinksVisual'], QtGui.QTableWidgetItem(str(valueVisualSockets)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sStr'], QtGui.QTableWidgetItem(str(valueColorStr)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sDex'], QtGui.QTableWidgetItem(str(valueColorDex)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sInt'], QtGui.QTableWidgetItem(str(valueColorInt)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sWh'], QtGui.QTableWidgetItem(str(valueColorWhite)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sStr'], QCI(valueColorStr))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sDex'], QCI(valueColorDex))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sInt'], QCI(valueColorInt))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sWh'], QCI(valueColorWhite))
 
 
 

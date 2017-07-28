@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImplicitExplicitLinesList, typeName):
     if dataPropertiesImplicitExplicitLinesList:
@@ -18,7 +19,7 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         valueCscfs = 0
         valueCsp = 0
         valueSpd = 0
-        valueStackQuantity = ''
+        valueStackQuantity = None
         for i in range (len(temp)):
             if 'Stack Size' in temp[i]:
                 valueStackQuantity = temp[i].split(':')[1].split('/')[0]
@@ -81,4 +82,5 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['CscfS'], QtGui.QTableWidgetItem(str(valueCscfs)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Csp'], QtGui.QTableWidgetItem(str(valueCsp)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['SpD'], QtGui.QTableWidgetItem(str(valueSpd)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Qty'], QtGui.QTableWidgetItem(str(valueStackQuantity)))
+        if valueStackQuantity:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Qty'], QCI(valueStackQuantity))

@@ -30,6 +30,7 @@ import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
 import modules.export.exportToSQLiteDatabase as exportToSQLiteDataBase
 import modules.openSingleJson as openSingleJson
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 import generated.form_main as GUIMain
 import generated.form_about as GUIAbout
 import ui.main_layout as UIMainLayout
@@ -171,13 +172,13 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Location'], QtGui.QTableWidgetItem(items.setItemLocation(self, itemIndex)))
 
             #iLvl
-            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QtGui.QTableWidgetItem(items.setIlvl(self, itemIndex)))
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QCI(items.setIlvl(self, itemIndex)))
 
             #Rarity
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Rarity'], QtGui.QTableWidgetItem(items.setItemRarity(self, itemIndex)))
 
-            #QualityglobalRowCount
-            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QtGui.QTableWidgetItem(items.setItemQuality(self, itemIndex)))
+            #Quality
+            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QCI(items.setItemQuality(self, itemIndex)))
 
             #Requirements
             setItemRequirements(self, itemIndex)
