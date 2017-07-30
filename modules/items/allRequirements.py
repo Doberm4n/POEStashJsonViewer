@@ -24,6 +24,9 @@ def setItemRequirements(form, itemIndex):
                 continue
         if valueLvl:
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rLvl'], QCI(valueLvl))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rStr'], QtGui.QTableWidgetItem(str(valueStr)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rDex'], QtGui.QTableWidgetItem(str(valueDex)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rInt'], QtGui.QTableWidgetItem(str(valueInt)))
+        if valueStr:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rStr'], QCI(valueStr))
+        if valueDex:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rDex'], QCI(valueDex))
+        if valueInt:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['rInt'], QCI(valueInt))
