@@ -34,6 +34,7 @@ def openSingleJsonFileName(directoryName):
 def printTime(start):
     end = time()
     duration = end - start
+    #return duration
     if duration < 60:
         return "used: " + str(round(duration, 2)) + "s."
     else:

@@ -37,6 +37,7 @@ import ui.main_layout as UIMainLayout
 import ui.filter_layout as UIFilterLayout
 import ui.columns_select_layout as UIColumnsSelectLayout
 import ctypes
+from time import time
 
 myappid = 'mycompany.myproduct.subproduct.version'
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
@@ -163,37 +164,59 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
     def setItem(self, itemIndex):
 
             #Name ('name' + 'typeLine')
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Name'], QtGui.QTableWidgetItem(items.setItemNameAndTypeLine(self, itemIndex)))
+            #print 'Name ' + str(tools.printTime(start))
 
             #Type
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
+            #print 'Type ' + str(tools.printTime(start))
 
             #Location
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Location'], QtGui.QTableWidgetItem(items.setItemLocation(self, itemIndex)))
+            #print 'Location ' + str(tools.printTime(start))
 
             #iLvl
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QCI(items.setIlvl(self, itemIndex)))
+            #print 'iLvl ' + str(tools.printTime(start))
 
             #Rarity
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Rarity'], QtGui.QTableWidgetItem(items.setItemRarity(self, itemIndex)))
+            #print 'Rarity ' + str(tools.printTime(start))
 
             #Quality
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QCI(items.setItemQuality(self, itemIndex)))
+            #print 'Quality ' + str(tools.printTime(start))
 
             #Requirements
+            #start = time()
             setItemRequirements(self, itemIndex)
+            #print 'Requirements ' + str(tools.printTime(start))
 
             #Properties
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Properties'], QtGui.QTableWidgetItem(items.setItemProperties(self, itemIndex)))
+            #print 'Properties ' + str(tools.printTime(start))
 
             #Implicit modifiers
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Implicit Modifiers'], QtGui.QTableWidgetItem(items.setItemImplicitModifiers(self, itemIndex)))
+            #print 'Implicit modifiers ' + str(tools.printTime(start))
 
-            #Type
+            #Explicit modifiers
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Explicit Modifiers'], QtGui.QTableWidgetItem(items.setItemExplicitModifiers(self, itemIndex)))
+            #print 'Explicit modifiers ' + str(tools.printTime(start))
 
-            #Type
+            #PropertiesImplicitExplicit
+            #start = time()
             self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['PropertiesImplicitExplicit'], QtGui.QTableWidgetItem(setItemPropertiesImplicitExplicit(self, itemIndex)))
+            #print 'PropertiesImplicitExplicit ' + str(tools.printTime(start))
 
             # Calculated columns
             if self.ig.jsonConfig['common']['calculateSpecifiedColumns']:
@@ -204,26 +227,40 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 typeName = unicode(self.tableWidget.item(itemIndex, self.ig.columnNameToIndex['Type']).text())
 
                 #dpsPdpsEdpsFdpsLdpsCdpsChDps
+                #start = time()
                 setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(self, itemIndex, propertiesImplicitExplicitLines)
+                #print 'dpsPdpsEdpsFdpsLdpsCdpsChDps ' + str(tools.printTime(start))
                 #self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Type'], QtGui.QTableWidgetItem(items.setItemType(self, itemIndex)))
 
                 #APS, Critical Strike Chance
+                #start = time()
                 setItemApsCsch(self, itemIndex, propertiesImplicitExplicitLinesList)
+                #print 'APS, Critical Strike Chance ' + str(tools.printTime(start))
 
                 #all Resistances (resTotal, resAll, resF, resL, resC, resCh), values for Fire, Lightning, Cold resistances includes value from '% to all elemental resistances' modifier
+                #start = time()
                 setItemResistances(self, itemIndex, propertiesImplicitExplicitLines, propertiesImplicitExplicitLinesList, typeName)
+                #print 'all Resistances ' + str(tools.printTime(start))
 
                 #all Attributes (toAttrTotal, toStr, toDex, toInt), values for Str, Dex, Int attributes includes value from 'to all Attributes' modifier
+                #start = time()
                 setItemAttributesLifeMana(self, itemIndex, propertiesImplicitExplicitLinesList, typeName)
+                #print 'all Attributes ' + str(tools.printTime(start))
 
                 #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
+                #start = time()
                 setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(self, itemIndex, propertiesImplicitExplicitLinesList, typeName)
+                #print 'Armour, Evasion, Energy Shield ' + str(tools.printTime(start))
 
-                #Armour, Evasion, Energy Shield, Chance to Block, Global Critical Strike Chance, Global Critical Strike Multiplier, Critical Strike Chance for Spells, Cast Speed, Spell Damage
+                #all Sockets
+                #start = time()
                 setItemSockets(self, itemIndex)
+                #print 'all Sockets ' + str(tools.printTime(start))
 
                 #MapTier
+                #start = time()
                 setItemMapTier(self, itemIndex, propertiesImplicitExplicitLinesList, typeName)
+                #print 'MapTier ' + str(tools.printTime(start))
 
     def loadJson(self, jsonFileNames):
         #try:
