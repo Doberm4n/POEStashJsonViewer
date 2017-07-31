@@ -16,11 +16,11 @@ def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitE
         if _dpsCalc.Calc(unicode(data)):
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QCI(_dpsCalc.totalDPS))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QCI(_dpsCalc.valueElemental))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valuePhysical)))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueFire)))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueLightning)))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueCold)))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QtGui.QTableWidgetItem(str(_dpsCalc.valueChaos)))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['pDPS'], QCI(_dpsCalc.valuePhysical))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['fDPS'], QCI(_dpsCalc.valueFire))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['lDPS'], QCI(_dpsCalc.valueLightning))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['cDPS'], QCI(_dpsCalc.valueCold))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChDPS'], QCI(_dpsCalc.valueChaos))
         else:
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['DPS'], QtGui.QTableWidgetItem('0'))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['eDPS'], QtGui.QTableWidgetItem('0'))
