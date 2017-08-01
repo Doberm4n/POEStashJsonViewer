@@ -24,7 +24,7 @@ def exportToSingleJson(form):
                     if itemValue:
                         jsonData['rows'][i].append(unicode(itemValue.text()))
                     else:
-                        jsonData['rows'][i].append('')
+                        jsonData['rows'][i].append(None)
         tools.writeJson(jsonData, unicode(fileName))
         form.statusbar.showMessage('Export complete')
         form.tableWidget.setEnabled(True)

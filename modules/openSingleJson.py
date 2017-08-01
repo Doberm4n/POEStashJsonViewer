@@ -36,8 +36,8 @@ def openSingleJson(form):
                     itemValue = jsonData['rows'][i][j]
                     if itemValue:
                         form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(unicode(itemValue)))
-                    else:
-                        form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(''))
+                    # else:
+                    #     form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(''))
         form.statusbar.showMessage('Load complete')
         setCurrency(form)
         UIMainLayout.tableWidgetContentsAutoSize(form)

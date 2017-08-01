@@ -122,9 +122,9 @@ def setFixedColumnsWidth(self):
 
 def tableWidgetDisableResizeToContents(form):
     for i in range (form.tableWidget.columnCount()):
-        form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.Fixed)
+        form.tableWidget.horizontalHeader().setResizeMode(i, QtGui.QHeaderView.Interactive)
     for j in range (form.tableWidget.rowCount()):
-        form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.Fixed)
+        form.tableWidget.verticalHeader().setResizeMode(j, QtGui.QHeaderView.Interactive)
 
 def tableWidgetSetColumnsSelected(form):
      for i in range (form.tableWidget.columnCount()):
