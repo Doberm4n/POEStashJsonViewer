@@ -38,6 +38,8 @@ def exportToSQLiteDatabase(form, driverType):
                 dataType = form.ig.columnsHeaders[j]['type']
                 if (not dataValue) and (not dataType == 'String'):
                     dataValue = '0'
+                elif (not dataValue):
+                    dataValue = ''
                 elif (not dataValue.text()) and (not dataType == 'String'):
                     dataValue = '0'
                 elif not dataValue.text():

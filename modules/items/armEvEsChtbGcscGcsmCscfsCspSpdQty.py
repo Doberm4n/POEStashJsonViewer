@@ -22,7 +22,7 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         valueStackQuantity = None
         for i in range (len(temp)):
             if 'Stack Size' in temp[i]:
-                valueStackQuantity = temp[i].split(':')[1].split('/')[0]
+                valueStackQuantity = int(temp[i].split(':')[1].split('/')[0])
                 continue
             if typeName == 'Essence':
                 break
@@ -71,7 +71,7 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
 
         #non stackable currency
         if typeName == 'Currency' and not valueStackQuantity:
-            valueStackQuantity = '1'
+            valueStackQuantity = 1
 
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Arm'], QtGui.QTableWidgetItem(str(valueArmour)))
         form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Ev'], QtGui.QTableWidgetItem(str(valueEvasion)))
