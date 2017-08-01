@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def setItemApsCsch(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
     if dataPropertiesImplicitExplicitLinesList:
@@ -14,8 +15,8 @@ def setItemApsCsch(form, itemIndex, dataPropertiesImplicitExplicitLinesList):
                 elif temp[i].find('Critical Strike Chance: ') >= 0:
                     dataCsCh = temp[i].split(':')[1]
                     dataCsCh = dataCsCh.split('%')
-                    form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['csCh'], QtGui.QTableWidgetItem(str(dataCsCh[0])))
+                    form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['csCh'], QCI(dataCsCh[0]))
             dataAPS = sum(data)
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['APS'], QtGui.QTableWidgetItem(str(dataAPS)))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['APS'], QCI(dataAPS))
 
 

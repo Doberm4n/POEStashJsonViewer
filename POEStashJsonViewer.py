@@ -59,7 +59,7 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
         self.actionAbout.triggered.connect(self.showAbout)
         self.actionAutosizeColumns.triggered.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
         self.loadConfig()
-        self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
+        #self.tableWidget.horizontalHeader().sortIndicatorChanged.connect(lambda: UIMainLayout.tableWidgetContentsAutoSize(self))
         self.actionEdit_filter.triggered.connect(self.showFilter)
         self.actionSelect_columns.triggered.connect(self.showColumnsSelect)
         self.actionReset_filter.triggered.connect(self.resetFilter)

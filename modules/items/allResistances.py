@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from PyQt4 import QtGui
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def setItemResistances(form, itemIndex, dataPropertiesImplicitExplicitLines, dataPropertiesImplicitExplicitLinesList, typeName):
     if dataPropertiesImplicitExplicitLinesList:
@@ -46,9 +47,9 @@ def setItemResistances(form, itemIndex, dataPropertiesImplicitExplicitLines, dat
             if dataCh:
                 valueCh = sum(dataCh)
             valueTotal = valueF + valueL + valueC + valueCh
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resTotal'], QtGui.QTableWidgetItem(str(valueTotal)))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resAll'], QtGui.QTableWidgetItem(str(valueAll)))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resF'], QtGui.QTableWidgetItem(str(valueF)))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resTotal'], QCI(valueTotal))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resAll'], QCI(valueAll))
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resF'], QCI(valueF))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resL'], QtGui.QTableWidgetItem(str(valueL)))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resC'], QtGui.QTableWidgetItem(str(valueC)))
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resCh'], QtGui.QTableWidgetItem(str(valueCh)))
