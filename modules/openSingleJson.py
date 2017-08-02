@@ -7,6 +7,7 @@ from PyQt4 import QtGui
 import modules.tools as tools
 import ui.main_layout as UIMainLayout
 from modules.tabs.currency.currency import setCurrency
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def openSingleJson(form):
     if form.ig.jsonConfig['curGuide']:
@@ -35,7 +36,9 @@ def openSingleJson(form):
                 for j in range(len(jsonData['rows'][i])):
                     itemValue = jsonData['rows'][i][j]
                     if itemValue:
-                        form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(unicode(itemValue)))
+                        if form.ig.columnsHeaders[j]['type'] == 'String':
+                            form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(unicode(itemValue)))
+                        else: form.tableWidget.setItem(i, j, QCI(itemValue))
                     # else:
                     #     form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(''))
         form.statusbar.showMessage('Load complete')
