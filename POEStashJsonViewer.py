@@ -164,7 +164,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
             #iLvl
             #start = time()
-            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QCI(items.setIlvl(self, itemIndex)))
+            value = items.setIlvl(self, itemIndex)
+            if value:
+                self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['iLvl'], QCI(value))
             #print 'iLvl ' + str(tools.printTime(start))
 
             #Rarity
@@ -174,7 +176,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
 
             #Quality
             #start = time()
-            self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QCI(items.setItemQuality(self, itemIndex)))
+            value = items.setItemQuality(self, itemIndex)
+            if value:
+                self.tableWidget.setItem(itemIndex, self.ig.columnNameToIndex['Quality'], QCI(value))
             #print 'Quality ' + str(tools.printTime(start))
 
             #Requirements

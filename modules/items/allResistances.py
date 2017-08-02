@@ -47,9 +47,16 @@ def setItemResistances(form, itemIndex, dataPropertiesImplicitExplicitLines, dat
             if dataCh:
                 valueCh = sum(dataCh)
             valueTotal = valueF + valueL + valueC + valueCh
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resTotal'], QCI(valueTotal))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resAll'], QCI(valueAll))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resF'], QCI(valueF))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resL'], QCI(valueL))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resC'], QCI(valueC))
-            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resCh'], QCI(valueCh))
+
+            if valueTotal:
+                form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resTotal'], QCI(valueTotal))
+            if valueAll:
+                form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resAll'], QCI(valueAll))
+            if valueF:
+                form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resF'], QCI(valueF))
+            if valueL:
+                form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resL'], QCI(valueL))
+            if valueC:
+                form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resC'], QCI(valueC))
+            if valueCh:
+                form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['resCh'], QCI(valueCh))

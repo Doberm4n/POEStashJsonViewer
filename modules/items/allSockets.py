@@ -41,13 +41,21 @@ def setItemSockets(form, itemIndex):
         valueMaxGroups = max(groups)
         if  valueMaxGroups > 1:
             valueMaxLinked = valueMaxGroups
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Sockets'], QCI(valueSocketsCount))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Linked'], QCI(valueMaxLinked))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['LinksVisual'], QtGui.QTableWidgetItem(str(valueVisualSockets)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sStr'], QCI(valueColorStr))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sDex'], QCI(valueColorDex))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sInt'], QCI(valueColorInt))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sWh'], QCI(valueColorWhite))
+
+        if valueSocketsCount:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Sockets'], QCI(valueSocketsCount))
+        if valueMaxLinked:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Linked'], QCI(valueMaxLinked))
+        if valueVisualSockets:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['LinksVisual'], QtGui.QTableWidgetItem(str(valueVisualSockets)))
+        if valueColorStr:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sStr'], QCI(valueColorStr))
+        if valueColorDex:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sDex'], QCI(valueColorDex))
+        if valueColorInt:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sInt'], QCI(valueColorInt))
+        if valueColorWhite:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['sWh'], QCI(valueColorWhite))
 
 
 

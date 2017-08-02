@@ -42,10 +42,7 @@ def setItemType(self, itemIndex):
         return itemType
 
 def setIlvl(self, itemIndex):
-    value = unicode(self.stashTabJson['items'][itemIndex]['ilvl'])
-    if value:
-        return value
-    else: return 0
+    return int(self.stashTabJson['items'][itemIndex]['ilvl'])
 
 def setItemRarity(self, itemIndex):
     return unicode(self.ig.rarity[self.stashTabJson['items'][itemIndex]['frameType']])
@@ -56,9 +53,8 @@ def setItemQuality(self, itemIndex):
         for i in range (len(self.stashTabJson['items'][itemIndex]['properties'])):
             if self.stashTabJson['items'][itemIndex]['properties'][i]['name'] == 'Quality':
                 dataQuality = self.stashTabJson['items'][itemIndex]['properties'][i]['values'][0][0]
-                dataQuality = dataQuality.replace('%', '')
-                dataQuality = dataQuality.replace('+', '')
-    return unicode(dataQuality)
+                dataQuality = dataQuality.replace('%', '').replace('+', '')
+    return int(dataQuality)
 
 def setSockets(self, itemIndex):
     return self.stashTabJson['items'][itemIndex]['frameType']

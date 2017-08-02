@@ -57,9 +57,16 @@ def setItemAttributesLifeMana(form, itemIndex, dataPropertiesImplicitExplicitLin
         valueTotal = valueS + valueD + valueI
         valueLifeTotal = valueLifeTotal + (valueS / 2)
         valueManaTotal = valueManaTotal + (valueI / 2)
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toAttrTotal'], QCI(valueTotal))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toStr'], QCI(valueS))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toDex'], QCI(valueD))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toInt'], QCI(valueI))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxLife'], QCI(valueLifeTotal))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxMana'], QCI(valueManaTotal))
+
+        if valueTotal:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toAttrTotal'], QCI(valueTotal))
+        if valueS:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toStr'], QCI(valueS))
+        if valueD:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toDex'], QCI(valueD))
+        if valueI:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toInt'], QCI(valueI))
+        if valueLifeTotal:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxLife'], QCI(valueLifeTotal))
+        if valueManaTotal:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxMana'], QCI(valueManaTotal))

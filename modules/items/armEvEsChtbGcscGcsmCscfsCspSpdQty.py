@@ -73,14 +73,23 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         if typeName == 'Currency' and not valueStackQuantity:
             valueStackQuantity = 1
 
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Arm'], QCI(valueArmour))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Ev'], QCI(valueEvasion))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ES'], QCI(valueEnergyShield))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChtB'], QCI(valueChanceToBlock))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsC'], QCI(valueGcsc))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsM'], QCI(valueGcsm))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['CscfS'], QCI(valueCscfs))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Csp'], QCI(valueCsp))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['SpD'], QCI(valueSpd))
+        if valueArmour:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Arm'], QCI(valueArmour))
+        if valueEvasion:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Ev'], QCI(valueEvasion))
+        if valueEnergyShield:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ES'], QCI(valueEnergyShield))
+        if valueChanceToBlock:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChtB'], QCI(valueChanceToBlock))
+        if valueGcsc:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsC'], QCI(valueGcsc))
+        if valueGcsm:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsM'], QCI(valueGcsm))
+        if valueCscfs:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['CscfS'], QCI(valueCscfs))
+        if valueCsp:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Csp'], QCI(valueCsp))
+        if valueSpd:
+            form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['SpD'], QCI(valueSpd))
         if valueStackQuantity:
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Qty'], QCI(valueStackQuantity))
