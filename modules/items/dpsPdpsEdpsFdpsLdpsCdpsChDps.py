@@ -7,7 +7,9 @@ import modules.calc.dpsCalc as dpsCalc
 from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def setItemDpsPdpsEdpsFdpsLdpsCdpsChDps(form, itemIndex, dataPropertiesImplicitExplicit):
-    if unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text()).find('H Weapon)') >= 0:
+    valueType = unicode(form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Type']).text())
+    valueRarity = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Rarity']).text()
+    if 'H Weapon' in valueType and ('Rare' in valueRarity or 'Unique' in valueRarity):
         dataQuality = form.tableWidget.item(itemIndex, form.ig.columnNameToIndex['Quality']).text()
         if dataQuality:
             dataQuality = 'Quality: +' + dataQuality + '\n'
