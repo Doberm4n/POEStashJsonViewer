@@ -6,7 +6,6 @@ sys.path.insert(0,parentdir)
 from PyQt4 import QtGui
 import modules.tools as tools
 import ui.main_layout as UIMainLayout
-from modules.tabs.currency.currency import setCurrency
 from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def openSingleJson(form):

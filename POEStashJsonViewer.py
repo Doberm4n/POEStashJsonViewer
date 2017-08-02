@@ -24,7 +24,6 @@ from modules.items.armEvEsChtbGcscGcsmCscfsCspSpdQty import setItemArmEvEsChtbGc
 from modules.items.allRequirements import setItemRequirements
 from modules.items.allSockets import setItemSockets
 from modules.items.mTier import setItemMapTier
-from modules.tabs.currency.currency import setCurrency
 from modules.filter import resetFilter
 import modules.export.exportToCsv as exportToCsv
 import modules.export.exportToSingleJson as exportToSingleJson
