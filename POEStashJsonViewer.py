@@ -44,7 +44,7 @@ ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 # form = None
 # formAbout = None
 # formFilter = None
-version = '0.9.0_alpha(260717_2)'
+version = '0.9.1(beta)'
 link = '<a href="https://github.com/Doberm4n/POEStashJsonViewer">GitHub</a>'
 
 

@@ -1,1 +1,1 @@
-powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('dist', 'POEStashJsonViewer_0.9.0_alpha(260717_2).zip'); }"
+powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::CreateFromDirectory('dist', 'POEStashJsonViewer_0.9.1(beta).zip'); }"
