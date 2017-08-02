@@ -23,12 +23,7 @@ def openSingleJson(form):
         if not form.ig.jsonConfig['common']['configVersion'] == jsonData['common']['singleJsonVersion']:
             QtGui.QMessageBox.warning(None, "Open single json", "Version mismatch. Single json cannot be opened. Please export data to single json again and then retry.")
             return
-        form.tableWidget.setEnabled(False)
-        form.tableWidget.setRowCount(0)
-        form.tableWidgetCurrency.setRowCount(0)
-        form.tableWidget.setSortingEnabled(False)
-        form.tableWidgetCurrency.setSortingEnabled(False)
-        UIMainLayout.tableWidgetDisableResizeToContents(form)
+        UIMainLayout.tableWidgetBeforeLoad(form)
         l = len(jsonData['rows'])
         for i in range(l):
                 form.statusbar.showMessage('Processing ' + os.path.basename(unicode(fileName))  + ' (item ' + str(i+1) + ' of ' + str(l) + ')')
@@ -42,14 +37,4 @@ def openSingleJson(form):
                     # else:
                     #     form.tableWidget.setItem(i, j, QtGui.QTableWidgetItem(''))
         form.statusbar.showMessage('Load complete')
-        setCurrency(form)
-        UIMainLayout.tableWidgetContentsAutoSize(form)
-        UIMainLayout.tableWidgetSetColumnsSelected(form)
-        form.tableWidget.setSortingEnabled(True)
-        form.tableWidgetCurrency.setSortingEnabled(True)
-        UIMainLayout.loadFiltersToSavedFiltersComboBox(form)
-        form.ig.itemCount = form.tableWidget.rowCount()
-        form.ig.itemFound = form.ig.itemFound
-        form.guideLineEdit.setText(form.guideLineEdit.text() + ' (' + str(form.tableWidget.rowCount()) + ' items)')
-        form.tableWidget.setEnabled(True)
-        form.tableWidgetCurrency.setEnabled(True)
+        UIMainLayout.tableWidgetAfterLoad(form)

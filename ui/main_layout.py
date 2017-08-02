@@ -8,6 +8,7 @@ from PyQt4 import QtCore
 import os
 import modules.filter as tableWidgetFilters
 import modules.tools as tools
+from modules.tabs.currency.currency import setCurrency
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -130,6 +131,27 @@ def tableWidgetSetColumnsSelected(form):
      for i in range (form.tableWidget.columnCount()):
             if form.ig.jsonConfig['view']['columns'][i]['isHidden']:
                 form.tableWidget.hideColumn(i)
+
+def tableWidgetBeforeLoad(form):
+    form.tableWidget.setEnabled(False)
+    form.tableWidget.setRowCount(0)
+    form.tableWidgetCurrency.setRowCount(0)
+    form.tableWidget.setSortingEnabled(False)
+    form.tableWidgetCurrency.setSortingEnabled(False)
+    tableWidgetDisableResizeToContents(form)
+
+def tableWidgetAfterLoad(form):
+    setCurrency(form)
+    tableWidgetContentsAutoSize(form)
+    tableWidgetSetColumnsSelected(form)
+    form.tableWidget.setSortingEnabled(True)
+    form.tableWidgetCurrency.setSortingEnabled(True)
+    loadFiltersToSavedFiltersComboBox(form)
+    form.ig.itemCount = form.tableWidget.rowCount()
+    form.ig.itemFound = form.ig.itemCount
+    form.guideLineEdit.setText(form.guideLineEdit.text() + ' (' + str(form.tableWidget.rowCount()) + ' items)')
+    form.tableWidget.setEnabled(True)
+    form.tableWidgetCurrency.setEnabled(True)
 
 def loadFiltersToSavedFiltersComboBox(form):
         form.savedFiltersComboBox.clear()

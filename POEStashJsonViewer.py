@@ -133,24 +133,9 @@ class POEStashTabViewerApp(QtGui.QMainWindow, GUIMain.Ui_MainWindow):
                 self.guideLineEdit.setText(os.path.basename(unicode(self.curJsonFiles[0])))
             else:
                 self.guideLineEdit.setText(str(l) + ' json files')
-            self.tableWidget.setEnabled(False)
-            self.tableWidget.setRowCount(0)
-            self.tableWidgetCurrency.setRowCount(0)
-            self.tableWidget.setSortingEnabled(False)
-            self.tableWidgetCurrency.setSortingEnabled(False)
-            UIMainLayout.tableWidgetDisableResizeToContents(self)
+            UIMainLayout.tableWidgetBeforeLoad(self)
             if self.loadJson(self.curJsonFiles):
-                setCurrency(self)
-                UIMainLayout.tableWidgetContentsAutoSize(self)
-                UIMainLayout.tableWidgetSetColumnsSelected(self)
-                self.tableWidget.setSortingEnabled(True)
-                self.tableWidgetCurrency.setSortingEnabled(True)
-                UIMainLayout.loadFiltersToSavedFiltersComboBox(self)
-                self.ig.itemCount = self.tableWidget.rowCount()
-                self.ig.itemFound = self.ig.itemCount
-                self.guideLineEdit.setText(self.guideLineEdit.text() + ' (' + str(self.tableWidget.rowCount()) + ' items)')
-                self.tableWidget.setEnabled(True)
-                self.tableWidgetCurrency.setEnabled(True)
+                UIMainLayout.tableWidgetAfterLoad(self)
 
     def prepareGui(self):
 
