@@ -142,7 +142,6 @@ def tableWidgetBeforeLoad(form):
 
 def tableWidgetAfterLoad(form):
     setCurrency(form)
-    tableWidgetContentsAutoSize(form)
     tableWidgetSetColumnsSelected(form)
     form.tableWidget.setSortingEnabled(True)
     form.tableWidgetCurrency.setSortingEnabled(True)
@@ -150,6 +149,7 @@ def tableWidgetAfterLoad(form):
     form.ig.itemCount = form.tableWidget.rowCount()
     form.ig.itemFound = form.ig.itemCount
     form.guideLineEdit.setText(form.guideLineEdit.text() + ' (' + str(form.tableWidget.rowCount()) + ' items)')
+    tableWidgetContentsAutoSize(form)
     form.tableWidget.setEnabled(True)
     form.tableWidgetCurrency.setEnabled(True)
 
