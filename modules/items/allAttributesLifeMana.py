@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from PyQt4 import QtGui
+from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QCI
 
 def setItemAttributesLifeMana(form, itemIndex, dataPropertiesImplicitExplicitLinesList, typeName):
     if dataPropertiesImplicitExplicitLinesList:
@@ -56,9 +57,9 @@ def setItemAttributesLifeMana(form, itemIndex, dataPropertiesImplicitExplicitLin
         valueTotal = valueS + valueD + valueI
         valueLifeTotal = valueLifeTotal + (valueS / 2)
         valueManaTotal = valueManaTotal + (valueI / 2)
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toAttrTotal'], QtGui.QTableWidgetItem(str(valueTotal)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toStr'], QtGui.QTableWidgetItem(str(valueS)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toDex'], QtGui.QTableWidgetItem(str(valueD)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toInt'], QtGui.QTableWidgetItem(str(valueI)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxLife'], QtGui.QTableWidgetItem(str(valueLifeTotal)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxMana'], QtGui.QTableWidgetItem(str(valueManaTotal)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toAttrTotal'], QCI(valueTotal))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toStr'], QCI(valueS))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toDex'], QCI(valueD))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toInt'], QCI(valueI))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxLife'], QCI(valueLifeTotal))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['toMaxMana'], QCI(valueManaTotal))

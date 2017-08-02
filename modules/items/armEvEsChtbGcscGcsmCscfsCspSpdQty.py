@@ -5,10 +5,10 @@ from modules.classes.custom.QTableWidgetItem import QCustomTableWidgetItem as QC
 def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImplicitExplicitLinesList, typeName):
     if dataPropertiesImplicitExplicitLinesList:
         temp = dataPropertiesImplicitExplicitLinesList
-        valueArmour = ''
-        valueEvasion = ''
-        valueEnergyShield = ''
-        valueChanceToBlock = ''
+        valueArmour = 0
+        valueEvasion = 0
+        valueEnergyShield = 0
+        valueChanceToBlock = 0
         dataGcsc = []
         dataGcsm = []
         dataCscfs = []
@@ -73,14 +73,14 @@ def setItemArmEvEsChtbGcscGcsmCscfsCspSpdQty(form, itemIndex, dataPropertiesImpl
         if typeName == 'Currency' and not valueStackQuantity:
             valueStackQuantity = 1
 
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Arm'], QtGui.QTableWidgetItem(str(valueArmour)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Ev'], QtGui.QTableWidgetItem(str(valueEvasion)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ES'], QtGui.QTableWidgetItem(str(valueEnergyShield)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChtB'], QtGui.QTableWidgetItem(str(valueChanceToBlock)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsC'], QtGui.QTableWidgetItem(str(valueGcsc)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsM'], QtGui.QTableWidgetItem(str(valueGcsm)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['CscfS'], QtGui.QTableWidgetItem(str(valueCscfs)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Csp'], QtGui.QTableWidgetItem(str(valueCsp)))
-        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['SpD'], QtGui.QTableWidgetItem(str(valueSpd)))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Arm'], QCI(valueArmour))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Ev'], QCI(valueEvasion))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ES'], QCI(valueEnergyShield))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['ChtB'], QCI(valueChanceToBlock))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsC'], QCI(valueGcsc))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['GcsM'], QCI(valueGcsm))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['CscfS'], QCI(valueCscfs))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Csp'], QCI(valueCsp))
+        form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['SpD'], QCI(valueSpd))
         if valueStackQuantity:
             form.tableWidget.setItem(itemIndex, form.ig.columnNameToIndex['Qty'], QCI(valueStackQuantity))
