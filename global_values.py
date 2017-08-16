@@ -168,8 +168,8 @@ class globalValues():
                           {'typeName' : 'Map', 'items' : ['Map']},  #Maps
                           {'typeName' : 'Boots', 'items' : ['Boots']}, #Boots
                           {'typeName' : 'Gloves', 'items' : ['Gloves']}, #Gloves
-                          {'typeName' : 'Shield', 'items' : ['Shield']}, #Shields
                           {'typeName' : 'Body Armour', 'items' : ['BodyArmour']}, #BodyArmours
+                          {'typeName' : 'Shield', 'items' : ['Shield']}, #Shields
                           {'typeName' : 'Helmet', 'items' : ['Helmet']}, #Helmets
                           {'typeName' : 'Amulet', 'items' : ['Amulet']}, #Amulets
                           {'typeName' : 'Ring', 'items' : ['Ring']}, #Rings
